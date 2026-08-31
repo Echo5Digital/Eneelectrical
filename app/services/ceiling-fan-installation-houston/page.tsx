@@ -253,11 +253,11 @@ export default function CeilingFanInstallationPage() {
       >
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            alt="Modern ceiling fan installed in a residential living room"
-            className="w-full h-full object-cover opacity-30"
+            src="/cellingfan.png"
+            alt="ENE Electrical technician installing a ceiling fan in a Houston-area home"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
@@ -583,8 +583,8 @@ export default function CeilingFanInstallationPage() {
 
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="https://images.pexels.com/photos/6588456/pexels-photo-6588456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="Ceiling fan installed in a covered outdoor patio of a Houston-area home"
+              src="/cellingfan.png"
+              alt="ENE Electrical technician installing a ceiling fan for a Houston-area home"
               className="w-full h-80 object-cover"
             />
           </div>
