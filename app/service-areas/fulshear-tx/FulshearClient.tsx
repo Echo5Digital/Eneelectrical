@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   ShieldCheck,
@@ -800,6 +801,16 @@ export default function FulshearClient({ faqData }: Props) {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Fulshear, TX?</span>
+          </>
+        }
+        description="Whether you're dealing with an electrical issue, planning an upgrade, or ready to move forward on a new installation, ENE Electrical is ready to help. We serve homeowners across Fulshear and the greater Katy area with dependable, licensed electrical service."
+      />
     </main>
   );
 }

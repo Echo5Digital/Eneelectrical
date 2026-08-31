@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -812,6 +813,16 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Upgrade Your Electrical System in{" "}
+            <span style={{ color: "#F5A623" }}>Spring Branch?</span>
+          </>
+        }
+        description="From panel upgrades to whole-home rewiring, ENE Electrical helps Spring Branch homeowners keep their electrical systems safe and up to code. Our licensed, background-checked technicians are ready to schedule your service or answer any questions you have."
+      />
     </>
   );
 }

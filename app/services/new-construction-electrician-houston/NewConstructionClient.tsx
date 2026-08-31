@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -1017,6 +1018,16 @@ export default function NewConstructionClient({ faqData }: Props) {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Build in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="Whether you're breaking ground on a custom home or managing a multi-lot development, ENE Electrical delivers reliable, code-compliant new construction electrical work from rough-in through final inspection. We partner with builders and homeowners across Katy, Fulshear, Cinco Ranch, Houston, and surrounding communities."
+      />
     </main>
   );
 }

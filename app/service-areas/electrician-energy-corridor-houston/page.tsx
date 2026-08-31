@@ -6,6 +6,7 @@ import Card from "@/components/Card";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import EnergyCorridorClient from "./EnergyCorridorClient";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import Link from "next/link";
 import {
   Zap,
@@ -626,6 +627,16 @@ export default function EnergyCorridorHoustonPage() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Energy Corridor Houston?</span>
+          </>
+        }
+        description="Whether it's a panel upgrade for one of Energy Corridor's established homes, an EV charger installation, or a same-day repair, ENE Electrical is ready to help. We dispatch quickly from nearby Katy, TX to serve homeowners throughout the Energy Corridor and West Houston area."
+      />
 
       <Footer address="Katy, TX, Serving Greater Houston & Surrounding Areas" />
     </>

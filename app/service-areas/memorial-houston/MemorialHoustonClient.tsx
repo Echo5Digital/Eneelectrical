@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   ShieldCheck,
@@ -766,6 +767,16 @@ export default function MemorialHoustonClient({ faqData }: Props) {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Memorial Houston?</span>
+          </>
+        }
+        description="From panel upgrades to EV charger installs, ENE Electrical delivers dependable, licensed electrical service to homeowners throughout Memorial Houston. Book an appointment today or give us a call and a background-checked technician will take care of the rest."
+      />
     </main>
   );
 }

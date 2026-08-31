@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ElectricalRepairClient from "./ElectricalRepairClient";
 import {
@@ -434,12 +435,42 @@ export default function ElectricalRepairPage() {
 
       {/* ── Common Electrical Problems We Fix ── */}
       <Section background="default" spacing="lg" maxWidth="xl" id="repairs">
-        <SectionHeading
-          eyebrow="Repair Services"
-          title="Common Electrical Problems We Fix"
-          subtitle="Whether it's a tripping breaker, a dead outlet, or flickering lights, ENE Electrical's technicians are trained to diagnose and resolve the most common residential electrical issues quickly and safely."
-          align="center"
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center mb-12">
+          <div>
+            <span
+              className="inline-block font-semibold text-sm uppercase tracking-widest mb-4"
+              style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
+            >
+              Repair Services
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl font-bold leading-tight mb-4"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              Common Electrical Problems We Fix
+            </h2>
+            <div
+              className="w-14 h-1 rounded-full mb-6"
+              style={{ backgroundColor: "#F5A623" }}
+            />
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              Whether it's a tripping breaker, a dead outlet, or flickering
+              lights, ENE Electrical's technicians are trained to diagnose and
+              resolve the most common residential electrical issues quickly
+              and safely.
+            </p>
+          </div>
+          <div className="w-full">
+            <img
+              src="/Electrical Repair.png"
+              alt="ENE Electrical technician repairing residential wiring in a junction box"
+              className="w-full h-auto rounded-2xl shadow-lg object-cover"
+            />
+          </div>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {repairProblems.map((item) => (
             <Card
@@ -455,12 +486,42 @@ export default function ElectricalRepairPage() {
 
       {/* ── Electrical Installation Services ── */}
       <Section background="white" spacing="lg" maxWidth="xl" id="installation">
-        <SectionHeading
-          eyebrow="Installation Services"
-          title="Electrical Installation Services"
-          subtitle="Need something new? ENE Electrical handles all types of residential electrical installations, from simple outlet additions to complete room wiring, all completed to Texas electrical code."
-          align="center"
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center mb-12">
+          <div className="w-full order-2 lg:order-1">
+            <img
+              src="/Electrical Repair & Installation.png"
+              alt="ENE Electrical technician installing a wall outlet"
+              className="w-full h-auto rounded-2xl shadow-lg object-cover"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <span
+              className="inline-block font-semibold text-sm uppercase tracking-widest mb-4"
+              style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
+            >
+              Installation Services
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl font-bold leading-tight mb-4"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              Electrical Installation Services
+            </h2>
+            <div
+              className="w-14 h-1 rounded-full mb-6"
+              style={{ backgroundColor: "#F5A623" }}
+            />
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              Need something new? ENE Electrical handles all types of
+              residential electrical installations, from simple outlet
+              additions to complete room wiring, all completed to Texas
+              electrical code.
+            </p>
+          </div>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {installationServices.map((item) => (
             <Card
@@ -739,6 +800,17 @@ export default function ElectricalRepairPage() {
           </div>
         </div>
       </Section>
+
+      {/* ── Van CTA ── */}
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="Whether you've got an electrical issue that needs fixing, an upgrade you've been putting off, or a new installation you're ready to move forward on, ENE Electrical is ready to help. We serve homeowners across Houston, Katy, and surrounding communities with dependable residential electrical service."
+      />
 
       <Footer address="Katy, TX, serving Greater Houston & Surrounding Areas" />
     </>

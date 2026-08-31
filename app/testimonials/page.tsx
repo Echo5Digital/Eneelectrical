@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 import TestimonialsClient from "./TestimonialsClient";
 
 export const metadata: Metadata = {
@@ -256,6 +257,16 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Join Our{" "}
+            <span style={{ color: "#F5A623" }}>Satisfied Customers?</span>
+          </>
+        }
+        description="Our reviews speak for themselves, but nothing beats experiencing ENE Electrical's dependable service firsthand. Whether you need a repair, an upgrade, or a new installation, our licensed, background-checked technicians are ready to help homeowners across Houston and Katy."
+      />
 
       <Footer />
     </>

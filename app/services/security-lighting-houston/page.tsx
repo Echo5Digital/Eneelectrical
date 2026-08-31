@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import SecurityLightingClient from "./SecurityLightingClient";
 import {
   ShieldCheck,
@@ -737,6 +738,16 @@ export default function SecurityLightingPage() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Light Up Your{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy Home?</span>
+          </>
+        }
+        description="Don't let dark corners and blind spots put your property at risk. ENE Electrical designs and installs motion-sensor floodlights, dusk-to-dawn fixtures, and pathway lighting that keep your home visible and protected around the clock. Serving homeowners across Houston, Katy, and surrounding communities."
+      />
 
       <Footer address="Katy, TX, Serving Greater Houston & Surrounding Areas" />
     </>

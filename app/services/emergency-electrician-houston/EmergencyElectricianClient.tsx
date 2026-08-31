@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Phone,
   AlertTriangle,
@@ -671,39 +672,16 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
         <FAQAccordion items={faqData} />
       </Section>
 
-      {/* ── FINAL STICKY CTA ── */}
-      <div
-        className="sticky bottom-0 z-40 w-full shadow-2xl"
-        style={{ backgroundColor: "#0B1F3A" }}
-        role="complementary"
-        aria-label="Emergency call to action"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <AlertTriangle size={18} style={{ color: "#dc2626" }} strokeWidth={2.5} />
-            <span
-              className="text-white text-sm font-semibold"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Electrical Emergency? Call ENE Electrical Now
-            </span>
-          </div>
-          {/* Phone number placeholder */}
-          <a
-            href={`tel:${PHONE_HREF}`}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold uppercase tracking-widest text-sm shadow-lg transition-all duration-200 hover:brightness-105 active:scale-95 whitespace-nowrap"
-            style={{
-              backgroundColor: "#dc2626",
-              color: "#fff",
-              fontFamily: "Montserrat, sans-serif",
-              boxShadow: "0 4px 16px rgba(220,38,38,0.45)",
-            }}
-          >
-            <Phone size={16} strokeWidth={2.5} />
-            {PHONE_DISPLAY}
-          </a>
-        </div>
-      </div>
+      {/* ── Van CTA ── */}
+      <VanCta
+        heading={
+          <>
+            Need an Emergency Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="From sparking outlets to total power loss, ENE Electrical's licensed technicians are ready to respond fast. Don't wait on a hazard — call now or book service online and we'll get a truck on the way."
+      />
     </main>
   );
 }

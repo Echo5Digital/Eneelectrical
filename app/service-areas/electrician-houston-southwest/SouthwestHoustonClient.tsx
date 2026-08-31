@@ -28,6 +28,7 @@ import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 
 interface FAQItem {
   question: string;
@@ -777,6 +778,16 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Southwest Houston?</span>
+          </>
+        }
+        description="From Sharpstown to Meyerland and the surrounding Southwest Houston neighborhoods, ENE Electrical delivers dependable panel upgrades, rewiring, and repair work homeowners can count on. Our licensed technicians dispatch quickly to keep your home's electrical system safe and up to code."
+      />
     </main>
   );
 }

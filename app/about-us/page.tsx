@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Section, { SectionHeading } from "@/components/Section";
+import VanCta from "@/components/VanCta";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -658,6 +659,16 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Work With Houston and Katy's{" "}
+            <span style={{ color: "#F5A623" }}>Trusted Electrical Team?</span>
+          </>
+        }
+        description="From routine repairs to major installations, ENE Electrical brings licensed, insured, and background-checked technicians to every job. We're proud to serve homeowners across Houston, Katy, and surrounding communities with dependable electrical service."
+      />
 
       <Footer />
     </>

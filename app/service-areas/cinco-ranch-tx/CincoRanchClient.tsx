@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   ShieldCheck,
@@ -748,6 +749,16 @@ export default function CincoRanchClient({ faqData }: Props) {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Cinco Ranch?</span>
+          </>
+        }
+        description="Whether it's a panel upgrade, an EV charger install, or an electrical repair that can't wait, ENE Electrical is ready to help. We serve homeowners throughout Cinco Ranch and the greater Katy area with licensed, background-checked technicians you can trust."
+      />
     </>
   );
 }

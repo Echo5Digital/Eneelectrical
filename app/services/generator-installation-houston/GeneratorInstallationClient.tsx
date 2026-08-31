@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   ShieldCheck,
@@ -998,6 +999,16 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Install a Generator in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="Don't let the next power outage catch you unprepared. ENE Electrical designs and installs whole-home standby generators with proper transfer switches, so your family stays safe and comfortable no matter what the Texas weather brings. We proudly serve Katy, Houston, Cinco Ranch, Fulshear, and the surrounding communities."
+      />
     </main>
   );
 }

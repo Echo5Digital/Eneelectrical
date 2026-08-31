@@ -5,6 +5,7 @@ import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 import ElectricalPanelUpgradeClient from "./ElectricalPanelUpgradeClient";
 import {
   AlertTriangle,
@@ -761,6 +762,16 @@ export default function ElectricalPanelUpgradePage() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Upgrade Your Electrical Panel in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="An outdated or overloaded panel can put your entire home at risk, from tripped breakers to fire hazards. ENE Electrical's licensed electricians provide safe, code-compliant panel upgrades for homeowners across Houston, Katy, and surrounding communities."
+      />
 
       <Footer address="Katy, TX, serving Greater Houston & Surrounding Areas" />
     </>

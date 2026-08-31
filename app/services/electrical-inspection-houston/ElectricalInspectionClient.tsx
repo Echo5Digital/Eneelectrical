@@ -33,6 +33,7 @@ import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 
 // ─── Breadcrumb items ───────────────────────────────────────────────────────
 const breadcrumbItems = [
@@ -1042,6 +1043,16 @@ export default function ElectricalInspectionClient() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Electrical Inspection in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="A thorough electrical inspection catches hidden hazards before they become costly repairs or safety risks. ENE Electrical's licensed technicians deliver honest, detailed inspection reports for homeowners across Houston, Katy, and surrounding communities."
+      />
     </main>
   );
 }

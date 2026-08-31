@@ -5,6 +5,7 @@ import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import EVChargerClient from "./EVChargerClient";
 import { Shield, Award, CheckCircle, MapPin, Zap, Clock, FileText, Wrench } from "lucide-react";
 
@@ -754,6 +755,16 @@ export default function EVChargerInstallationPage() {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Power Up Your{" "}
+            <span style={{ color: "#F5A623" }}>EV Charger Installation?</span>
+          </>
+        }
+        description="From dedicated 240V circuits to full panel upgrades, ENE Electrical handles every step of your home EV charging installation safely and to code. We serve homeowners across Houston, Katy, and surrounding communities with fast, reliable EV charger installation."
+      />
 
       <Footer />
     </>

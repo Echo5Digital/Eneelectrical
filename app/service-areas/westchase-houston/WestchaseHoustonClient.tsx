@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   ShieldCheck,
   Award,
@@ -824,6 +825,17 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ── Van CTA ── */}
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your{" "}
+            <span style={{ color: "#F5A623" }}>Westchase</span> Electrician?
+          </>
+        }
+        description="From panel upgrades to emergency repairs, ENE Electrical's licensed technicians proudly serve Westchase homeowners. Book an appointment online or give us a call to get started today."
+      />
     </>
   );
 }

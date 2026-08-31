@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   Shield,
@@ -835,6 +836,16 @@ export default function KatyClient({ faqData }: Props) {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Katy, TX?</span>
+          </>
+        }
+        description="Whether you've got an electrical issue that needs fixing, an upgrade you've been putting off, or a new installation you're ready to move forward on, ENE Electrical is ready to help. Headquartered right here in Katy, TX 77494, we serve local homeowners with fast, dependable, licensed electrical service."
+      />
     </main>
   );
 }

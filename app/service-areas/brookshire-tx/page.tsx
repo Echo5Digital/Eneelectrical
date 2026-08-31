@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 import BrookshireClient from "./BrookshireClient";
 
 export const metadata: Metadata = {
@@ -614,6 +615,16 @@ export default function BrookshireTXPage() {
           </div>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Brookshire?</span>
+          </>
+        }
+        description="Whether you've got an electrical issue that needs fixing, an upgrade you've been putting off, or a new installation you're ready to move forward on, ENE Electrical is ready to help. We serve homeowners across Brookshire and the greater Katy area with dependable residential electrical service."
+      />
 
       <Footer />
     </>

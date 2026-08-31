@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import NewConstructionWiringClient from "./NewConstructionWiringClient";
 import Link from "next/link";
 import {
@@ -754,6 +755,16 @@ export default function NewConstructionWiringPage() {
           </p>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Wire Your New Build in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="From rough-in to final trim, ENE Electrical delivers code-compliant new construction wiring builders and homeowners can count on. Our licensed electricians coordinate closely with your project timeline to keep your build on schedule. We serve new construction projects across Houston, Katy, and surrounding communities."
+      />
 
       <Footer />
     </>

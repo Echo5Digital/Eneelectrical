@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import RecessedLEDLightingClient, { ServiceAreaGrid } from "./RecessedLEDLightingClient";
 
 export const metadata: Metadata = {
@@ -657,6 +658,16 @@ export default function RecessedLEDLightingPage() {
           </p>
         </div>
       </section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Upgrade Your{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy Home?</span>
+          </>
+        }
+        description="From sleek can lights in the kitchen to soft accent lighting in the living room, ENE Electrical designs and installs recessed LED lighting that transforms your space while cutting your energy costs. We serve homeowners across Houston, Katy, and surrounding communities with clean, code-compliant installations."
+      />
 
       <Footer />
     </>

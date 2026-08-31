@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 import {
   FileText,
   Database,
@@ -384,6 +385,16 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Book Your{" "}
+            <span style={{ color: "#F5A623" }}>Electrical Service?</span>
+          </>
+        }
+        description="ENE Electrical provides licensed, background-checked residential electrical service across Houston and Katy, TX. Book an appointment or give us a call and our team will take care of the rest."
+      />
 
       <Footer />
     </>

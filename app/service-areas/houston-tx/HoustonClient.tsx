@@ -6,6 +6,7 @@ import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   ShieldCheck,
@@ -969,6 +970,16 @@ export default function HoustonClient({ faqData }: Props) {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Houston, TX?</span>
+          </>
+        }
+        description="Whether you've got an electrical issue that needs fixing, an upgrade you've been putting off, or a new installation you're ready to move forward on, ENE Electrical is ready to help. We serve homeowners across the greater Houston metro, from Energy Corridor to Richmond, with dependable residential electrical service."
+      />
     </main>
   );
 }

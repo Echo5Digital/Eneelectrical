@@ -5,6 +5,7 @@ import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import {
   Zap,
   ShieldCheck,
@@ -939,87 +940,16 @@ export default function HomeClient({ faqData }: HomeClientProps) {
         <FaqAccordion items={faqData} />
       </Section>
 
-      {/* ── FOOTER CTA ────────────────────────────────────────────────────────── */}
-      <section
-        className="w-full py-16 md:py-20"
-        style={{
-          background:
-            "linear-gradient(135deg, #0B1F3A 0%, #122b52 100%)",
-        }}
-        aria-label="Final conversion call to action"
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span
-            className="inline-block text-xs font-bold uppercase tracking-widest mb-4"
-            style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
-          >
-            Ready to Get Started?
-          </span>
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 leading-tight"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            Book Your Appointment Today
-          </h2>
-          <p
-            className="text-white/70 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
-            Licensed, insured, and bonded residential electrical service for
-            Katy and Houston homeowners. Schedule online or give us a call.
-            We make it easy.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/appointment-booking"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm shadow-xl transition-all duration-200 hover:opacity-90 active:scale-95"
-              style={{
-                backgroundColor: "#F5A623",
-                color: "#0B1F3A",
-                fontFamily: "Montserrat, sans-serif",
-                boxShadow: "0 8px 24px rgba(245,166,35,0.4)",
-              }}
-            >
-              <CalendarCheck size={17} strokeWidth={2.5} />
-              Book Appointment
-            </Link>
-            <a
-              href="tel:+18327830303"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-200 active:scale-95"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              <Phone size={17} strokeWidth={2.5} />
-              (832) 783-0303
-            </a>
-          </div>
-
-          {/* Nav links */}
-          <nav
-            className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-2"
-            aria-label="Footer quick navigation"
-          >
-            {[
-              { label: "Services", href: "/services" },
-              { label: "Service Areas", href: "/service-areas/houston-tx" },
-              { label: "About Us", href: "/about-us" },
-              { label: "Testimonials", href: "/testimonials" },
-              { label: "FAQs", href: "/faqs" },
-              { label: "Contact Us", href: "/contact-us" },
-              { label: "Privacy Policy", href: "/privacy-policy" },
-              { label: "Terms of Service", href: "/terms" },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-white/50 hover:text-[#F5A623] text-xs font-medium transition-colors"
-                style={{ fontFamily: "Inter, sans-serif" }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </section>
+      {/* ── VAN CTA ──────────────────────────────────────────────────────────── */}
+      <VanCta
+        heading={
+          <>
+            Ready to Schedule Your Residential Electrician in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="Whether you've got an electrical issue that needs fixing, an upgrade you've been putting off, or a new installation you're ready to move forward on, ENE Electrical is ready to help. Licensed, insured, and trusted by homeowners across Houston, Katy, and surrounding communities, our team delivers dependable electrical repair, upgrade, and installation services you can count on."
+      />
     </main>
   );
 }

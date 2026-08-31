@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
+import VanCta from "@/components/VanCta";
 import CeilingFanClient from "./CeilingFanClient";
 import {
   ShieldCheck,
@@ -708,6 +709,16 @@ export default function CeilingFanInstallationPage() {
           </div>
         </div>
       </Section>
+
+      <VanCta
+        heading={
+          <>
+            Ready to Add or Replace a Ceiling Fan in{" "}
+            <span style={{ color: "#F5A623" }}>Houston or Katy?</span>
+          </>
+        }
+        description="A properly wired ceiling fan improves comfort and energy efficiency all year round. ENE Electrical's licensed electricians handle safe installation and replacement for homeowners across Houston, Katy, and surrounding communities."
+      />
 
       <Footer address="Katy, TX, Serving Greater Houston & Surrounding Areas" />
     </>
