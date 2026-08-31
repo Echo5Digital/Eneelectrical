@@ -32,6 +32,7 @@ const defaultNavLinks: NavLink[] = [
       { label: "Generator Installation", route: "/services/generator-installation-houston" },
       { label: "Security Lighting", route: "/services/security-lighting-houston" },
       { label: "Recessed LED Lighting", route: "/services/recessed-led-lighting" },
+      { label: "Ceiling Fan Installation", route: "/services/ceiling-fan-installation-houston" },
       { label: "New Construction Electrician", route: "/services/new-construction-electrician-houston" },
       { label: "New Construction Wiring", route: "/services/new-construction-wiring" },
       { label: "Emergency Electrician", route: "/services/emergency-electrician-houston" },

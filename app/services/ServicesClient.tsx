@@ -19,6 +19,7 @@ import {
   MapPin,
   ArrowRight,
   CheckCircle,
+  Fan,
 } from "lucide-react";
 
 const services = [
@@ -63,6 +64,13 @@ const services = [
       "Transform your living spaces with energy-efficient recessed LED lighting, with expert design and installation.",
     icon: Lightbulb,
     href: "/services/recessed-led-lighting",
+  },
+  {
+    title: "Ceiling Fan Installation",
+    description:
+      "Professional ceiling fan installation and replacement, including wiring for rooms without existing fixtures.",
+    icon: Fan,
+    href: "/services/ceiling-fan-installation-houston",
   },
   {
     title: "New Construction Electrician",
