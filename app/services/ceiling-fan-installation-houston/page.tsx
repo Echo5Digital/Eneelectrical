@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
+import ContactForm from "@/components/ContactForm";
 import CeilingFanClient from "./CeilingFanClient";
 import {
   ShieldCheck,
@@ -260,52 +261,66 @@ export default function CeilingFanInstallationPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="max-w-2xl">
-            <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest mb-4"
-              style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
-            >
-              Residential Ceiling Fan Installation
-            </span>
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Ceiling Fan Installation for{" "}
-              <span style={{ color: "#F5A623" }}>Houston & Katy, TX Homes</span>
-            </h1>
-            <p
-              className="text-lg text-blue-100 leading-relaxed mb-8"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              ENE Electrical installs and replaces ceiling fans throughout
-              Houston and Katy, TX, including rooms with no existing wiring.
-              Our licensed, insured, and bonded electricians ensure every fan
-              is safely mounted, properly wired, and balanced for quiet,
-              reliable operation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.45)",
-                }}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-2xl">
+              <span
+                className="inline-block text-xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
               >
-                <Zap size={16} strokeWidth={2.5} />
-                Book Installation
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white transition-all duration-200 hover:bg-white/10"
+                Residential Ceiling Fan Installation
+              </span>
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Get a Free Quote
-              </a>
+                Ceiling Fan Installation for{" "}
+                <span style={{ color: "#F5A623" }}>Houston & Katy, TX Homes</span>
+              </h1>
+              <p
+                className="text-lg text-blue-100 leading-relaxed mb-8"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                ENE Electrical installs and replaces ceiling fans throughout
+                Houston and Katy, TX, including rooms with no existing wiring.
+                Our licensed, insured, and bonded electricians ensure every fan
+                is safely mounted, properly wired, and balanced for quiet,
+                reliable operation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.45)",
+                  }}
+                >
+                  <Zap size={16} strokeWidth={2.5} />
+                  Book Installation
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white transition-all duration-200 hover:bg-white/10"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Get a Free Quote
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

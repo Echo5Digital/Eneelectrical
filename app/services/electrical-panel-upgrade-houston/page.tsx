@@ -259,59 +259,73 @@ export default function ElectricalPanelUpgradePage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
-          <div className="max-w-3xl">
-            <span
-              className="inline-block mb-4 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full"
-              style={{
-                backgroundColor: "rgba(245,166,35,0.18)",
-                color: "#F5A623",
-                fontFamily: "Inter, sans-serif",
-              }}
-            >
-              Residential Electrical Services
-            </span>
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Electrical Panel{" "}
-              <span style={{ color: "#F5A623" }}>Upgrade</span> in Houston &amp;
-              Katy, TX
-            </h1>
-            <p
-              className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Outdated breaker box causing problems? ENE Electrical's licensed,
-              insured, and bonded team installs 200-amp panel upgrades to keep
-              your home safe, code-compliant, and ready for modern demands.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-3xl">
+              <span
+                className="inline-block mb-4 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full"
                 style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  backgroundColor: "rgba(245,166,35,0.18)",
+                  color: "#F5A623",
+                  fontFamily: "Inter, sans-serif",
                 }}
               >
-                <Zap size={16} strokeWidth={2.5} />
-                Book a Panel Assessment
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 transition-all duration-200 hover:bg-white/10 active:scale-95"
-                style={{
-                  borderColor: "rgba(255,255,255,0.4)",
-                  color: "#FFFFFF",
-                  fontFamily: "Montserrat, sans-serif",
-                }}
+                Residential Electrical Services
+              </span>
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Get a Free Quote
-              </a>
+                Electrical Panel{" "}
+                <span style={{ color: "#F5A623" }}>Upgrade</span> in Houston &amp;
+                Katy, TX
+              </h1>
+              <p
+                className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Outdated breaker box causing problems? ENE Electrical's licensed,
+                insured, and bonded team installs 200-amp panel upgrades to keep
+                your home safe, code-compliant, and ready for modern demands.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  }}
+                >
+                  <Zap size={16} strokeWidth={2.5} />
+                  Book a Panel Assessment
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 transition-all duration-200 hover:bg-white/10 active:scale-95"
+                  style={{
+                    borderColor: "rgba(255,255,255,0.4)",
+                    color: "#FFFFFF",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                >
+                  Get a Free Quote
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

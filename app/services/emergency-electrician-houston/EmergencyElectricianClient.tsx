@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
+import ContactForm from "@/components/ContactForm";
 import {
   Phone,
   AlertTriangle,
@@ -271,64 +272,80 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
           />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col items-start gap-6">
-          {/* Emergency badge */}
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
-            style={{ backgroundColor: "#dc2626", color: "#fff", fontFamily: "Montserrat, sans-serif" }}
-          >
-            <AlertTriangle size={14} strokeWidth={2.5} />
-            Emergency Service Available
-          </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="flex flex-col items-start gap-6">
+              {/* Emergency badge */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
+                style={{ backgroundColor: "#dc2626", color: "#fff", fontFamily: "Montserrat, sans-serif" }}
+              >
+                <AlertTriangle size={14} strokeWidth={2.5} />
+                Emergency Service Available
+              </div>
 
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-3xl"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            Emergency Electrician{" "}
-            <span style={{ color: "#F5A623" }}>Houston & Katy, TX</span>
-          </h1>
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-3xl"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                Emergency Electrician{" "}
+                <span style={{ color: "#F5A623" }}>Houston & Katy, TX</span>
+              </h1>
 
-          <p
-            className="text-lg sm:text-xl text-blue-100 max-w-2xl leading-relaxed"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
-            Electrical emergency? ENE Electrical dispatches licensed, insured,
-            and background-checked electricians across the Houston and Katy metro,
-            fast. Don't wait. Call now.
-          </p>
+              <p
+                className="text-lg sm:text-xl text-blue-100 max-w-2xl leading-relaxed"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Electrical emergency? ENE Electrical dispatches licensed, insured,
+                and background-checked electricians across the Houston and Katy metro,
+                fast. Don't wait. Call now.
+              </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
-            {/* Click-to-call CTA — phone number is a placeholder */}
-            <a
-              href={`tel:${PHONE_HREF}`}
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-base shadow-xl transition-all duration-200 hover:brightness-105 active:scale-95"
-              style={{
-                backgroundColor: "#dc2626",
-                color: "#fff",
-                fontFamily: "Montserrat, sans-serif",
-                boxShadow: "0 6px 24px rgba(220,38,38,0.45)",
-              }}
-            >
-              <Phone size={20} strokeWidth={2.5} />
-              Call Now: {PHONE_DISPLAY}
-            </a>
-            <a
-              href="/appointment-booking"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-base border-2 border-white/40 text-white hover:bg-white/10 transition-all duration-200 active:scale-95"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              <Zap size={18} strokeWidth={2.5} />
-              Book Online
-            </a>
-          </div>
+              <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
+                {/* Click-to-call CTA — phone number is a placeholder */}
+                <a
+                  href={`tel:${PHONE_HREF}`}
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-base shadow-xl transition-all duration-200 hover:brightness-105 active:scale-95"
+                  style={{
+                    backgroundColor: "#dc2626",
+                    color: "#fff",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 6px 24px rgba(220,38,38,0.45)",
+                  }}
+                >
+                  <Phone size={20} strokeWidth={2.5} />
+                  Call Now: {PHONE_DISPLAY}
+                </a>
+                <a
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-base border-2 border-white/40 text-white hover:bg-white/10 transition-all duration-200 active:scale-95"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  <Zap size={18} strokeWidth={2.5} />
+                  Book Online
+                </a>
+              </div>
 
-          <div
-            className="flex items-center gap-2 mt-1 text-sm font-medium"
-            style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
-          >
-            <Clock size={16} strokeWidth={2} />
-            <span>Licensed · Insured · Bonded · Background-Checked · 15+ Years Experience</span>
+              <div
+                className="flex items-center gap-2 mt-1 text-sm font-medium"
+                style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
+              >
+                <Clock size={16} strokeWidth={2} />
+                <span>Licensed · Insured · Bonded · Background-Checked · 15+ Years Experience</span>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
+            </div>
           </div>
         </div>
       </section>

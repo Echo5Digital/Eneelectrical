@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
+import ContactForm from "@/components/ContactForm";
 import {
   Zap,
   ShieldCheck,
@@ -156,55 +157,69 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span
-              className="inline-block mb-4 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
-              style={{
-                backgroundColor: "rgba(245,166,35,0.18)",
-                color: "#F5A623",
-                fontFamily: "Inter, sans-serif",
-              }}
-            >
-              Generator Installation in Houston &amp; Katy, TX
-            </span>
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Never Lose Power{" "}
-              <span style={{ color: "#F5A623" }}>Again.</span>
-            </h1>
-            <p
-              className="text-lg text-blue-100 leading-relaxed mb-8 max-w-xl"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              ENE Electrical installs whole-home standby generators that keep
-              your family safe and comfortable through Texas storms, hurricanes,
-              and grid outages, fully permitted, fully tested, and fully backed by
-              15+ years of licensed expertise.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm shadow-lg hover:opacity-90 active:scale-95 transition-all duration-200"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-2xl">
+              <span
+                className="inline-block mb-4 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
                 style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  backgroundColor: "rgba(245,166,35,0.18)",
+                  color: "#F5A623",
+                  fontFamily: "Inter, sans-serif",
                 }}
               >
-                <Calendar size={16} strokeWidth={2.5} />
-                Book Installation
-              </Link>
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all duration-200"
+                Generator Installation in Houston &amp; Katy, TX
+              </span>
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                <Phone size={16} strokeWidth={2.5} />
-                Get a Free Quote
-              </Link>
+                Never Lose Power{" "}
+                <span style={{ color: "#F5A623" }}>Again.</span>
+              </h1>
+              <p
+                className="text-lg text-blue-100 leading-relaxed mb-8 max-w-xl"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                ENE Electrical installs whole-home standby generators that keep
+                your family safe and comfortable through Texas storms, hurricanes,
+                and grid outages, fully permitted, fully tested, and fully backed by
+                15+ years of licensed expertise.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm shadow-lg hover:opacity-90 active:scale-95 transition-all duration-200"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  }}
+                >
+                  <Calendar size={16} strokeWidth={2.5} />
+                  Book Installation
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all duration-200"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  <Phone size={16} strokeWidth={2.5} />
+                  Get a Free Quote
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

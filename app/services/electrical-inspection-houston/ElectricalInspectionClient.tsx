@@ -449,79 +449,93 @@ export default function ElectricalInspectionClient() {
           />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
-          <div className="max-w-3xl">
-            {/* Eyebrow */}
-            <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
-              style={{
-                backgroundColor: "rgba(245,166,35,0.15)",
-                color: "#F5A623",
-                fontFamily: "Inter, sans-serif",
-              }}
-            >
-              ENE Electrical: Houston &amp; Katy, TX
-            </span>
-
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Electrical Inspections{" "}
-              <span style={{ color: "#F5A623" }}>You Can Trust</span>
-            </h1>
-
-            <p
-              className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Protect your family and your home with a thorough, licensed residential
-              electrical inspection. ENE Electrical identifies hidden hazards, verifies
-              code compliance, and delivers a clear written report, giving you
-              complete peace of mind.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-3xl">
+              {/* Eyebrow */}
+              <span
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
                 style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  backgroundColor: "rgba(245,166,35,0.15)",
+                  color: "#F5A623",
+                  fontFamily: "Inter, sans-serif",
                 }}
               >
-                <Zap size={18} strokeWidth={2.5} />
-                Book an Inspection
-              </Link>
-              <Link
-                href="#what-we-inspect"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-200"
+                ENE Electrical: Houston &amp; Katy, TX
+              </span>
+
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                What We Inspect
-                <ArrowRight size={16} />
-              </Link>
-            </div>
+                Electrical Inspections{" "}
+                <span style={{ color: "#F5A623" }}>You Can Trust</span>
+              </h1>
 
-            {/* Trust badge bar */}
-            <div className="flex flex-wrap gap-3">
-              {trustBadges.map(({ label, icon: Icon }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold"
+              <p
+                className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Protect your family and your home with a thorough, licensed residential
+                electrical inspection. ENE Electrical identifies hidden hazards, verifies
+                code compliance, and delivers a clear written report, giving you
+                complete peace of mind.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Link
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.08)",
-                    color: "#FFFFFF",
-                    fontFamily: "Inter, sans-serif",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
                   }}
                 >
-                  <Icon size={14} style={{ color: "#F5A623" }} />
-                  {label}
-                </div>
-              ))}
+                  <Zap size={18} strokeWidth={2.5} />
+                  Book an Inspection
+                </Link>
+                <Link
+                  href="#what-we-inspect"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-200"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  What We Inspect
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+
+              {/* Trust badge bar */}
+              <div className="flex flex-wrap gap-3">
+                {trustBadges.map(({ label, icon: Icon }) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold"
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.08)",
+                      color: "#FFFFFF",
+                      fontFamily: "Inter, sans-serif",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                    }}
+                  >
+                    <Icon size={14} style={{ color: "#F5A623" }} />
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

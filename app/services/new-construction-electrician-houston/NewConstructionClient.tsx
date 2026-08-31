@@ -232,63 +232,77 @@ export default function NewConstructionClient({ faqData }: Props) {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-5 px-4 py-1.5 rounded-full"
-              style={{
-                backgroundColor: "rgba(245,166,35,0.18)",
-                color: "#F5A623",
-                fontFamily: "Inter, sans-serif",
-                border: "1px solid rgba(245,166,35,0.35)",
-              }}
-            >
-              Houston &amp; Katy, TX, New Construction
-            </span>
-
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Trusted{" "}
-              <span style={{ color: "#F5A623" }}>New Construction</span>{" "}
-              Electrician
-            </h1>
-
-            <p
-              className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              ENE Electrical partners with builders and homeowners in Houston
-              and Katy, TX to deliver fully code-compliant electrical from
-              rough-in through final inspection, on schedule, every time.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-3xl">
+              <span
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-5 px-4 py-1.5 rounded-full"
                 style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  backgroundColor: "rgba(245,166,35,0.18)",
+                  color: "#F5A623",
+                  fontFamily: "Inter, sans-serif",
+                  border: "1px solid rgba(245,166,35,0.35)",
                 }}
               >
-                <Zap size={16} strokeWidth={2.5} />
-                Get a Project Quote
-              </Link>
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 transition-all duration-200 hover:bg-white hover:text-[#0B1F3A] active:scale-95"
-                style={{
-                  borderColor: "rgba(255,255,255,0.4)",
-                  color: "#ffffff",
-                  fontFamily: "Montserrat, sans-serif",
-                }}
+                Houston &amp; Katy, TX, New Construction
+              </span>
+
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Contact Us
-                <ArrowRight size={16} strokeWidth={2.5} />
-              </Link>
+                Trusted{" "}
+                <span style={{ color: "#F5A623" }}>New Construction</span>{" "}
+                Electrician
+              </h1>
+
+              <p
+                className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                ENE Electrical partners with builders and homeowners in Houston
+                and Katy, TX to deliver fully code-compliant electrical from
+                rough-in through final inspection, on schedule, every time.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  }}
+                >
+                  <Zap size={16} strokeWidth={2.5} />
+                  Get a Project Quote
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 transition-all duration-200 hover:bg-white hover:text-[#0B1F3A] active:scale-95"
+                  style={{
+                    borderColor: "rgba(255,255,255,0.4)",
+                    color: "#ffffff",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                >
+                  Contact Us
+                  <ArrowRight size={16} strokeWidth={2.5} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

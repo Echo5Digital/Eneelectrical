@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ContactForm from "@/components/ContactForm";
 import NewConstructionWiringClient from "./NewConstructionWiringClient";
 import Link from "next/link";
 import {
@@ -286,55 +287,69 @@ export default function NewConstructionWiringPage() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
-              style={{
-                backgroundColor: "rgba(245,166,35,0.15)",
-                color: "#F5A623",
-                fontFamily: "Inter, sans-serif",
-                border: "1px solid rgba(245,166,35,0.4)",
-              }}
-            >
-              Residential New Construction
-            </span>
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Expert New{" "}
-              <span style={{ color: "#F5A623" }}>Construction Wiring</span>{" "}
-              From Rough-In to Final Inspection
-            </h1>
-            <p
-              className="text-blue-100 text-lg leading-relaxed mb-8"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Licensed, bonded, and insured electricians delivering complete
-              residential wiring for new builds across Houston &amp; Katy, TX.
-              On schedule. Code compliant. Built to last.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-2xl">
+              <span
+                className="inline-block text-xs font-bold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
                 style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  backgroundColor: "rgba(245,166,35,0.15)",
+                  color: "#F5A623",
+                  fontFamily: "Inter, sans-serif",
+                  border: "1px solid rgba(245,166,35,0.4)",
                 }}
               >
-                <Zap size={16} strokeWidth={2.5} />
-                Request a Wiring Quote
-              </Link>
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white transition-all duration-200 hover:border-white/60 hover:bg-white/10 active:scale-95"
+                Residential New Construction
+              </span>
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Contact Us
-              </Link>
+                Expert New{" "}
+                <span style={{ color: "#F5A623" }}>Construction Wiring</span>{" "}
+                From Rough-In to Final Inspection
+              </h1>
+              <p
+                className="text-blue-100 text-lg leading-relaxed mb-8"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Licensed, bonded, and insured electricians delivering complete
+                residential wiring for new builds across Houston &amp; Katy, TX.
+                On schedule. Code compliant. Built to last.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  }}
+                >
+                  <Zap size={16} strokeWidth={2.5} />
+                  Request a Wiring Quote
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white transition-all duration-200 hover:border-white/60 hover:bg-white/10 active:scale-95"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

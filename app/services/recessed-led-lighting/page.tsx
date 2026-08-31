@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ContactForm from "@/components/ContactForm";
 import RecessedLEDLightingClient, { ServiceAreaGrid } from "./RecessedLEDLightingClient";
 
 export const metadata: Metadata = {
@@ -117,41 +118,55 @@ export default function RecessedLEDLightingPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/90 via-[#0B1F3A]/70 to-[#0B1F3A]/30" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
-              style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Inter, sans-serif" }}
-            >
-              Residential Lighting Upgrade
-            </span>
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Recessed LED{" "}
-              <span style={{ color: "#F5A623" }}>Lighting Installation</span>
-            </h1>
-            <p
-              className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Transform any room with clean, modern recessed lighting. ENE Electrical's licensed electricians deliver flawless installations, from layout to dimmer integration, across Houston and Katy, TX.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Montserrat, sans-serif", boxShadow: "0 4px 20px rgba(245,166,35,0.45)" }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-2xl">
+              <span
+                className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
+                style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Inter, sans-serif" }}
               >
-                Schedule Installation
-              </a>
-              <a
-                href="/contact-us"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white text-white hover:bg-white hover:text-[#0B1F3A] transition-all duration-200 active:scale-95"
+                Residential Lighting Upgrade
+              </span>
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Get a Free Quote
-              </a>
+                Recessed LED{" "}
+                <span style={{ color: "#F5A623" }}>Lighting Installation</span>
+              </h1>
+              <p
+                className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Transform any room with clean, modern recessed lighting. ENE Electrical's licensed electricians deliver flawless installations, from layout to dimmer integration, across Houston and Katy, TX.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Montserrat, sans-serif", boxShadow: "0 4px 20px rgba(245,166,35,0.45)" }}
+                >
+                  Schedule Installation
+                </a>
+                <a
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white text-white hover:bg-white hover:text-[#0B1F3A] transition-all duration-200 active:scale-95"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Get a Free Quote
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>

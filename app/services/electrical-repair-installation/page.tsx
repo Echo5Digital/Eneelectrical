@@ -304,84 +304,99 @@ export default function ElectricalRepairPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col items-start gap-6">
-          <span
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
-            style={{
-              backgroundColor: "rgba(245,166,35,0.15)",
-              color: "#F5A623",
-              fontFamily: "Inter, sans-serif",
-              border: "1px solid rgba(245,166,35,0.35)",
-            }}
-          >
-            <Zap size={13} strokeWidth={2.5} />
-            Residential Electrical Services in Houston &amp; Katy, TX
-          </span>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="flex flex-col items-start gap-6">
+              <span
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
+                style={{
+                  backgroundColor: "rgba(245,166,35,0.15)",
+                  color: "#F5A623",
+                  fontFamily: "Inter, sans-serif",
+                  border: "1px solid rgba(245,166,35,0.35)",
+                }}
+              >
+                <Zap size={13} strokeWidth={2.5} />
+                Residential Electrical Services in Houston &amp; Katy, TX
+              </span>
 
-          <h1
-            id="hero-heading"
-            className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white max-w-3xl"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            Electrical Repair &amp;{" "}
-            <span style={{ color: "#F5A623" }}>Installation</span> You Can
-            Trust
-          </h1>
+              <h1
+                id="hero-heading"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white max-w-3xl"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                Electrical Repair &amp;{" "}
+                <span style={{ color: "#F5A623" }}>Installation</span> You Can
+                Trust
+              </h1>
 
-          <p
-            className="text-lg text-blue-100 max-w-2xl leading-relaxed"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
-            Licensed, insured, and bonded technicians serving Houston and Katy,
-            TX. From a single outlet to full home wiring, ENE Electrical gets
-            it done safely, on time, and up to code.
-          </p>
+              <p
+                className="text-lg text-blue-100 max-w-2xl leading-relaxed"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Licensed, insured, and bonded technicians serving Houston and Katy,
+                TX. From a single outlet to full home wiring, ENE Electrical gets
+                it done safely, on time, and up to code.
+              </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-2">
-            <Link
-              href="/appointment-booking"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:brightness-105 active:scale-95"
-              style={{
-                backgroundColor: "#F5A623",
-                color: "#0B1F3A",
-                fontFamily: "Montserrat, sans-serif",
-                boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
-              }}
-            >
-              <Zap size={16} strokeWidth={2.5} />
-              Book Your Service
-            </Link>
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 transition-all duration-200 hover:bg-white hover:text-[#0B1F3A] active:scale-95"
-              style={{
-                borderColor: "rgba(255,255,255,0.5)",
-                color: "#ffffff",
-                fontFamily: "Montserrat, sans-serif",
-              }}
-            >
-              Contact Us
-            </Link>
-          </div>
-
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-4 mt-4">
-            {["Licensed", "Insured", "Bonded", "Background-Checked"].map(
-              (badge) => (
-                <span
-                  key={badge}
-                  className="flex items-center gap-1.5 text-xs font-medium"
-                  style={{ color: "rgba(255,255,255,0.8)", fontFamily: "Inter, sans-serif" }}
+              <div className="flex flex-col sm:flex-row gap-4 mt-2">
+                <Link
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:brightness-105 active:scale-95"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  }}
                 >
-                  <CheckCircle
-                    size={14}
-                    style={{ color: "#F5A623" }}
-                    strokeWidth={2.5}
-                  />
-                  {badge}
-                </span>
-              )
-            )}
+                  <Zap size={16} strokeWidth={2.5} />
+                  Book Your Service
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 text-white transition-all duration-200 hover:bg-white hover:text-[#0B1F3A] active:scale-95"
+                  style={{
+                    borderColor: "rgba(255,255,255,0.5)",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                >
+                  Contact Us
+                </Link>
+              </div>
+
+              {/* Trust badges */}
+              <div className="flex flex-wrap gap-4 mt-4">
+                {["Licensed", "Insured", "Bonded", "Background-Checked"].map(
+                  (badge) => (
+                    <span
+                      key={badge}
+                      className="flex items-center gap-1.5 text-xs font-medium"
+                      style={{ color: "rgba(255,255,255,0.8)", fontFamily: "Inter, sans-serif" }}
+                    >
+                      <CheckCircle
+                        size={14}
+                        style={{ color: "#F5A623" }}
+                        strokeWidth={2.5}
+                      />
+                      {badge}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
+            </div>
           </div>
         </div>
       </section>

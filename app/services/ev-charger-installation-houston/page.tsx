@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ContactForm from "@/components/ContactForm";
 import EVChargerClient from "./EVChargerClient";
 import { Shield, Award, CheckCircle, MapPin, Zap, Clock, FileText, Wrench } from "lucide-react";
 
@@ -209,52 +210,66 @@ export default function EVChargerInstallationPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/90 via-[#0B1F3A]/70 to-[#0B1F3A]/40" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
-          <div className="max-w-2xl">
-            <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
-              style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Inter, sans-serif" }}
-            >
-              Residential EV Charging
-            </span>
-            <h1
-              id="hero-heading"
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Home EV Charger{" "}
-              <span style={{ color: "#F5A623" }}>Installation</span>{" "}
-              in Houston & Katy, TX
-            </h1>
-            <p
-              className="text-lg text-blue-100 leading-relaxed mb-8 max-w-xl"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Charge smarter at home. ENE Electrical's licensed, insured electricians install
-              dedicated Level 2 EV charging stations for Houston and Katy homeowners: fast,
-              safe, and code-compliant.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/appointment-booking"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{
-                  backgroundColor: "#F5A623",
-                  color: "#0B1F3A",
-                  fontFamily: "Montserrat, sans-serif",
-                  boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
-                }}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+            <div className="max-w-2xl">
+              <span
+                className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1 rounded-full"
+                style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Inter, sans-serif" }}
               >
-                <Zap size={16} strokeWidth={2.5} />
-                Book Your Installation
-              </a>
-              <a
-                href="#ev-faq"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white transition-all duration-200 hover:border-[#F5A623] hover:text-[#F5A623]"
+                Residential EV Charging
+              </span>
+              <h1
+                id="hero-heading"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Learn More
-              </a>
+                Home EV Charger{" "}
+                <span style={{ color: "#F5A623" }}>Installation</span>{" "}
+                in Houston & Katy, TX
+              </h1>
+              <p
+                className="text-lg text-blue-100 leading-relaxed mb-8 max-w-xl"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Charge smarter at home. ENE Electrical's licensed, insured electricians install
+                dedicated Level 2 EV charging stations for Houston and Katy homeowners: fast,
+                safe, and code-compliant.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/appointment-booking"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{
+                    backgroundColor: "#F5A623",
+                    color: "#0B1F3A",
+                    fontFamily: "Montserrat, sans-serif",
+                    boxShadow: "0 4px 20px rgba(245,166,35,0.4)",
+                  }}
+                >
+                  <Zap size={16} strokeWidth={2.5} />
+                  Book Your Installation
+                </a>
+                <a
+                  href="#ev-faq"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 border-white/30 text-white transition-all duration-200 hover:border-[#F5A623] hover:text-[#F5A623]"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:max-w-md lg:justify-self-end w-full">
+              <ContactForm
+                compact
+                dark
+                showServiceField
+                heading="Request a Free Estimate"
+                subheading="Fill out the form and we'll get back to you quickly."
+                ctaLabel="Submit Request"
+                locationLabel="Serving Houston & Katy, TX"
+              />
             </div>
           </div>
         </div>
