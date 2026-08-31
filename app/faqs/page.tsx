@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "Do I need a permit for electrical work in Katy or Houston, TX?",
     answer:
-      "Most significant electrical work — such as panel upgrades, new construction wiring, and generator installation — requires a permit in Texas. ENE Electrical's licensed team is familiar with local requirements and can guide you through the process.",
+      "Most significant electrical work, such as panel upgrades, new construction wiring, and generator installation, requires a permit in Texas. ENE Electrical's licensed team is familiar with local requirements and can guide you through the process.",
   },
   {
     question: "Does ENE Electrical work on new construction homes?",
@@ -89,12 +89,15 @@ export default function FAQsPage() {
       />
       <Header />
 
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "FAQs", href: "/faqs" },
-        ]}
-      />
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "FAQs", href: "/faqs" },
+          ]}
+        />
+      </div>
 
       {/* Page Hero */}
       <section
@@ -130,7 +133,7 @@ export default function FAQsPage() {
             className="text-base sm:text-lg text-blue-200 max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            Have questions about residential electrical services in Houston or Katy, TX? Find clear, honest answers from ENE Electrical's licensed team — covering everything from panel upgrades and EV chargers to permits and emergency service.
+            Have questions about residential electrical services in Houston or Katy, TX? Find clear, honest answers from ENE Electrical's licensed team, covering everything from panel upgrades and EV chargers to permits and emergency service.
           </p>
           {/* Accent bar */}
           <div
@@ -225,13 +228,13 @@ export default function FAQsPage() {
                   className="text-sm leading-relaxed"
                   style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
                 >
-                  Homeowners across Katy, TX 77494 and the broader Houston metro — including Cinco Ranch, Fulshear, Energy Corridor, and surrounding suburbs — frequently ask about local electrical requirements, permit processes, and service availability. This FAQ page addresses those specific concerns for residents in ENE Electrical's verified service area.
+                  Homeowners across Katy, TX 77494 and the broader Houston metro, including Cinco Ranch, Fulshear, Energy Corridor, and surrounding suburbs, frequently ask about local electrical requirements, permit processes, and service availability. This FAQ page addresses those specific concerns for residents in ENE Electrical's verified service area.
                 </p>
                 <p
                   className="text-sm mt-2"
                   style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
                 >
-                  <strong>Service Area:</strong> Katy, TX 77494 — Houston and Katy, TX metro including Katy, Energy Corridor, Southwest Houston, Cinco Ranch, Fulshear, Memorial, Spring Branch, Westchase, Brookshire, and Richmond, TX.
+                  <strong>Service Area:</strong> Katy, TX 77494, plus the Houston and Katy, TX metro including Katy, Energy Corridor, Southwest Houston, Cinco Ranch, Fulshear, Memorial, Spring Branch, Westchase, Brookshire, and Richmond, TX.
                 </p>
               </div>
             </div>
@@ -393,7 +396,7 @@ export default function FAQsPage() {
             className="text-center text-sm text-gray-500 mt-8"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            ENE Electrical — 15+ years serving residential customers in{" "}
+            ENE Electrical, 15+ years serving residential customers in{" "}
             <strong style={{ color: "#0B1F3A" }}>Houston &amp; Katy, TX</strong> and the surrounding metro.
           </p>
         </div>

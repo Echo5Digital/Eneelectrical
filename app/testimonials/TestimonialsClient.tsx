@@ -36,7 +36,7 @@ const REVIEWS: Review[] = [
     date: "March 2024",
     serviceType: "Panel Upgrade",
     quote:
-      "ENE Electrical upgraded our entire electrical panel in one day. The team was professional, arrived on time, and left our home cleaner than they found it. Absolutely top-tier service — I wouldn't call anyone else.",
+      "ENE Electrical upgraded our entire electrical panel in one day. The team was professional, arrived on time, and left our home cleaner than they found it. Absolutely top-tier service; I wouldn't call anyone else.",
   },
   {
     id: 2,
@@ -76,7 +76,7 @@ const REVIEWS: Review[] = [
     date: "November 2023",
     serviceType: "Lighting",
     quote:
-      "Had recessed LED lighting installed throughout our main floor. The team was meticulous — no drywall damage, perfect placement. The finished result looks like something out of a magazine. Incredible work.",
+      "Had recessed LED lighting installed throughout our main floor. The team was meticulous, with no drywall damage and perfect placement. The finished result looks like something out of a magazine. Incredible work.",
   },
   {
     id: 6,
@@ -136,7 +136,7 @@ const REVIEWS: Review[] = [
     date: "May 2023",
     serviceType: "Emergency",
     quote:
-      "Had a burning smell from an outlet late at night — very scary. ENE came out within 45 minutes, identified a dangerous wiring issue, and fixed it safely. Couldn't be more grateful for their quick response.",
+      "Had a burning smell from an outlet late at night, which was very scary. ENE came out within 45 minutes, identified a dangerous wiring issue, and fixed it safely. Couldn't be more grateful for their quick response.",
   },
   {
     id: 12,

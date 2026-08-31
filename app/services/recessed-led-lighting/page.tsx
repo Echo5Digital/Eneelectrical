@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Upgrade your home with recessed LED lighting installed by ENE Electrical. Licensed electricians serving Houston & Katy, TX. Energy-efficient, beautiful results. Book now.",
   alternates: {
-    canonical: "https://www.eneelectrical.com/services/recessed-led-lighting",
+    canonical: "/services/recessed-led-lighting",
   },
 };
 
@@ -94,13 +94,17 @@ export default function RecessedLEDLightingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "Recessed LED Lighting", href: "/services/recessed-led-lighting" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Recessed LED Lighting", href: "/services/recessed-led-lighting" },
+          ]}
+        />
+      </div>
 
       {/* Hero */}
       <section className="relative w-full min-h-[560px] md:min-h-[680px] flex items-center overflow-hidden">
@@ -131,7 +135,7 @@ export default function RecessedLEDLightingPage() {
               className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Transform any room with clean, modern recessed lighting. ENE Electrical's licensed electricians deliver flawless installations — from layout to dimmer integration — across Houston and Katy, TX.
+              Transform any room with clean, modern recessed lighting. ENE Electrical's licensed electricians deliver flawless installations, from layout to dimmer integration, across Houston and Katy, TX.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -429,7 +433,7 @@ export default function RecessedLEDLightingPage() {
         <SectionHeading
           eyebrow="Real Transformations"
           title="Before & After Showcase"
-          subtitle="See how recessed LED lighting transforms Houston-area homes — from dull and dim to bright and modern."
+          subtitle="See how recessed LED lighting transforms Houston-area homes, from dull and dim to bright and modern."
           align="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -437,21 +441,21 @@ export default function RecessedLEDLightingPage() {
             {
               room: "Kitchen",
               before: "Single overhead fixture with harsh shadows over countertops",
-              after: "6 recessed LED downlights with dimmer — bright, even task lighting",
+              after: "6 recessed LED downlights with dimmer, providing bright, even task lighting",
               imageSrc: "https://images.pexels.com/photos/15580481/pexels-photo-15580481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
               imageAlt: "Modern kitchen with newly installed recessed LED lighting illuminating countertops evenly",
             },
             {
               room: "Living Room",
               before: "Floor lamps and one ceiling fan light creating uneven lighting",
-              after: "8 recessed LED lights on dimmer — perfect ambiance for any occasion",
+              after: "8 recessed LED lights on dimmer, perfect ambiance for any occasion",
               imageSrc: "https://images.pexels.com/photos/7166933/pexels-photo-7166933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
               imageAlt: "Comfortable living room interior with warm recessed LED lighting creating even illumination",
             },
             {
               room: "Hallway",
               before: "Single bulb fixture leaving ends of hallway dark",
-              after: "3 slim wafer LED lights — fully illuminated, modern look",
+              after: "3 slim wafer LED lights, fully illuminated, modern look",
               imageSrc: "https://images.pexels.com/photos/6238608/pexels-photo-6238608.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
               imageAlt: "Well-lit home hallway with evenly spaced recessed LED wafer lights in the ceiling",
             },
@@ -530,7 +534,7 @@ export default function RecessedLEDLightingPage() {
           <a href="/contact-us" className="font-semibold underline" style={{ color: "#F5A623" }}>
             Contact us
           </a>{" "}
-          — we may still serve your neighborhood.
+          and we may still serve your neighborhood.
         </p>
       </Section>
 

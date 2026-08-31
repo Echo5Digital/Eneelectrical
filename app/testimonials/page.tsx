@@ -8,9 +8,9 @@ import TestimonialsClient from "./TestimonialsClient";
 export const metadata: Metadata = {
   title: "Customer Reviews | ENE Electrical Houston & Katy TX",
   description:
-    "Read real customer testimonials for ENE Electrical — a licensed, insured residential electrician serving Houston and Katy, TX with 15+ years of trusted electrical service.",
+    "Read real customer testimonials for ENE Electrical, a licensed, insured residential electrician serving Houston and Katy, TX with 15+ years of trusted electrical service.",
   alternates: {
-    canonical: "https://eneelectrical.com/testimonials",
+    canonical: "/testimonials",
   },
 };
 
@@ -49,15 +49,14 @@ export default function TestimonialsPage() {
       />
       <Header />
 
-      <div className="bg-[#F7F8FA] px-4 sm:px-6 lg:px-8 pt-4">
-        <div className="max-w-6xl mx-auto">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Testimonials", href: "/testimonials" },
-            ]}
-          />
-        </div>
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Testimonials", href: "/testimonials" },
+          ]}
+        />
       </div>
 
       {/* Hero Section */}
@@ -168,14 +167,14 @@ export default function TestimonialsPage() {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Reviews on this page come from residential homeowners across the Houston and Katy, TX
-            metro area — including communities such as Katy, Cinco Ranch, Fulshear, Energy Corridor,
-            and Southwest Houston — reflecting ENE Electrical's local service reputation.
+            metro area, including communities such as Katy, Cinco Ranch, Fulshear, Energy Corridor,
+            and Southwest Houston, reflecting ENE Electrical's local service reputation.
           </p>
           <address
             className="not-italic text-sm text-gray-500"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            <strong style={{ color: "#0B1F3A" }}>ENE Electrical</strong> — Katy, TX 77494
+            <strong style={{ color: "#0B1F3A" }}>ENE Electrical</strong>, Katy, TX 77494
           </address>
         </div>
       </Section>
@@ -232,7 +231,7 @@ export default function TestimonialsPage() {
           >
             Join hundreds of satisfied Houston and Katy homeowners who trust ENE Electrical
             for reliable, licensed, and affordable residential electrical work.
-            Request a free estimate — no obligation.
+            Request a free estimate, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

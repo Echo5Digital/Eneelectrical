@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "ENE Electrical delivers licensed residential electrical services across Southwest Houston. From panel upgrades to emergency repairs, we've got you covered. Book today.",
   alternates: {
-    canonical: "/service-areas/southwest-houston",
+    canonical: "/service-areas/electrician-houston-southwest",
   },
 };
 

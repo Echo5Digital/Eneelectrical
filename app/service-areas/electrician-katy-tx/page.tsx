@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "ENE Electrical is based in Katy, TX 77494, offering licensed, insured residential electrical services. Panel upgrades, EV chargers, emergency repairs & more. Call today.",
   alternates: {
-    canonical: "/service-areas/katy-tx",
+    canonical: "/service-areas/electrician-katy-tx",
   },
 };
 
@@ -103,13 +103,17 @@ export default function KatyTXPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Service Areas", href: "/service-areas/houston-tx" },
-          { label: "Katy, TX", href: "/service-areas/katy-tx" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Service Areas", href: "/service-areas/houston-tx" },
+            { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
+          ]}
+        />
+      </div>
       <KatyClient faqData={faqData} />
       <Footer />
     </>

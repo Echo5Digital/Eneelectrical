@@ -9,7 +9,7 @@ import BrookshireClient from "./BrookshireClient";
 export const metadata: Metadata = {
   title: "Electrician in Brookshire TX | ENE Electrical",
   description:
-    "ENE Electrical serves Brookshire, TX with licensed residential electrical services — repairs, panel upgrades, generators, EV chargers & emergency electrician. Based in nearby Katy, TX.",
+    "ENE Electrical serves Brookshire, TX with licensed residential electrical services: repairs, panel upgrades, generators, EV chargers & emergency electrician. Based in nearby Katy, TX.",
   alternates: {
     canonical: "/service-areas/brookshire-tx",
   },
@@ -103,7 +103,8 @@ export default function BrookshireTXPage() {
 
       <Header />
 
-      <div className="bg-[#F7F8FA] px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pt-4">
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
@@ -139,7 +140,7 @@ export default function BrookshireTXPage() {
                 border: "1px solid rgba(245,166,35,0.3)",
               }}
             >
-              Service Area — Brookshire, TX
+              Service Area: Brookshire, TX
             </span>
             <h1
               id="hero-heading"
@@ -153,7 +154,7 @@ export default function BrookshireTXPage() {
               className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-8 max-w-xl"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              ENE Electrical brings 15+ years of licensed residential electrical expertise directly to Brookshire homeowners — from repairs and panel upgrades to generators and EV chargers. Based in nearby Katy, TX 77494.
+              ENE Electrical brings 15+ years of licensed residential electrical expertise directly to Brookshire homeowners, from repairs and panel upgrades to generators and EV chargers. Based in nearby Katy, TX 77494.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -240,7 +241,7 @@ export default function BrookshireTXPage() {
         <SectionHeading
           eyebrow="What We Offer"
           title="Residential Electrical Services in Brookshire, TX"
-          subtitle="ENE Electrical provides comprehensive residential electrical services to Brookshire homeowners — from routine repairs to full generator installations."
+          subtitle="ENE Electrical provides comprehensive residential electrical services to Brookshire homeowners, from routine repairs to full generator installations."
           align="center"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -254,31 +255,31 @@ export default function BrookshireTXPage() {
             {
               title: "Electrical Panel Upgrade",
               description:
-                "Upgrade your home's electrical panel for safer, more reliable power — essential for growing families and older Brookshire homes.",
-              href: "/services/electrical-panel-upgrade",
+                "Upgrade your home's electrical panel for safer, more reliable power, essential for growing families and older Brookshire homes.",
+              href: "/services/electrical-panel-upgrade-houston",
             },
             {
               title: "Generator Installation",
               description:
-                "Whole-home standby generator installation ideal for Brookshire's rural properties — stay powered through any outage.",
-              href: "/services/generator-installation",
+                "Whole-home standby generator installation ideal for Brookshire's rural properties, keeping you powered through any outage.",
+              href: "/services/generator-installation-houston",
             },
             {
               title: "EV Charger Installation",
               description:
-                "Level 2 home EV charger installation for Brookshire homeowners driving electric vehicles — convenient and fast charging at home.",
-              href: "/services/ev-charger-installation",
+                "Level 2 home EV charger installation for Brookshire homeowners driving electric vehicles, offering convenient and fast charging at home.",
+              href: "/services/ev-charger-installation-houston",
             },
             {
               title: "Security Lighting",
               description:
                 "Enhance safety around your Brookshire property with professionally installed motion-sensor and security lighting systems.",
-              href: "/services/security-lighting",
+              href: "/services/security-lighting-houston",
             },
             {
               title: "Recessed LED Lighting",
               description:
-                "Modernize your home's interior with energy-efficient recessed LED lighting — expert installation for any room.",
+                "Modernize your home's interior with energy-efficient recessed LED lighting, with expert installation for any room.",
               href: "/services/recessed-led-lighting",
             },
             {
@@ -291,13 +292,13 @@ export default function BrookshireTXPage() {
               title: "Electrical Inspection",
               description:
                 "Comprehensive home electrical inspections for Brookshire buyers, sellers, or homeowners concerned about safety.",
-              href: "/services/electrical-inspection",
+              href: "/services/electrical-inspection-houston",
             },
             {
               title: "Emergency Electrician",
               description:
-                "24/7 emergency electrical response for Brookshire homeowners — power outages, sparking wires, and urgent repairs.",
-              href: "/services/emergency-electrician",
+                "24/7 emergency electrical response for Brookshire homeowners: power outages, sparking wires, and urgent repairs.",
+              href: "/services/emergency-electrician-houston",
             },
           ].map((service) => (
             <article
@@ -373,13 +374,13 @@ export default function BrookshireTXPage() {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               <p>
-                Brookshire, TX sits along I-10 just west of Katy — a small city where rural character meets growing residential development. Homeowners here often manage larger properties, aging electrical systems, and the very real need for reliable backup power when storms roll through.
+                Brookshire, TX sits along I-10 just west of Katy, a small city where rural character meets growing residential development. Homeowners here often manage larger properties, aging electrical systems, and the very real need for reliable backup power when storms roll through.
               </p>
               <p>
                 ENE Electrical is based in <strong>Katy, TX 77494</strong>, making Brookshire a natural part of our service area. Our licensed technicians regularly serve the Houston-Katy corridor, bringing the same level of professionalism to Brookshire that west Houston homeowners have relied on for over 15 years.
               </p>
               <p>
-                Whether you need a generator to protect your rural property, a panel upgrade for an older home, or a new EV charger in your garage, ENE Electrical delivers dependable workmanship backed by full licensing, insurance, and bonding — and technicians who have passed thorough background checks.
+                Whether you need a generator to protect your rural property, a panel upgrade for an older home, or a new EV charger in your garage, ENE Electrical delivers dependable workmanship backed by full licensing, insurance, and bonding, and technicians who have passed thorough background checks.
               </p>
             </div>
           </div>
@@ -452,14 +453,14 @@ export default function BrookshireTXPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card
             variant="testimonial"
-            quote="ENE Electrical upgraded our electrical panel and installed a whole-home generator. Professional from start to finish — on time, clean work, and fully explained everything. Highly recommend for any homeowner in the area."
+            quote="ENE Electrical upgraded our electrical panel and installed a whole-home generator. Professional from start to finish, on time, clean work, and fully explained everything. Highly recommend for any homeowner in the area."
             authorName="Marcus T."
             authorLocation="Katy, TX"
             rating={5}
           />
           <Card
             variant="testimonial"
-            quote="We had an emergency at 10 PM — circuit breaker kept tripping. ENE Electrical sent someone out quickly and had us sorted within an hour. Couldn't ask for better service."
+            quote="We had an emergency at 10 PM when the circuit breaker kept tripping. ENE Electrical sent someone out quickly and had us sorted within an hour. Couldn't ask for better service."
             authorName="Sandra R."
             authorLocation="Fulshear, TX"
             rating={5}
@@ -478,7 +479,7 @@ export default function BrookshireTXPage() {
       <Section background="white" spacing="md" maxWidth="2xl" id="location">
         <SectionHeading
           eyebrow="Location"
-          title="Brookshire, TX — In Our Service Area"
+          title="Brookshire, TX: In Our Service Area"
           subtitle="ENE Electrical is based in Katy, TX 77494, just a short drive from Brookshire along I-10."
           align="center"
         />
@@ -499,7 +500,7 @@ export default function BrookshireTXPage() {
           className="text-center text-sm text-gray-500 mt-4"
           style={{ fontFamily: "Inter, sans-serif" }}
         >
-          ENE Electrical — Based in <strong>Katy, TX 77494</strong> · Serving Brookshire and the greater Houston metro
+          ENE Electrical, Based in <strong>Katy, TX 77494</strong> · Serving Brookshire and the greater Houston metro
         </p>
       </Section>
 
@@ -514,7 +515,7 @@ export default function BrookshireTXPage() {
         <nav aria-label="Nearby service area links">
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { label: "Katy, TX", href: "/service-areas/katy-tx" },
+              { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
               { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
               { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
               { label: "Houston, TX", href: "/service-areas/houston-tx" },
@@ -542,7 +543,7 @@ export default function BrookshireTXPage() {
       <Section background="white" spacing="lg" maxWidth="xl" id="faq">
         <SectionHeading
           eyebrow="Common Questions"
-          title="FAQ — ENE Electrical in Brookshire, TX"
+          title="FAQ: ENE Electrical in Brookshire, TX"
           subtitle="Answers to the most common questions from Brookshire homeowners about ENE Electrical's service availability and offerings."
           align="center"
         />

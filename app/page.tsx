@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "ENE Electrical is a licensed, insured, and bonded residential electrician serving Katy and Houston, TX. 15+ years of experience in panel upgrades, EV chargers, generators & more.",
   alternates: {
-    canonical: "https://eneelectrical.com/",
+    canonical: "/",
   },
 };
 

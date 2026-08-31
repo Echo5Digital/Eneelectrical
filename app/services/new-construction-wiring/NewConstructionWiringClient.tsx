@@ -141,7 +141,7 @@ export default function NewConstructionWiringClient({ testimonials, faqs }: Prop
         <div className="max-w-3xl mx-auto">
           <SectionHeading
             eyebrow="FAQ"
-            title="New Construction Wiring — Common Questions"
+            title="New Construction Wiring: Common Questions"
             subtitle="Answers to the most frequently asked questions about new construction electrical wiring in Texas."
             align="center"
           />

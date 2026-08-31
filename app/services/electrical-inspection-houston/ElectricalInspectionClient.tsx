@@ -38,7 +38,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Electrical Inspection", href: "/services/electrical-inspection" },
+  { label: "Electrical Inspection", href: "/services/electrical-inspection-houston" },
 ];
 
 // ─── Trust badge data ────────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ const inspectItems = [
     icon: Plug,
     title: "Outlets & Switches",
     description:
-      "All outlets and switches are tested for proper grounding, polarity, and function — including two-prong ungrounded outlets.",
+      "All outlets and switches are tested for proper grounding, polarity, and function, including two-prong ungrounded outlets.",
   },
   {
     icon: ShieldCheck,
@@ -146,7 +146,7 @@ const scenarios = [
     icon: Zap,
     title: "Frequent Tripped Breakers",
     description:
-      "Breakers that trip repeatedly signal overloaded circuits or failing components — a licensed inspection identifies the root cause.",
+      "Breakers that trip repeatedly signal overloaded circuits or failing components. A licensed inspection identifies the root cause.",
   },
   {
     icon: Wifi,
@@ -216,7 +216,7 @@ const faqs = [
   {
     question: "Do I need a licensed electrician to perform a home electrical inspection?",
     answer:
-      "Yes. In Texas, electrical inspections should be performed by a licensed electrician to ensure the assessment is accurate, code-referenced, and legally credible — especially for real estate transactions or insurance purposes. ENE Electrical is licensed, insured, and bonded.",
+      "Yes. In Texas, electrical inspections should be performed by a licensed electrician to ensure the assessment is accurate, code-referenced, and legally credible, especially for real estate transactions or insurance purposes. ENE Electrical is licensed, insured, and bonded.",
   },
   {
     question: "What does an ENE Electrical inspection cover?",
@@ -430,10 +430,8 @@ export default function ElectricalInspectionClient() {
   return (
     <main>
       {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
       </div>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
@@ -462,7 +460,7 @@ export default function ElectricalInspectionClient() {
                 fontFamily: "Inter, sans-serif",
               }}
             >
-              ENE Electrical — Houston &amp; Katy, TX
+              ENE Electrical: Houston &amp; Katy, TX
             </span>
 
             <h1
@@ -479,7 +477,7 @@ export default function ElectricalInspectionClient() {
             >
               Protect your family and your home with a thorough, licensed residential
               electrical inspection. ENE Electrical identifies hidden hazards, verifies
-              code compliance, and delivers a clear written report — giving you
+              code compliance, and delivers a clear written report, giving you
               complete peace of mind.
             </p>
 
@@ -551,7 +549,7 @@ export default function ElectricalInspectionClient() {
                   color: "rgba(11,31,58,0.7)",
                 }}
               >
-                Quick Answer — What Is a Residential Electrical Inspection?
+                Quick Answer: What Is a Residential Electrical Inspection?
               </p>
               <p
                 className="text-sm sm:text-base leading-relaxed font-medium"
@@ -665,7 +663,7 @@ export default function ElectricalInspectionClient() {
         <SectionHeading
           eyebrow="How It Works"
           title="Our Inspection Process"
-          subtitle="From scheduling to your final written report — here's what to expect when you work with ENE Electrical."
+          subtitle="From scheduling to your final written report, here's what to expect when you work with ENE Electrical."
           align="center"
           inverted
         />
@@ -746,7 +744,7 @@ export default function ElectricalInspectionClient() {
         <SectionHeading
           eyebrow="Common Scenarios"
           title="When You Need an Electrical Inspection"
-          subtitle="Electrical inspections aren't just for older homes — many everyday situations call for a professional assessment."
+          subtitle="Electrical inspections aren't just for older homes. Many everyday situations call for a professional assessment."
           align="center"
         />
 
@@ -897,11 +895,11 @@ export default function ElectricalInspectionClient() {
             </p>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: "Katy, TX", href: "/service-areas/katy-tx" },
+                { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
                 { label: "Houston, TX", href: "/service-areas/houston-tx" },
                 { label: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
                 { label: "Fulshear", href: "/service-areas/fulshear-tx" },
-                { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+                { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
                 { label: "Memorial", href: "/service-areas/memorial-houston" },
                 { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
                 { label: "Westchase", href: "/service-areas/westchase-houston" },

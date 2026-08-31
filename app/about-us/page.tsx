@@ -20,9 +20,9 @@ import {
 export const metadata: Metadata = {
   title: "About ENE Electrical | 15+ Years Serving Houston Homeowners",
   description:
-    "Learn about ENE Electrical — a licensed, insured, and bonded residential electrician based in Katy, TX with 15+ years of experience serving the greater Houston metro area.",
+    "Learn about ENE Electrical, a licensed, insured, and bonded residential electrician based in Katy, TX with 15+ years of experience serving the greater Houston metro area.",
   alternates: {
-    canonical: "https://eneelectrical.com/about-us",
+    canonical: "/about-us",
   },
 };
 
@@ -60,7 +60,7 @@ const coreValues = [
     icon: ThumbsUp,
     title: "Transparency",
     description:
-      "No surprise charges. We provide clear, upfront estimates before any work begins so you always know what to expect — in plain language.",
+      "No surprise charges. We provide clear, upfront estimates in plain language before any work begins so you always know what to expect.",
   },
   {
     icon: ShieldCheck,
@@ -77,10 +77,10 @@ const coreValues = [
 ];
 
 const serviceAreas = [
-  { label: "Katy, TX", route: "/service-areas/katy-tx" },
+  { label: "Katy, TX", route: "/service-areas/electrician-katy-tx" },
   { label: "Houston, TX", route: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", route: "/service-areas/energy-corridor-houston" },
-  { label: "Southwest Houston", route: "/service-areas/southwest-houston" },
+  { label: "Energy Corridor", route: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Southwest Houston", route: "/service-areas/electrician-houston-southwest" },
   { label: "Cinco Ranch", route: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear", route: "/service-areas/fulshear-tx" },
   { label: "Memorial", route: "/service-areas/memorial-houston" },
@@ -171,12 +171,15 @@ export default function AboutUsPage() {
 
       <Header />
 
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "About Us", href: "/about-us" },
-        ]}
-      />
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About Us", href: "/about-us" },
+          ]}
+        />
+      </div>
 
       {/* ── ABOUT HERO ── */}
       <section
@@ -217,7 +220,7 @@ export default function AboutUsPage() {
           >
             ENE Electrical is a licensed, insured, and bonded residential electrical
             contractor proudly serving Katy, TX and the greater Houston metro for over
-            15 years — with background-checked technicians and a commitment to doing
+            15 years, with background-checked technicians and a commitment to doing
             the job right the first time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -306,7 +309,7 @@ export default function AboutUsPage() {
             >
               <p>
                 ENE Electrical was built on a simple belief: Houston homeowners deserve
-                an electrician they can truly trust — someone who shows up on time,
+                an electrician they can truly trust, someone who shows up on time,
                 explains the work clearly, and stands behind every job completed.
               </p>
               <p>
@@ -318,36 +321,38 @@ export default function AboutUsPage() {
               <p>
                 Our mission remains unchanged: to deliver safe, reliable, code-compliant
                 electrical work that protects your home, your family, and your
-                investment — performed by background-checked technicians who treat your
+                investment, performed by background-checked technicians who treat your
                 home with the same care and respect they'd give their own.
               </p>
             </div>
           </div>
-          <div className="relative rounded-[0.75rem] overflow-hidden shadow-xl">
-            <img
-              src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="ENE Electrical technician reviewing electrical work with a Houston homeowner"
-              className="w-full h-80 lg:h-[420px] object-cover"
-            />
-            <div
-              className="absolute bottom-0 left-0 right-0 px-6 py-5"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(11,31,58,0.95) 0%, rgba(11,31,58,0.0) 100%)",
-              }}
-            >
-              <p
-                className="text-white font-bold text-lg"
-                style={{ fontFamily: "Montserrat, sans-serif" }}
+          <div className="relative">
+            <div className="relative rounded-[0.75rem] overflow-hidden shadow-xl">
+              <img
+                src="/about.png"
+                alt="ENE Electrical technician working on a residential electrical panel"
+                className="w-full h-80 lg:h-[420px] object-cover"
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 px-6 py-5"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(11,31,58,0.95) 0%, rgba(11,31,58,0.0) 100%)",
+                }}
               >
-                Proudly Based in Katy, TX
-              </p>
-              <p
-                className="text-sm"
-                style={{ color: "rgba(255,255,255,0.75)", fontFamily: "Inter, sans-serif" }}
-              >
-                Serving the Greater Houston Metro for 15+ Years
-              </p>
+                <p
+                  className="text-white font-bold text-lg"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Proudly Based in Katy, TX
+                </p>
+                <p
+                  className="text-sm"
+                  style={{ color: "rgba(255,255,255,0.75)", fontFamily: "Inter, sans-serif" }}
+                >
+                  Serving the Greater Houston Metro for 15+ Years
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -396,7 +401,7 @@ export default function AboutUsPage() {
         <SectionHeading
           eyebrow="Why Choose ENE Electrical"
           title="What Sets Us Apart"
-          subtitle="We don't just fix wiring — we build long-term relationships based on honesty, expertise, and care for the communities we serve."
+          subtitle="We don't just fix wiring. We build long-term relationships based on honesty, expertise, and care for the communities we serve."
           align="center"
           inverted
         />
@@ -467,7 +472,7 @@ export default function AboutUsPage() {
               style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
             >
               Whether you're in a neighborhood just down the road or across the Houston
-              metro, our licensed technicians come to you — on time and fully prepared.
+              metro, our licensed technicians come to you on time and fully prepared.
             </p>
             <nav aria-label="Service area links">
               <ul className="flex flex-wrap gap-3">
@@ -623,7 +628,7 @@ export default function AboutUsPage() {
             style={{ color: "rgba(11,31,58,0.8)", fontFamily: "Inter, sans-serif" }}
           >
             If our story resonates with you, we'd love to help with your next electrical
-            project. Book a service or reach out — our licensed team is ready to help.
+            project. Book a service or reach out, and our licensed team is ready to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <Link

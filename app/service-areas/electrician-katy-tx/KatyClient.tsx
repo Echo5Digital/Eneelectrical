@@ -39,7 +39,7 @@ const services = [
   {
     title: "Electrical Repair & Installation",
     description:
-      "Fast, reliable electrical repairs and new installations for Katy homeowners — from outlets and switches to complete rewiring projects.",
+      "Fast, reliable electrical repairs and new installations for Katy homeowners, from outlets and switches to complete rewiring projects.",
     icon: Zap,
     href: "/services/electrical-repair-installation",
   },
@@ -48,28 +48,28 @@ const services = [
     description:
       "Upgrade your electrical panel to handle modern energy demands safely. Essential for Katy's growing homes and new appliances.",
     icon: Home,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
       "Level 2 home EV charger installations for Katy's expanding community of electric vehicle owners. Fast and code-compliant.",
     icon: Car,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Stay powered during Texas storms and outages. We install whole-home and standby generators for Katy residents.",
     icon: Zap,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Enhance your home's safety and curb appeal with professionally installed security and landscape lighting systems.",
     icon: Shield,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed Lighting",
@@ -83,14 +83,14 @@ const services = [
     description:
       "Electrical emergencies don't wait. ENE Electrical provides urgent electrical services for Katy homeowners around the clock.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Comprehensive home electrical inspections to ensure your Katy property meets Texas safety codes and standards.",
     icon: Search,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
@@ -99,7 +99,7 @@ const trustReasons = [
     icon: MapPin,
     title: "Locally Headquartered",
     description:
-      "ENE Electrical is based right here in Katy, TX 77494 — not a distant company dispatching from elsewhere. We know the neighborhoods, codes, and needs of Katy homeowners.",
+      "ENE Electrical is based right here in Katy, TX 77494, not a distant company dispatching from elsewhere. We know the neighborhoods, codes, and needs of Katy homeowners.",
   },
   {
     icon: Award,
@@ -123,7 +123,7 @@ const trustReasons = [
     icon: Clock,
     title: "Responsive & Reliable",
     description:
-      "We respect your time. ENE Electrical provides prompt scheduling, clear communication, and shows up when promised — every time.",
+      "We respect your time. ENE Electrical provides prompt scheduling, clear communication, and shows up when promised, every time.",
   },
   {
     icon: CheckCircle,
@@ -143,7 +143,7 @@ const testimonials = [
   },
   {
     quote:
-      "Had an electrical emergency on a Sunday evening — ENE showed up within two hours. The technician was courteous, knowledgeable, and fixed the issue quickly. Absolute lifesavers.",
+      "Had an electrical emergency on a Sunday evening, and ENE showed up within two hours. The technician was courteous, knowledgeable, and fixed the issue quickly. Absolute lifesavers.",
     authorName: "Jennifer R.",
     authorLocation: "Cinco Ranch, Katy TX",
     rating: 5,
@@ -167,14 +167,14 @@ const stats = [
 const nearbyAreas = [
   { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
   { label: "Memorial, Houston", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase, Houston", href: "/service-areas/westchase-houston" },
   { label: "Brookshire, TX", href: "/service-areas/brookshire-tx" },
   { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
 ];
 
 function FaqAccordion({ items }: { items: FaqItem[] }) {
@@ -275,7 +275,7 @@ export default function KatyClient({ faqData }: Props) {
               className="text-lg text-blue-100 mb-8 max-w-2xl leading-relaxed"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              ENE Electrical is headquartered in Katy, TX 77494 — your
+              ENE Electrical is headquartered in Katy, TX 77494, your
               neighborhood licensed, insured, and bonded residential electrician
               with 15+ years of experience serving the greater Katy community.
             </p>
@@ -357,9 +357,9 @@ export default function KatyClient({ faqData }: Props) {
                 <strong>ENE Electrical</strong> is a licensed, insured, and
                 bonded residential electrical contractor{" "}
                 <strong>headquartered in Katy, TX 77494</strong>. The company
-                provides a full range of home electrical services — including
+                provides a full range of home electrical services, including
                 panel upgrades, EV charger installation, emergency electrical
-                repair, and electrical inspections — to homeowners throughout
+                repair, and electrical inspections, to homeowners throughout
                 Katy and the surrounding Houston metro area. With{" "}
                 <strong>15+ years of experience</strong> and
                 background-checked technicians, ENE Electrical is Katy's
@@ -395,7 +395,7 @@ export default function KatyClient({ faqData }: Props) {
               className="text-base text-gray-600 leading-relaxed mb-5"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              ENE Electrical is not just a company that services Katy — we are
+              ENE Electrical is not just a company that services Katy, we are
               based here. Our headquarters is located in{" "}
               <strong style={{ color: "#0B1F3A" }}>Katy, TX 77494</strong>,
               which means faster response times, local knowledge of the
@@ -408,7 +408,7 @@ export default function KatyClient({ faqData }: Props) {
             >
               With over <strong style={{ color: "#0B1F3A" }}>15 years of experience</strong>{" "}
               in residential electrical work, our team has supported the rapid
-              growth of Katy and its master-planned communities — from new
+              growth of Katy and its master-planned communities, from new
               construction wiring to panel upgrades that keep pace with modern
               power demands.
             </p>
@@ -673,7 +673,7 @@ export default function KatyClient({ faqData }: Props) {
           className="text-center text-sm text-gray-500 mt-4"
           style={{ fontFamily: "Inter, sans-serif" }}
         >
-          <strong style={{ color: "#0B1F3A" }}>ENE Electrical</strong> —
+          <strong style={{ color: "#0B1F3A" }}>ENE Electrical</strong>,
           Headquartered in Katy, TX 77494. Serving Katy and the greater Houston
           metro area.
         </p>
@@ -781,8 +781,8 @@ export default function KatyClient({ faqData }: Props) {
               >
                 Ready to schedule electrical service in Katy, TX? Fill out the
                 form and a member of our team will reach out promptly. Whether
-                it's an emergency repair, a panel upgrade, or a new EV charger
-                — ENE Electrical is your local, licensed choice.
+                it's an emergency repair, a panel upgrade, or a new EV charger,
+                ENE Electrical is your local, licensed choice.
               </p>
 
               <ul className="space-y-4 mb-8">

@@ -8,7 +8,7 @@ import MemorialHoustonClient from "./MemorialHoustonClient";
 export const metadata: Metadata = {
   title: "Electrician in Memorial Houston TX | ENE Electrical",
   description:
-    "ENE Electrical serves Memorial Houston with licensed residential electrical services — panel upgrades, EV chargers, security lighting, generators & emergency repairs. 15+ yrs experience.",
+    "ENE Electrical serves Memorial Houston with licensed residential electrical services, including panel upgrades, EV chargers, security lighting, generators & emergency repairs. 15+ yrs experience.",
   alternates: {
     canonical: "/service-areas/memorial-houston",
   },
@@ -106,7 +106,11 @@ export default function MemorialHoustonPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <Header />
-      <Breadcrumbs items={breadcrumbItems} />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
       <MemorialHoustonClient faqData={faqData} />
       <Footer />
     </>

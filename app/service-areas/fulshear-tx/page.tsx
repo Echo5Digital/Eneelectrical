@@ -8,7 +8,7 @@ import FulshearClient from "./FulshearClient";
 export const metadata: Metadata = {
   title: "Electrician in Fulshear TX | ENE Electrical",
   description:
-    "ENE Electrical provides licensed residential electrical services in Fulshear, TX — panel upgrades, EV chargers, generators, lighting & more. Serving Fulshear from Katy, TX.",
+    "ENE Electrical provides licensed residential electrical services in Fulshear, TX, including panel upgrades, EV chargers, generators, lighting & more. Serving Fulshear from Katy, TX.",
   alternates: {
     canonical: "/service-areas/fulshear-tx",
   },
@@ -74,7 +74,7 @@ const serviceJsonLd = {
     },
   },
   description:
-    "ENE Electrical provides licensed residential electrical services in Fulshear, TX — panel upgrades, EV chargers, generators, lighting & more. Serving Fulshear from Katy, TX.",
+    "ENE Electrical provides licensed residential electrical services in Fulshear, TX, including panel upgrades, EV chargers, generators, lighting & more. Serving Fulshear from Katy, TX.",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Residential Electrical Services",
@@ -104,13 +104,17 @@ export default function FulshearPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Service Areas", href: "/service-areas/houston-tx" },
-          { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Service Areas", href: "/service-areas/houston-tx" },
+            { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
+          ]}
+        />
+      </div>
       <FulshearClient faqData={faqData} />
       <Footer />
     </>

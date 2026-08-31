@@ -58,15 +58,15 @@ const serviceCards = [
     icon: PanelTop,
     title: "Panel Installation",
     description:
-      "Main electrical panel sizing, installation, and load calculation for new homes — built for today and tomorrow's power demands.",
-    href: "/services/electrical-panel-upgrade",
+      "Main electrical panel sizing, installation, and load calculation for new homes, built for today and tomorrow's power demands.",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     icon: Car,
     title: "EV Charger Rough-In",
     description:
       "Future-proof your new build with a dedicated EV charger circuit and conduit rough-in during construction for cost-effective installation.",
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     icon: Lightbulb,
@@ -80,7 +80,7 @@ const serviceCards = [
     title: "Inspection Coordination",
     description:
       "We coordinate directly with city and county inspectors to ensure your new construction electrical passes every phase of inspection.",
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
@@ -174,12 +174,12 @@ const testimonials = [
 ];
 
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
   { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
@@ -242,7 +242,7 @@ export default function NewConstructionClient({ faqData }: Props) {
                 border: "1px solid rgba(245,166,35,0.35)",
               }}
             >
-              Houston &amp; Katy, TX — New Construction
+              Houston &amp; Katy, TX, New Construction
             </span>
 
             <h1
@@ -260,7 +260,7 @@ export default function NewConstructionClient({ faqData }: Props) {
             >
               ENE Electrical partners with builders and homeowners in Houston
               and Katy, TX to deliver fully code-compliant electrical from
-              rough-in through final inspection — on schedule, every time.
+              rough-in through final inspection, on schedule, every time.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -361,7 +361,7 @@ export default function NewConstructionClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Our Clients"
           title="Who We Work With"
-          subtitle="ENE Electrical serves two distinct groups in new construction — and we tailor our approach to fit each one's needs."
+          subtitle="ENE Electrical serves two distinct groups in new construction, and we tailor our approach to fit each one's needs."
           align="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -393,7 +393,7 @@ export default function NewConstructionClient({ faqData }: Props) {
                 We understand that builders need a reliable electrical
                 subcontractor who shows up on time, hits phase milestones, and
                 communicates clearly. ENE Electrical becomes a seamless part of
-                your construction team — coordinating with your other trades,
+                your construction team, coordinating with your other trades,
                 pulling permits, and scheduling inspections so your project
                 never stalls waiting on electrical.
               </p>
@@ -451,8 +451,8 @@ export default function NewConstructionClient({ faqData }: Props) {
               >
                 Building your dream home is one of the biggest investments
                 you'll make. ENE Electrical guides homeowners through every
-                electrical decision — from panel sizing and circuit planning to
-                smart home pre-wiring and EV charger rough-in — ensuring your
+                electrical decision, from panel sizing and circuit planning to
+                smart home pre-wiring and EV charger rough-in, ensuring your
                 new home is wired exactly the way you want it.
               </p>
             </div>
@@ -695,8 +695,8 @@ export default function NewConstructionClient({ faqData }: Props) {
                 className="text-blue-200 text-sm leading-relaxed mb-6"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                The Houston and Katy, TX metro — particularly Fulshear, Cinco
-                Ranch, and surrounding west Houston suburbs — is one of Texas's
+                The Houston and Katy, TX metro, particularly Fulshear, Cinco
+                Ranch, and surrounding west Houston suburbs, is one of Texas's
                 fastest-growing residential development zones. ENE Electrical
                 partners with builders and homeowners across this region to
                 deliver code-compliant new construction electrical services from

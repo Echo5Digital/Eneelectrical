@@ -229,7 +229,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
               style={{ fontFamily: "Inter, sans-serif", color: "#CBD8E6" }}
             >
               ENE Electrical delivers expert residential electrical services to
-              Spring Branch homeowners — from panel upgrades and EV chargers to
+              Spring Branch homeowners, from panel upgrades and EV chargers to
               24/7 emergency response. Licensed, insured, and bonded with 15+
               years of experience.
             </p>
@@ -352,7 +352,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
               icon: Wrench,
               title: "Electrical Repairs",
               description:
-                "Fast, reliable electrical repair services for Spring Branch homes — outlets, switches, circuits, and more diagnosed and fixed right the first time.",
+                "Fast, reliable electrical repair services for Spring Branch homes: outlets, switches, circuits, and more diagnosed and fixed right the first time.",
               href: "/services/electrical-repair-installation",
             },
             {
@@ -360,28 +360,28 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
               title: "Panel Upgrades",
               description:
                 "Upgrade your electrical panel to safely support modern energy demands. Ideal for older Spring Branch homes with outdated 60–100A panels.",
-              href: "/services/electrical-panel-upgrade",
+              href: "/services/electrical-panel-upgrade-houston",
             },
             {
               icon: BatteryCharging,
               title: "EV Charger Installation",
               description:
-                "Level 2 EV charger installation for Spring Branch homeowners — fast, code-compliant, and professionally installed for all major EV brands.",
-              href: "/services/ev-charger-installation",
+                "Level 2 EV charger installation for Spring Branch homeowners: fast, code-compliant, and professionally installed for all major EV brands.",
+              href: "/services/ev-charger-installation-houston",
             },
             {
               icon: Building2,
               title: "Generator Installation",
               description:
-                "Whole-home standby generator installation to keep your Spring Branch home powered during outages — especially important during Houston storm season.",
-              href: "/services/generator-installation",
+                "Whole-home standby generator installation to keep your Spring Branch home powered during outages, especially important during Houston storm season.",
+              href: "/services/generator-installation-houston",
             },
             {
               icon: Sun,
               title: "Security Lighting",
               description:
                 "Enhance your Spring Branch home's safety and curb appeal with professionally installed motion-sensor and security lighting systems.",
-              href: "/services/security-lighting",
+              href: "/services/security-lighting-houston",
             },
             {
               icon: Lightbulb,
@@ -395,14 +395,14 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
               title: "Electrical Inspections",
               description:
                 "Pre-purchase and safety electrical inspections for Spring Branch properties. Identify hazards and code issues before they become costly problems.",
-              href: "/services/electrical-inspection",
+              href: "/services/electrical-inspection-houston",
             },
             {
               icon: AlertTriangle,
               title: "Emergency Electrician",
               description:
                 "24/7 emergency electrical service for Spring Branch homeowners. When you need immediate help, ENE Electrical responds fast.",
-              href: "/services/emergency-electrician",
+              href: "/services/emergency-electrician-houston",
             },
           ].map(({ icon: Icon, title, description, href }) => (
             <div
@@ -506,7 +506,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
               style={{ fontFamily: "Inter, sans-serif", color: "#CBD8E6" }}
             >
               <p>
-                Spring Branch is one of Houston's most dynamic neighborhoods —
+                Spring Branch is one of Houston's most dynamic neighborhoods,
                 a diverse community where mid-century ranch homes sit alongside
                 newly renovated residences and growing families. This variety
                 means electrical needs range widely: from aging 60-amp panels
@@ -524,7 +524,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
               </p>
               <p>
                 Operating from our Katy, TX 77494 base, we reach Spring Branch
-                quickly — and our 24/7 emergency response means you're never
+                quickly, and our 24/7 emergency response means you're never
                 left waiting when an electrical problem strikes.
               </p>
             </div>
@@ -583,7 +583,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
           />
           <Card
             variant="testimonial"
-            quote="Fast response for an emergency — a tripped breaker that kept resetting at midnight. Their technician arrived within the hour and solved the problem safely. Licensed, professional, and friendly."
+            quote="Fast response for an emergency: a tripped breaker that kept resetting at midnight. Their technician arrived within the hour and solved the problem safely. Licensed, professional, and friendly."
             authorName="Sandra K."
             authorLocation="Spring Branch, Houston TX"
             rating={5}
@@ -595,7 +595,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
       <Section background="default" spacing="md" id="map">
         <SectionHeading
           eyebrow="Our Location"
-          title="Spring Branch, Houston — Our Service Area"
+          title="Spring Branch, Houston: Our Service Area"
           subtitle="ENE Electrical serves Spring Branch from our Katy, TX 77494 base, reaching Houston-area neighborhoods quickly."
           align="center"
         />
@@ -617,7 +617,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
           className="mt-4 text-center text-sm"
           style={{ fontFamily: "Inter, sans-serif", color: "#1A2530" }}
         >
-          <strong>ENE Electrical</strong> — Based in{" "}
+          <strong>ENE Electrical</strong> Based in{" "}
           <span>Katy, TX 77494</span> · Serving Spring Branch &amp; Greater Houston
         </p>
       </Section>
@@ -639,7 +639,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
             },
             {
               label: "Energy Corridor",
-              href: "/service-areas/energy-corridor-houston",
+              href: "/service-areas/electrician-energy-corridor-houston",
               description: "Panel upgrades and EV chargers in the Energy Corridor.",
             },
             {
@@ -757,7 +757,7 @@ export default function SpringBranchHoustonClient({ faqData }: Props) {
             >
               Book an appointment or send us a message. ENE Electrical's
               licensed, background-checked technicians serve Spring Branch,
-              Houston and the greater Katy metro — with 24/7 emergency response
+              Houston and the greater Katy metro, with 24/7 emergency response
               when you need it most.
             </p>
 

@@ -25,9 +25,9 @@ import Card from "@/components/Card";
 export const metadata: Metadata = {
   title: "New Construction Wiring Services Houston & Katy TX | ENE Electrical",
   description:
-    "Professional new construction wiring by ENE Electrical — serving Houston & Katy, TX. Licensed electricians for rough-in, circuits & code-compliant installs. Get a quote.",
+    "Professional new construction wiring by ENE Electrical, serving Houston & Katy, TX. Licensed electricians for rough-in, circuits & code-compliant installs. Get a quote.",
   alternates: {
-    canonical: "https://www.eneelectrical.com/services/new-construction-wiring",
+    canonical: "/services/new-construction-wiring",
   },
 };
 
@@ -58,7 +58,7 @@ const serviceSchema = {
     "Richmond, TX",
   ],
   description:
-    "Complete new construction wiring services for residential homes — rough-in wiring, outlet placement, dedicated circuits, low-voltage pre-wiring, sub-panel feeds, and smart-home wiring rough-in. All work is performed to Texas electrical code by licensed, bonded, and insured electricians.",
+    "Complete new construction wiring services for residential homes, including rough-in wiring, outlet placement, dedicated circuits, low-voltage pre-wiring, sub-panel feeds, and smart-home wiring rough-in. All work is performed to Texas electrical code by licensed, bonded, and insured electricians.",
   serviceType: "New Construction Electrical Wiring",
 };
 
@@ -71,7 +71,7 @@ const faqSchema = {
       name: "What does new construction wiring include?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "New construction wiring from ENE Electrical includes rough-in wiring, outlet and switch placement, dedicated circuits, sub-panel feeds, low-voltage pre-wiring, and outdoor circuit installation — all coordinated with the build schedule and inspections.",
+        text: "New construction wiring from ENE Electrical includes rough-in wiring, outlet and switch placement, dedicated circuits, sub-panel feeds, low-voltage pre-wiring, and outdoor circuit installation, all coordinated with the build schedule and inspections.",
       },
     },
     {
@@ -114,7 +114,7 @@ const wiringServices = [
     icon: Cable,
     title: "Rough-In Wiring",
     description:
-      "We run all branch circuits through studs and joists before drywall — precisely laid out per your floor plan, ready for inspection.",
+      "We run all branch circuits through studs and joists before drywall, precisely laid out per your floor plan and ready for inspection.",
   },
   {
     icon: CircuitBoard,
@@ -132,7 +132,7 @@ const wiringServices = [
     icon: Zap,
     title: "Sub-Panel Feeds",
     description:
-      "We install and feed sub-panels for large homes, garages, or detached structures — sized correctly from the ground up.",
+      "We install and feed sub-panels for large homes, garages, or detached structures, sized correctly from the ground up.",
   },
   {
     icon: Sun,
@@ -157,36 +157,36 @@ const wiringServices = [
 const relatedServices = [
   {
     label: "New Construction Electrician Hub",
-    href: "/services/new-construction-electrician",
+    href: "/services/new-construction-electrician-houston",
     description: "Full overview of our new construction electrical services.",
   },
   {
     label: "Electrical Panel Upgrade",
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
     description: "Panel sizing and upgrades for new builds and additions.",
   },
   {
     label: "EV Charger Installation",
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
     description: "Complete EV charger installation once your home is ready.",
   },
   {
     label: "Electrical Inspection",
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
     description: "Pre-purchase and code-compliance inspections.",
   },
 ];
 
 const serviceAreas = [
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Brookshire, TX", href: "/service-areas/brookshire-tx" },
   { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
 ];
@@ -219,7 +219,7 @@ const faqs = [
   {
     question: "What does new construction wiring include?",
     answer:
-      "New construction wiring from ENE Electrical includes rough-in wiring, outlet and switch placement, dedicated circuits, sub-panel feeds, low-voltage pre-wiring, and outdoor circuit installation — all coordinated with the build schedule and inspections.",
+      "New construction wiring from ENE Electrical includes rough-in wiring, outlet and switch placement, dedicated circuits, sub-panel feeds, low-voltage pre-wiring, and outdoor circuit installation, all coordinated with the build schedule and inspections.",
   },
   {
     question: "Does ENE Electrical ensure wiring is up to Texas electrical code?",
@@ -252,13 +252,16 @@ export default function NewConstructionWiringPage() {
 
       <Header />
 
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "New Construction Wiring", href: "/services/new-construction-wiring" },
-        ]}
-      />
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "New Construction Wiring", href: "/services/new-construction-wiring" },
+          ]}
+        />
+      </div>
 
       {/* ── HERO ── */}
       <section
@@ -358,7 +361,7 @@ export default function NewConstructionWiringPage() {
             className="text-xl md:text-2xl font-bold mb-3"
             style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
           >
-            What Is New Construction Wiring — And What Does ENE Electrical Deliver?
+            What Is New Construction Wiring, and What Does ENE Electrical Deliver?
           </h2>
           <p
             className="text-base leading-relaxed"
@@ -367,7 +370,7 @@ export default function NewConstructionWiringPage() {
             ENE Electrical provides complete new construction wiring services for
             residential homes being built in Houston and Katy, TX. This includes
             rough-in wiring, outlet and switch placement, dedicated circuit
-            installation, low-voltage pre-wiring, and sub-panel feeds — all
+            installation, low-voltage pre-wiring, and sub-panel feeds, all
             performed to Texas electrical code by licensed, bonded, and insured
             electricians. ENE Electrical coordinates with inspectors and other
             trades to keep your build on schedule.
@@ -408,7 +411,7 @@ export default function NewConstructionWiringPage() {
             <SectionHeading
               eyebrow="Education"
               title="What Is New Construction Wiring?"
-              subtitle="New construction wiring is a multi-phase electrical process that begins before the walls go up and continues through final inspection — it's fundamentally different from retrofit or repair work."
+              subtitle="New construction wiring is a multi-phase electrical process that begins before the walls go up and continues through final inspection. It's fundamentally different from retrofit or repair work."
               align="left"
             />
             <div className="space-y-5" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -429,7 +432,7 @@ export default function NewConstructionWiringPage() {
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Wire runs, conduit, boxes, and panel feeds are installed
                     through studs and joists before drywall is hung. This is the
-                    most critical phase — errors here are expensive to fix later.
+                    most critical phase, since errors here are expensive to fix later.
                   </p>
                 </div>
               </div>
@@ -449,7 +452,7 @@ export default function NewConstructionWiringPage() {
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Every outlet, switch, and circuit is positioned per code
-                    minimums and your layout plan — kitchen, bathrooms, bedrooms,
+                    minimums and your layout plan, covering kitchen, bathrooms, bedrooms,
                     garage, and outdoor spaces all accounted for.
                   </p>
                 </div>
@@ -470,7 +473,7 @@ export default function NewConstructionWiringPage() {
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Main electrical panel sizing and sub-panel feeds are planned
-                    early to support your home's total load — including future EV
+                    early to support your home's total load, including future EV
                     chargers, HVAC, and smart systems.
                   </p>
                 </div>
@@ -491,7 +494,7 @@ export default function NewConstructionWiringPage() {
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Texas requires rough-in inspection before drywall and final
-                    inspection before occupancy. ENE Electrical coordinates both —
+                    inspection before occupancy. ENE Electrical coordinates both,
                     so your project never stalls waiting on re-inspections.
                   </p>
                 </div>
@@ -515,7 +518,7 @@ export default function NewConstructionWiringPage() {
                 className="text-white text-sm font-semibold"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                ENE Electrical — New Construction Rough-In Specialists
+                ENE Electrical: New Construction Rough-In Specialists
               </p>
             </div>
           </div>
@@ -556,7 +559,7 @@ export default function NewConstructionWiringPage() {
             />
             <ul className="space-y-4" style={{ fontFamily: "Inter, sans-serif" }}>
               {[
-                "We design and install all wiring to NEC standards as adopted by Texas — no shortcuts.",
+                "We design and install all wiring to NEC standards as adopted by Texas, with no shortcuts.",
                 "ENE Electrical schedules and coordinates rough-in inspections before drywall closes the walls.",
                 "We work directly with local municipal inspectors in Katy, Fulshear, and Harris/Fort Bend counties.",
                 "Final trim-out and panel energization are completed only after all inspections pass.",
@@ -671,7 +674,7 @@ export default function NewConstructionWiringPage() {
           className="text-center text-sm text-gray-500 mt-6"
           style={{ fontFamily: "Inter, sans-serif" }}
         >
-          Not seeing your area? <Link href="/contact-us" className="font-semibold underline" style={{ color: "#0B1F3A" }}>Contact us</Link> — we may still serve your location.
+          Not seeing your area? <Link href="/contact-us" className="font-semibold underline" style={{ color: "#0B1F3A" }}>Contact us</Link>, as we may still serve your location.
         </p>
       </Section>
 
@@ -700,7 +703,7 @@ export default function NewConstructionWiringPage() {
             className="text-blue-100 text-lg leading-relaxed mb-8"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            Get a detailed wiring estimate from ENE Electrical — licensed,
+            Get a detailed wiring estimate from ENE Electrical, licensed,
             bonded &amp; insured electricians with 15+ years of new construction
             experience serving Houston and Katy, TX.
           </p>

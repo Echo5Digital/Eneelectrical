@@ -10,9 +10,9 @@ import { Shield, Award, CheckCircle, MapPin, Zap, Clock, FileText, Wrench } from
 export const metadata: Metadata = {
   title: "Home EV Charger Installation Houston & Katy TX | ENE Electrical",
   description:
-    "Install a Level 2 EV charger at your Houston or Katy, TX home with ENE Electrical. Licensed, insured electricians — fast, safe installation. Request your quote today.",
+    "Install a Level 2 EV charger at your Houston or Katy, TX home with ENE Electrical. Licensed, insured electricians providing fast, safe installation. Request your quote today.",
   alternates: {
-    canonical: "/services/ev-charger-installation",
+    canonical: "/services/ev-charger-installation-houston",
   },
 };
 
@@ -30,7 +30,7 @@ const faqData = [
   {
     question: "Is a permit required for EV charger installation in Katy or Houston, TX?",
     answer:
-      "In most cases, yes — a permit is required for the dedicated circuit installation associated with a home EV charger in Texas. ENE Electrical's licensed team handles permit coordination as part of the process.",
+      "In most cases, yes, a permit is required for the dedicated circuit installation associated with a home EV charger in Texas. ENE Electrical's licensed team handles permit coordination as part of the process.",
   },
   {
     question: "How long does EV charger installation take?",
@@ -183,16 +183,15 @@ export default function EVChargerInstallationPage() {
 
       <Header />
 
-      <div className="bg-[#F7F8FA]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Services", href: "/services" },
-              { label: "EV Charger Installation", href: "/services/ev-charger-installation" },
-            ]}
-          />
-        </div>
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "EV Charger Installation", href: "/services/ev-charger-installation-houston" },
+          ]}
+        />
       </div>
 
       {/* ── HERO ── */}
@@ -232,7 +231,7 @@ export default function EVChargerInstallationPage() {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Charge smarter at home. ENE Electrical's licensed, insured electricians install
-              dedicated Level 2 EV charging stations for Houston and Katy homeowners — fast,
+              dedicated Level 2 EV charging stations for Houston and Katy homeowners: fast,
               safe, and code-compliant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -397,7 +396,7 @@ export default function EVChargerInstallationPage() {
                 >
                   ✓
                 </span>
-                Dedicated 240-volt circuit — like your dryer or range
+                Dedicated 240-volt circuit, like your dryer or range
               </li>
               <li className="flex items-start gap-2">
                 <span
@@ -549,7 +548,7 @@ export default function EVChargerInstallationPage() {
               className="mt-5 text-sm text-gray-500 italic"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Don't see your charger brand? Contact ENE Electrical — we work with a wide range of
+              Don't see your charger brand? Contact ENE Electrical, as we work with a wide range of
               NEMA 14-50 and hardwired home charging stations.
             </p>
           </div>
@@ -638,7 +637,7 @@ export default function EVChargerInstallationPage() {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             <span className="font-semibold" style={{ color: "#0B1F3A" }}>ENE Electrical</span>
-            {" — "}
+            {", "}
             {/* Address from verified business facts */}
             <span>Katy, TX 77494</span>
           </address>

@@ -26,7 +26,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Electrical Repair & Installation | ENE Electrical Houston",
   description:
-    "ENE Electrical provides expert residential electrical repair and installation in Houston & Katy, TX. Licensed, insured, bonded — 15+ years experience. Book your service today.",
+    "ENE Electrical provides expert residential electrical repair and installation in Houston & Katy, TX. Licensed, insured, bonded, with 15+ years experience. Book your service today.",
   alternates: {
     canonical: "/services/electrical-repair-installation",
   },
@@ -101,7 +101,7 @@ const installationServices = [
     icon: PlugZap,
     title: "Outlet Installation",
     description:
-      "New standard, GFCI, AFCI, and USB outlets installed wherever you need them — kitchens, bathrooms, garages, and outdoor spaces.",
+      "New standard, GFCI, AFCI, and USB outlets installed wherever you need them, including kitchens, bathrooms, garages, and outdoor spaces.",
   },
   {
     icon: ToggleLeft,
@@ -113,7 +113,7 @@ const installationServices = [
     icon: Fan,
     title: "Ceiling Fan Installation",
     description:
-      "Safe ceiling fan installation with proper wiring, bracing, and switch control — keeping your home comfortable year-round.",
+      "Safe ceiling fan installation with proper wiring, bracing, and switch control, keeping your home comfortable year-round.",
   },
   {
     icon: Lightbulb,
@@ -140,7 +140,7 @@ const trustSignals = [
     icon: BadgeCheck,
     title: "Licensed, Insured & Bonded",
     description:
-      "ENE Electrical is fully licensed, insured, and bonded in Texas — giving you complete peace of mind on every job.",
+      "ENE Electrical is fully licensed, insured, and bonded in Texas, giving you complete peace of mind on every job.",
   },
   {
     icon: Shield,
@@ -277,10 +277,9 @@ export default function ElectricalRepairPage() {
 
       <Header />
 
-      <div className="bg-[#F7F8FA]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
       </div>
 
       {/* ── Hero ── */}
@@ -316,7 +315,7 @@ export default function ElectricalRepairPage() {
             }}
           >
             <Zap size={13} strokeWidth={2.5} />
-            Residential Electrical Services — Houston &amp; Katy, TX
+            Residential Electrical Services in Houston &amp; Katy, TX
           </span>
 
           <h1
@@ -334,7 +333,7 @@ export default function ElectricalRepairPage() {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Licensed, insured, and bonded technicians serving Houston and Katy,
-            TX. From a single outlet to full home wiring — ENE Electrical gets
+            TX. From a single outlet to full home wiring, ENE Electrical gets
             it done safely, on time, and up to code.
           </p>
 
@@ -423,7 +422,7 @@ export default function ElectricalRepairPage() {
         <SectionHeading
           eyebrow="Repair Services"
           title="Common Electrical Problems We Fix"
-          subtitle="Whether it's a tripping breaker, a dead outlet, or flickering lights — ENE Electrical's technicians are trained to diagnose and resolve the most common residential electrical issues quickly and safely."
+          subtitle="Whether it's a tripping breaker, a dead outlet, or flickering lights, ENE Electrical's technicians are trained to diagnose and resolve the most common residential electrical issues quickly and safely."
           align="center"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -444,7 +443,7 @@ export default function ElectricalRepairPage() {
         <SectionHeading
           eyebrow="Installation Services"
           title="Electrical Installation Services"
-          subtitle="Need something new? ENE Electrical handles all types of residential electrical installations — from simple outlet additions to complete room wiring — all completed to Texas electrical code."
+          subtitle="Need something new? ENE Electrical handles all types of residential electrical installations, from simple outlet additions to complete room wiring, all completed to Texas electrical code."
           align="center"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -560,9 +559,9 @@ export default function ElectricalRepairPage() {
               className="text-base leading-relaxed mb-8"
               style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
             >
-              Homeowners throughout Katy, TX 77494 and the Houston metro —
+              Homeowners throughout Katy, TX 77494 and the Houston metro,
               including Cinco Ranch, Energy Corridor, Fulshear, Memorial,
-              Spring Branch, Westchase, Brookshire, and Richmond — rely on ENE
+              Spring Branch, Westchase, Brookshire, and Richmond, rely on ENE
               Electrical for reliable residential electrical repair and
               installation. ENE Electrical's local technicians serve the entire
               Houston and Katy metro service area.
@@ -576,7 +575,7 @@ export default function ElectricalRepairPage() {
                 style={{ color: "#1A2530" }}
               >
                 <MapPin size={16} style={{ color: "#F5A623" }} />
-                Katy, TX 77494 — Serving Greater Houston &amp; Surrounding Areas
+                Katy, TX 77494, serving Greater Houston &amp; Surrounding Areas
               </span>
             </address>
             <Link
@@ -726,7 +725,7 @@ export default function ElectricalRepairPage() {
         </div>
       </Section>
 
-      <Footer address="Katy, TX — Serving Greater Houston & Surrounding Areas" />
+      <Footer address="Katy, TX, serving Greater Houston & Surrounding Areas" />
     </>
   );
 }

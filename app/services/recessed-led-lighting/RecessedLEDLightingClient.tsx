@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "ENE Electrical installed recessed lighting throughout our entire kitchen and living room. The difference is night and day — it looks like a completely different home. Clean, modern, and so much brighter.",
+      "ENE Electrical installed recessed lighting throughout our entire kitchen and living room. The difference is night and day, it looks like a completely different home. Clean, modern, and so much brighter.",
     authorName: "Maria G.",
     authorLocation: "Katy, TX",
     rating: 5,
@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     quote:
-      "Outstanding work on our kitchen recessed lighting. They planned the layout perfectly — no dark spots over the counters. The dimmers work flawlessly with the LED fixtures too.",
+      "Outstanding work on our kitchen recessed lighting. They planned the layout perfectly, with no dark spots over the counters. The dimmers work flawlessly with the LED fixtures too.",
     authorName: "Robert K.",
     authorLocation: "Memorial, Houston TX",
     rating: 5,
@@ -51,13 +51,13 @@ const testimonials = [
 ];
 
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
   { label: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear", href: "/service-areas/fulshear-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
   { label: "Brookshire, TX", href: "/service-areas/brookshire-tx" },

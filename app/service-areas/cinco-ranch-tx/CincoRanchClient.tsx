@@ -38,7 +38,7 @@ const services = [
   {
     title: "Electrical Repair & Installation",
     description:
-      "Fast, reliable repairs and new electrical installations for Cinco Ranch homes — outlets, switches, fixtures, and more.",
+      "Fast, reliable repairs and new electrical installations for Cinco Ranch homes: outlets, switches, fixtures, and more.",
     icon: Wrench,
     href: "/services/electrical-repair-installation",
   },
@@ -47,28 +47,28 @@ const services = [
     description:
       "Upgrade your home's electrical panel to safely handle modern power demands in Cinco Ranch's newer master-planned homes.",
     icon: Zap,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
-      "Level 2 home EV charger installation for Cinco Ranch residents — future-proof your garage for electric vehicles.",
+      "Level 2 home EV charger installation for Cinco Ranch residents to future-proof your garage for electric vehicles.",
     icon: BatteryCharging,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Whole-home and standby generator installation to keep your Cinco Ranch home powered during outages.",
     icon: AlertTriangle,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Enhance your home's safety and curb appeal with professionally installed security and landscape lighting.",
     icon: ShieldCheck,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed LED Lighting",
@@ -89,14 +89,14 @@ const services = [
     description:
       "Certified electrical inspections for home buyers, sellers, and homeowners in Cinco Ranch, TX.",
     icon: ClipboardCheck,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
   {
     title: "Emergency Electrician",
     description:
-      "24/7 emergency electrical service dispatched from nearby Katy, TX — fast response for Cinco Ranch emergencies.",
+      "24/7 emergency electrical service dispatched from nearby Katy, TX, for fast response to Cinco Ranch emergencies.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
 ];
 
@@ -125,10 +125,10 @@ const testimonials = [
 ];
 
 const nearbyAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Memorial Houston", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
 ];
@@ -226,7 +226,7 @@ export default function CincoRanchClient({ faqData }: Props) {
             className="text-base sm:text-lg text-blue-100 max-w-2xl leading-relaxed"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            ENE Electrical — based nearby in Katy, TX 77494 — brings 15+ years
+            ENE Electrical, based nearby in Katy, TX 77494, brings 15+ years
             of licensed, insured residential electrical expertise to Cinco Ranch
             homeowners. From EV chargers to panel upgrades, we've got you covered.
           </p>
@@ -342,7 +342,7 @@ export default function CincoRanchClient({ faqData }: Props) {
             >
               <p>
                 Cinco Ranch is one of the most sought-after master-planned
-                communities in the greater Katy area — and ENE Electrical is
+                communities in the greater Katy area, and ENE Electrical is
                 proud to be the local residential electrical contractor Cinco
                 Ranch homeowners call first.
               </p>
@@ -405,7 +405,7 @@ export default function CincoRanchClient({ faqData }: Props) {
                 className="text-white text-sm font-semibold"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Based in Katy, TX 77494 — Serving Cinco Ranch & Beyond
+                Based in Katy, TX 77494, Serving Cinco Ranch & Beyond
               </p>
             </div>
           </div>
@@ -454,7 +454,7 @@ export default function CincoRanchClient({ faqData }: Props) {
             {
               icon: ShieldCheck,
               title: "Licensed, Insured & Bonded",
-              body: "ENE Electrical holds all required Texas electrical licenses and carries full insurance and bonding — protecting you and your home on every job.",
+              body: "ENE Electrical holds all required Texas electrical licenses and carries full insurance and bonding, protecting you and your home on every job.",
             },
             {
               icon: Users,
@@ -479,7 +479,7 @@ export default function CincoRanchClient({ faqData }: Props) {
             {
               icon: Clock,
               title: "Fast Local Response",
-              body: "Based in nearby Katy, TX 77494, ENE Electrical can reach Cinco Ranch homes quickly — especially important for emergency electrical situations.",
+              body: "Based in nearby Katy, TX 77494, ENE Electrical can reach Cinco Ranch homes quickly, which is especially important for emergency electrical situations.",
             },
           ].map((item) => (
             <div
@@ -742,7 +742,7 @@ export default function CincoRanchClient({ faqData }: Props) {
           <div>
             <ContactForm
               heading="Request a Free Quote"
-              subheading="Serving Cinco Ranch, TX — we'll respond within 24 hours."
+              subheading="Serving Cinco Ranch, TX. We'll respond within 24 hours."
               ctaLabel="Send My Request"
             />
           </div>

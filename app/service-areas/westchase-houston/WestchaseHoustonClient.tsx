@@ -88,30 +88,30 @@ const services = [
   {
     title: "Electrical Panel Upgrade",
     description:
-      "Modernize your Westchase home's electrical panel to safely handle today's power demands — from heavy appliances to EV charging.",
+      "Modernize your Westchase home's electrical panel to safely handle today's power demands, from heavy appliances to EV charging.",
     icon: Power,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
       "Level 2 home EV charger installation for Westchase homeowners. Fast, licensed, and code-compliant.",
     icon: BatteryCharging,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Whole-home and standby generator installation to keep your Westchase home powered through Texas storms.",
     icon: Zap,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Professionally installed security and outdoor lighting solutions tailored to Westchase residential properties.",
     icon: Lightbulb,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed LED Lighting",
@@ -123,7 +123,7 @@ const services = [
   {
     title: "Electrical Repair & Installation",
     description:
-      "From outlets and switches to wiring and fixtures — comprehensive electrical repair and installation for Westchase homes.",
+      "From outlets and switches to wiring and fixtures, we provide comprehensive electrical repair and installation for Westchase homes.",
     icon: Wrench,
     href: "/services/electrical-repair-installation",
   },
@@ -132,14 +132,14 @@ const services = [
     description:
       "Electrical emergencies don't wait. ENE Electrical offers round-the-clock emergency response throughout Westchase and Houston.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Pre-purchase, safety, and code-compliance electrical inspections for Westchase residential properties.",
     icon: ClipboardList,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
@@ -170,12 +170,12 @@ const testimonials = [
 
 // ── Neighbor area links ────────────────────────────────────────────────────
 const neighborAreas = [
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial Houston", href: "/service-areas/memorial-houston" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
 ];
 
 // ── Trust badges ───────────────────────────────────────────────────────────
@@ -251,7 +251,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               ENE Electrical is your trusted, licensed residential electrician in
-              Westchase — offering panel upgrades, EV charger installation,
+              Westchase, offering panel upgrades, EV charger installation,
               generators, lighting, and 24/7 emergency service. Katy-based.
               Houston-wide.
             </p>
@@ -348,7 +348,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="What We Offer"
           title="Electrical Services in Westchase Houston"
-          subtitle="ENE Electrical provides a full menu of licensed residential electrical services to Westchase homeowners — from routine repairs to major upgrades."
+          subtitle="ENE Electrical provides a full menu of licensed residential electrical services to Westchase homeowners, from routine repairs to major upgrades."
           align="center"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -385,7 +385,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
               className="text-base leading-relaxed mb-5"
               style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
             >
-              Westchase is one of Houston's most dynamic communities — a vibrant
+              Westchase is one of Houston's most dynamic communities, a vibrant
               mix of established residential neighborhoods and a booming
               commercial corridor along Westheimer and Beltway 8. This unique
               blend means homes in Westchase often face higher-than-average
@@ -410,7 +410,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
                 "Fast response times from our Katy base to Westchase",
                 "Licensed, insured, and bonded for your protection",
                 "Background-checked technicians you can trust in your home",
-                "Transparent flat-rate pricing — no surprises",
+                "Transparent flat-rate pricing with no surprises",
                 "Familiar with Westchase-era homes and local code requirements",
               ].map((point) => (
                 <li
@@ -499,7 +499,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Customer Reviews"
           title="What Houston Homeowners Say"
-          subtitle="Real reviews from homeowners across the Houston and Katy metro — including Westchase residents who rely on ENE Electrical."
+          subtitle="Real reviews from homeowners across the Houston and Katy metro, including Westchase residents who rely on ENE Electrical."
           align="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -547,8 +547,8 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
                 residential development alongside commercial corridors, creating
                 demand for reliable residential electrical services. ENE
                 Electrical covers Westchase as part of its Houston and Katy metro
-                service area — operating from{" "}
-                <strong>Katy, TX 77494</strong> — offering licensed electrical
+                service area, operating from{" "}
+                <strong>Katy, TX 77494</strong> and offering licensed electrical
                 work including panel upgrades, EV charger installation, and
                 emergency response to homeowners in this district.
               </p>
@@ -567,7 +567,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
         />
         <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
           <iframe
-            title="Westchase Houston TX map — ENE Electrical service area"
+            title="Westchase Houston TX map: ENE Electrical service area"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55590.40!2d-95.5900!3d29.7370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c3a2d3a4e2d9%3A0xcb9afbc9ca28f7a!2sWestchase%2C%20Houston%2C%20TX!5e0!3m2!1sen!2sus!4v1714000000000!5m2!1sen!2sus"
             width="100%"
             height="420"
@@ -751,7 +751,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 Whether you need a panel upgrade, EV charger, generator
-                installation, or emergency electrical repair — ENE Electrical is
+                installation, or emergency electrical repair, ENE Electrical is
                 ready to serve your Westchase home. Contact us today to schedule
                 an appointment or get a free estimate.
               </p>
@@ -767,7 +767,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
                   },
                   {
                     icon: MapPin,
-                    text: "Based in Katy, TX 77494 — Serving Westchase & Houston Metro",
+                    text: "Based in Katy, TX 77494, Serving Westchase & Houston Metro",
                   },
                 ].map(({ icon: Icon, text }) => (
                   <li

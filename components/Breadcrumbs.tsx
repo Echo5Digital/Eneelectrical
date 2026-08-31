@@ -5,7 +5,7 @@ export interface Crumb {
   href: string;
 }
 
-const SITE_URL = "https://example.com";
+const SITE_URL = "https://eneelectrical.com";
 
 // Deterministic component (not AI-authored) so BreadcrumbList JSON-LD always
 // matches the visible trail exactly, per spec section 38.

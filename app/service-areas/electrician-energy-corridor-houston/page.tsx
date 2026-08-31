@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   description:
     "ENE Electrical serves the Energy Corridor area of Houston with licensed residential electrical services. Panel upgrades, EV chargers, inspections & more. Book now.",
   alternates: {
-    canonical: "/service-areas/energy-corridor-houston",
+    canonical: "/service-areas/electrician-energy-corridor-houston",
   },
 };
 
@@ -39,42 +39,42 @@ const services = [
     description:
       "Upgrade your home's electrical panel to handle modern power demands safely. Ideal for older Energy Corridor homes adding EV chargers, home offices, or major appliances.",
     icon: Power,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
       "Level 2 home EV charger installation by licensed technicians. Fast, code-compliant installation for Energy Corridor homeowners.",
     icon: BatteryCharging,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Professional outdoor and security lighting installation to protect your property and enhance curb appeal in upscale Energy Corridor communities.",
     icon: Lightbulb,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Whole-home and standby generator installation so your Energy Corridor home stays powered during Houston's severe weather events.",
     icon: Zap,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Emergency Electrician",
     description:
       "Fast emergency electrical repair services for Energy Corridor residents. Contact us directly for availability and response times.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Comprehensive residential electrical inspections for Energy Corridor home buyers, sellers, and owners wanting peace of mind.",
     icon: SearchCheck,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
   {
     title: "Recessed LED Lighting",
@@ -124,11 +124,11 @@ const testimonials = [
 ];
 
 const nearbyAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
 ];
 
 const faqItems = [
@@ -166,7 +166,7 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Residential Electrical Services — Energy Corridor Houston",
+  name: "Residential Electrical Services: Energy Corridor Houston",
   provider: {
     "@type": "LocalBusiness",
     name: "ENE Electrical",
@@ -201,7 +201,7 @@ const serviceSchema = {
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Service Areas", href: "/service-areas/houston-tx" },
-  { label: "Energy Corridor Houston", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor Houston", href: "/service-areas/electrician-energy-corridor-houston" },
 ];
 
 export default function EnergyCorridorHoustonPage() {
@@ -218,7 +218,10 @@ export default function EnergyCorridorHoustonPage() {
 
       <Header />
 
-      <Breadcrumbs items={breadcrumbItems} />
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
 
       {/* ── HERO ── */}
       <section
@@ -254,7 +257,7 @@ export default function EnergyCorridorHoustonPage() {
               className="text-lg sm:text-xl text-blue-100 mb-8 leading-relaxed max-w-2xl"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              ENE Electrical brings 15+ years of licensed residential electrical expertise to Energy Corridor homeowners. Panel upgrades, EV chargers, security lighting &amp; more — dispatched from our Katy, TX base.
+              ENE Electrical brings 15+ years of licensed residential electrical expertise to Energy Corridor homeowners. Panel upgrades, EV chargers, security lighting &amp; more, dispatched from our Katy, TX base.
             </p>
 
             {/* CTA Buttons */}
@@ -337,7 +340,7 @@ export default function EnergyCorridorHoustonPage() {
                 The Energy Corridor is one of west Houston's most vibrant and upscale residential communities, stretching along I-10 near the Barker Reservoir and Eldridge Parkway. ENE Electrical is proud to serve homeowners throughout this area, bringing the same professional-grade electrical services we've delivered across the greater Houston metro for over 15 years.
               </p>
               <p className="text-base leading-relaxed">
-                Dispatching from our Katy, TX 77494 base, our licensed technicians reach Energy Corridor homes quickly — making us one of the most accessible residential electricians for the community. We're familiar with the electrical demands of the area's upscale homes, including high-capacity panel requirements, smart home integrations, EV charging infrastructure, and whole-home generator systems.
+                Dispatching from our Katy, TX 77494 base, our licensed technicians reach Energy Corridor homes quickly, making us one of the most accessible residential electricians for the community. We're familiar with the electrical demands of the area's upscale homes, including high-capacity panel requirements, smart home integrations, EV charging infrastructure, and whole-home generator systems.
               </p>
               <p className="text-base leading-relaxed">
                 Whether you live in Eldridge Park, Nottingham, or Memorial Thicket, ENE Electrical is your local, trusted electrical partner. Our team understands the standards Energy Corridor homeowners expect and delivers work that meets or exceeds them every time.
@@ -375,7 +378,7 @@ export default function EnergyCorridorHoustonPage() {
               style={{ background: "linear-gradient(to top, rgba(11,31,58,0.92) 0%, transparent 100%)" }}
             >
               <p className="text-white font-bold text-sm" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                ENE Electrical — Energy Corridor's Trusted Residential Electrician
+                ENE Electrical: Energy Corridor's Trusted Residential Electrician
               </p>
               <p className="text-blue-200 text-xs mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
                 Dispatching from Katy, TX 77494
@@ -414,7 +417,7 @@ export default function EnergyCorridorHoustonPage() {
         <SectionHeading
           eyebrow="Why Choose Us"
           title="Why Energy Corridor Homeowners Trust ENE Electrical"
-          subtitle="We hold ourselves to the highest standards of professionalism, safety, and craftsmanship — because Energy Corridor homes deserve nothing less."
+          subtitle="We hold ourselves to the highest standards of professionalism, safety, and craftsmanship, because Energy Corridor homes deserve nothing less."
           align="center"
           inverted
         />
@@ -428,7 +431,7 @@ export default function EnergyCorridorHoustonPage() {
             {
               icon: ShieldCheck,
               title: "Insured & Bonded",
-              desc: "Fully insured and bonded for every job — protecting your home and giving you complete peace of mind.",
+              desc: "Fully insured and bonded for every job, protecting your home and giving you complete peace of mind.",
             },
             {
               icon: Star,
@@ -514,7 +517,7 @@ export default function EnergyCorridorHoustonPage() {
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-500" style={{ fontFamily: "Inter, sans-serif" }}>
             <MapPin size={14} className="inline mr-1 text-amber-500" />
-            Serving the Energy Corridor from our base in <strong style={{ color: "#0B1F3A" }}>Katy, TX 77494</strong> — part of our Houston and Katy metro service area.
+            Serving the Energy Corridor from our base in <strong style={{ color: "#0B1F3A" }}>Katy, TX 77494</strong>, part of our Houston and Katy metro service area.
           </p>
         </div>
       </Section>
@@ -595,7 +598,7 @@ export default function EnergyCorridorHoustonPage() {
                 "Licensed, insured & bonded residential electricians",
                 "Background-checked technicians on every job",
                 "15+ years serving Houston and Katy metro",
-                "Dispatching from Katy, TX 77494 — close to Energy Corridor",
+                "Dispatching from Katy, TX 77494, close to Energy Corridor",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <BadgeCheck size={18} className="mt-0.5 flex-shrink-0" style={{ color: "#F5A623" }} />
@@ -610,7 +613,7 @@ export default function EnergyCorridorHoustonPage() {
                 Service Area
               </p>
               <p className="text-blue-200 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-                Energy Corridor, Houston, TX and surrounding west Houston communities — served from Katy, TX 77494.
+                Energy Corridor, Houston, TX and surrounding west Houston communities, served from Katy, TX 77494.
               </p>
             </div>
           </div>
@@ -624,7 +627,7 @@ export default function EnergyCorridorHoustonPage() {
         </div>
       </Section>
 
-      <Footer address="Katy, TX — Serving Greater Houston & Surrounding Areas" />
+      <Footer address="Katy, TX, Serving Greater Houston & Surrounding Areas" />
     </>
   );
 }

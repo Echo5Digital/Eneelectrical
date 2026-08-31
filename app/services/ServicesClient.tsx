@@ -34,33 +34,33 @@ const services = [
     description:
       "Upgrade your electrical panel to safely support modern appliances, EVs, and increased power demands.",
     icon: Zap,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
-      "Level 2 home EV charger installation by certified electricians — faster charging, safely installed.",
+      "Level 2 home EV charger installation by certified electricians for faster charging, safely installed.",
     icon: Car,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Whole-home standby and portable generator installation to keep your family safe during power outages.",
     icon: Power,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Professionally installed exterior security lighting to deter intruders and illuminate your property.",
     icon: ShieldCheck,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed LED Lighting",
     description:
-      "Transform your living spaces with energy-efficient recessed LED lighting — expert design and installation.",
+      "Transform your living spaces with energy-efficient recessed LED lighting, with expert design and installation.",
     icon: Lightbulb,
     href: "/services/recessed-led-lighting",
   },
@@ -69,7 +69,7 @@ const services = [
     description:
       "Full-service electrical contractor for new residential construction projects from rough-in to finish.",
     icon: HardHat,
-    href: "/services/new-construction-electrician",
+    href: "/services/new-construction-electrician-houston",
   },
   {
     title: "New Construction Wiring",
@@ -83,14 +83,14 @@ const services = [
     description:
       "24/7 emergency electrical service for outages, sparks, tripped breakers, and urgent electrical hazards.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Comprehensive residential electrical inspections for home buyers, sellers, and safety peace of mind.",
     icon: ClipboardCheck,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
@@ -102,12 +102,12 @@ const credentials = [
 ];
 
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear", href: "/service-areas/fulshear-tx" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
@@ -124,10 +124,8 @@ export default function ServicesClient() {
   return (
     <main>
       {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
       </div>
 
       {/* ── Hero ── */}
@@ -158,7 +156,7 @@ export default function ServicesClient() {
               className="inline-block text-xs font-semibold uppercase tracking-widest mb-4"
               style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
             >
-              Houston &amp; Katy, TX — Residential Electrical
+              Houston &amp; Katy, TX Residential Electrical
             </span>
             <h1
               id="services-hero-heading"
@@ -174,7 +172,7 @@ export default function ServicesClient() {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               From panel upgrades and EV chargers to emergency repairs and new
-              construction wiring — ENE Electrical delivers expert electrical
+              construction wiring, ENE Electrical delivers expert electrical
               solutions for homeowners across Houston and Katy, TX. Licensed,
               insured, and trusted for 15+ years.
             </p>
@@ -524,7 +522,7 @@ export default function ServicesClient() {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Whether you need a panel upgrade, EV charger, generator
-              installation, or emergency electrical service — our team is ready
+              installation, or emergency electrical service, our team is ready
               to help. Fill out the form and a licensed ENE Electrical technician
               will contact you promptly.
             </p>

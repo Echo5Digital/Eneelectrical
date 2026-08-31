@@ -98,13 +98,17 @@ export default function CincoRanchPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Service Areas", href: "/service-areas/houston-tx" },
-          { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Service Areas", href: "/service-areas/houston-tx" },
+            { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
+          ]}
+        />
+      </div>
       <main>
         <CincoRanchClient faqData={faqData} />
       </main>

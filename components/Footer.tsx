@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Zap, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 interface FooterLink {
@@ -27,19 +28,19 @@ const defaultLinks: FooterLink[] = [
   { label: "About Us", route: "/about-us" },
   { label: "Services", route: "/services" },
   { label: "Electrical Repair & Installation", route: "/services/electrical-repair-installation" },
-  { label: "Electrical Panel Upgrade", route: "/services/electrical-panel-upgrade" },
-  { label: "EV Charger Installation", route: "/services/ev-charger-installation" },
-  { label: "Generator Installation", route: "/services/generator-installation" },
-  { label: "Security Lighting", route: "/services/security-lighting" },
+  { label: "Electrical Panel Upgrade", route: "/services/electrical-panel-upgrade-houston" },
+  { label: "EV Charger Installation", route: "/services/ev-charger-installation-houston" },
+  { label: "Generator Installation", route: "/services/generator-installation-houston" },
+  { label: "Security Lighting", route: "/services/security-lighting-houston" },
   { label: "Recessed LED Lighting", route: "/services/recessed-led-lighting" },
-  { label: "New Construction Electrician", route: "/services/new-construction-electrician" },
+  { label: "New Construction Electrician", route: "/services/new-construction-electrician-houston" },
   { label: "New Construction Wiring", route: "/services/new-construction-wiring" },
-  { label: "Emergency Electrician", route: "/services/emergency-electrician" },
-  { label: "Electrical Inspection", route: "/services/electrical-inspection" },
-  { label: "Katy, TX", route: "/service-areas/katy-tx" },
+  { label: "Emergency Electrician", route: "/services/emergency-electrician-houston" },
+  { label: "Electrical Inspection", route: "/services/electrical-inspection-houston" },
+  { label: "Katy, TX", route: "/service-areas/electrician-katy-tx" },
   { label: "Houston, TX", route: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", route: "/service-areas/energy-corridor-houston" },
-  { label: "Southwest Houston", route: "/service-areas/southwest-houston" },
+  { label: "Energy Corridor", route: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Southwest Houston", route: "/service-areas/electrician-houston-southwest" },
   { label: "Cinco Ranch, TX", route: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear, TX", route: "/service-areas/fulshear-tx" },
   { label: "Memorial Houston", route: "/service-areas/memorial-houston" },
@@ -91,12 +92,12 @@ export default function Footer({
   tagline = "Licensed & Insured Residential Electricians Serving Greater Houston",
   phone = "(832) 783-0303",
   email = "info@eneelectrical.com",
-  address = "Katy, TX — Serving Greater Houston & Surrounding Areas",
+  address = "Katy, TX, Serving Greater Houston & Surrounding Areas",
   licenseNumber = "TECL #XXXXXX",
   links = defaultLinks,
   socialLinks = {
     facebook: "#",
-    instagram: "#",
+    instagram: "https://www.instagram.com/ene_electrical",
     twitter: "#",
     youtube: "#",
   },
@@ -126,7 +127,7 @@ export default function Footer({
             </p>
           </div>
           <a
-            href={`tel:${phone.replace(/\D/g, "")}`}
+            href={`tel:+1${phone.replace(/\D/g, "")}`}
             style={{
               backgroundColor: "#0B1F3A",
               borderRadius: "0.75rem",
@@ -147,19 +148,14 @@ export default function Footer({
           {/* Brand Column */}
           <div className="lg:col-span-1">
             {/* Logo / Business Name */}
-            <div className="flex items-center gap-2 mb-4">
-              <div
-                style={{ backgroundColor: "#F5A623", borderRadius: "0.5rem" }}
-                className="p-2"
-              >
-                <Zap size={22} color="#0B1F3A" />
-              </div>
-              <span
-                style={{ fontFamily: "Montserrat, sans-serif", color: "#F5A623" }}
-                className="text-xl font-extrabold tracking-tight"
-              >
-                {businessName}
-              </span>
+            <div className="flex items-center mb-4">
+              <Image
+                src="/logo_ene_white.png"
+                alt={`${businessName} logo`}
+                width={188}
+                height={125}
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
@@ -170,7 +166,7 @@ export default function Footer({
             <ul className="space-y-3 mb-6">
               <li>
                 <a
-                  href={`tel:${phone.replace(/\D/g, "")}`}
+                  href={`tel:+1${phone.replace(/\D/g, "")}`}
                   className="flex items-start gap-3 text-slate-300 hover:text-[#F5A623] transition-colors text-sm"
                 >
                   <Phone size={16} className="mt-0.5 flex-shrink-0 text-[#F5A623]" />

@@ -89,12 +89,15 @@ export default function TermsPage() {
     <>
       <Header />
 
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Terms of Service", href: "/terms" },
-        ]}
-      />
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Terms of Service", href: "/terms" },
+          ]}
+        />
+      </div>
 
       {/* Page Header */}
       <Section background="primary" spacing="lg" as="div">

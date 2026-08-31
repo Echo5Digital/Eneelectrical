@@ -35,7 +35,7 @@ interface Props {
 }
 
 const PHONE_DISPLAY = "(832) 783-0303";
-const PHONE_HREF = "8327830303";
+const PHONE_HREF = "+18327830303";
 
 const trustBadges = [
   { icon: BadgeCheck, label: "Licensed in Texas" },
@@ -49,7 +49,7 @@ const emergencySignals = [
   {
     icon: Flame,
     title: "Burning Smell",
-    desc: "Any burning odor from outlets, panels, or walls is an immediate emergency — it may indicate wiring overheating or a smoldering fire inside walls.",
+    desc: "Any burning odor from outlets, panels, or walls is an immediate emergency, as it may indicate wiring overheating or a smoldering fire inside walls.",
   },
   {
     icon: Zap,
@@ -64,7 +64,7 @@ const emergencySignals = [
   {
     icon: Power,
     title: "Sudden Power Loss",
-    desc: "Complete or partial loss of power to critical areas — HVAC, refrigerators, medical equipment — may require emergency diagnosis and repair.",
+    desc: "Complete or partial loss of power to critical areas (HVAC, refrigerators, medical equipment) may require emergency diagnosis and repair.",
   },
   {
     icon: PlugZap,
@@ -107,7 +107,7 @@ const emergencyServices = [
   {
     icon: Power,
     title: "Loss of Power",
-    desc: "Systematic diagnosis of total or partial power loss — from the meter to individual circuits — with fast restoration.",
+    desc: "Systematic diagnosis of total or partial power loss, from the meter to individual circuits, with fast restoration.",
   },
 ];
 
@@ -130,7 +130,7 @@ const safetyTips = [
   },
   {
     icon: Eye,
-    tip: "Do not attempt to open your electrical panel or touch any wiring yourself — even if power appears to be off.",
+    tip: "Do not attempt to open your electrical panel or touch any wiring yourself, even if power appears to be off.",
   },
 ];
 
@@ -163,7 +163,7 @@ const whyChoose = [
   {
     icon: ThumbsUp,
     title: "Transparent, Upfront Service",
-    desc: "We explain the problem, the fix, and the cost before we start — no surprises.",
+    desc: "We explain the problem, the fix, and the cost before we start, with no surprises.",
   },
 ];
 
@@ -294,8 +294,8 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Electrical emergency? ENE Electrical dispatches licensed, insured,
-            and background-checked electricians across the Houston and Katy metro
-            — fast. Don't wait. Call now.
+            and background-checked electricians across the Houston and Katy metro,
+            fast. Don't wait. Call now.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
@@ -498,7 +498,7 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
             style={{ backgroundColor: "rgba(255,255,255,0.18)", color: "#fff", fontFamily: "Montserrat, sans-serif" }}
           >
             <AlertTriangle size={13} />
-            Don't Wait — Act Now
+            Don't Wait, Act Now
           </div>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
@@ -582,7 +582,7 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
               className="text-sm leading-relaxed text-gray-600 max-w-xl"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Houston and Katy, TX homeowners face electrical emergencies year-round —
+              Houston and Katy, TX homeowners face electrical emergencies year-round,
               from storm-related outages and panel failures to flooding near electrical
               panels during hurricane season. ENE Electrical provides emergency electrician
               services across the full Houston and Katy metro area.
@@ -590,7 +590,7 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
             <address className="not-italic mt-3 text-sm text-gray-500" style={{ fontFamily: "Inter, sans-serif" }}>
               <span className="flex items-center gap-1.5">
                 <MapPin size={14} style={{ color: "#F5A623" }} />
-                Katy, TX 77494 — Serving Greater Houston &amp; Surrounding Areas
+                Katy, TX 77494, Serving Greater Houston &amp; Surrounding Areas
               </span>
             </address>
           </div>

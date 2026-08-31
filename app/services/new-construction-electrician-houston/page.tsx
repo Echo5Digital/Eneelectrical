@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "ENE Electrical is a licensed new construction electrician serving Katy & Houston, TX. Expert rough-in, panel install & inspection coordination. Get a project quote today.",
   alternates: {
     canonical:
-      "https://www.eneelectrical.com/services/new-construction-electrician",
+      "https://www.eneelectrical.com/services/new-construction-electrician-houston",
   },
 };
 
@@ -86,7 +86,7 @@ const serviceSchema = {
     "Richmond, TX",
   ],
   serviceType: "New Construction Electrical",
-  url: "https://www.eneelectrical.com/services/new-construction-electrician",
+  url: "https://www.eneelectrical.com/services/new-construction-electrician-houston",
 };
 
 export default function NewConstructionElectricianPage() {
@@ -101,13 +101,17 @@ export default function NewConstructionElectricianPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "New Construction Electrician", href: "/services/new-construction-electrician" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "New Construction Electrician", href: "/services/new-construction-electrician-houston" },
+          ]}
+        />
+      </div>
       <NewConstructionClient faqData={faqData} />
       <Footer />
     </>

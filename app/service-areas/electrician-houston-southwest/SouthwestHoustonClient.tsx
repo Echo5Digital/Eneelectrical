@@ -49,30 +49,30 @@ const services = [
   {
     title: "Panel Upgrades",
     description:
-      "Upgrade your electrical panel to safely handle modern power demands — essential for many Southwest Houston homes.",
+      "Upgrade your electrical panel to safely handle modern power demands, essential for many Southwest Houston homes.",
     icon: Zap,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
       "Level 2 home EV charger installation by licensed electricians. Charge your electric vehicle faster and safer.",
     icon: BatteryCharging,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Protect your family during outages with a professionally installed standby or portable generator system.",
     icon: Plug,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Enhance your home's safety with motion-activated and strategic security lighting solutions.",
     icon: Lightbulb,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed Lighting",
@@ -91,16 +91,16 @@ const services = [
   {
     title: "Emergency Electrician",
     description:
-      "24/7 emergency electrical service — when you need help fast, ENE Electrical responds quickly.",
+      "24/7 emergency electrical service: when you need help fast, ENE Electrical responds quickly.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Comprehensive electrical inspections to keep your Southwest Houston home safe and code-compliant.",
     icon: ClipboardCheck,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
@@ -121,7 +121,7 @@ const testimonials = [
   },
   {
     quote:
-      "From the EV charger installation to recessed lighting, ENE Electrical handled everything perfectly. Their technicians are background-checked and it really shows — complete peace of mind.",
+      "From the EV charger installation to recessed lighting, ENE Electrical handled everything perfectly. Their technicians are background-checked and it really shows, complete peace of mind.",
     authorName: "Sandra R.",
     authorLocation: "Southwest Houston, TX",
     rating: 5,
@@ -133,7 +133,7 @@ const trustReasons = [
     icon: ShieldCheck,
     title: "Licensed, Insured & Bonded",
     description:
-      "ENE Electrical holds full licensing, insurance, and bonding in Texas — giving Southwest Houston homeowners complete peace of mind.",
+      "ENE Electrical holds full licensing, insurance, and bonding in Texas, giving Southwest Houston homeowners complete peace of mind.",
   },
   {
     icon: Users,
@@ -166,14 +166,14 @@ const nearbyAreas = [
   { label: "Westchase", href: "/service-areas/westchase-houston" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
   { label: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
 ];
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Service Areas", href: "/service-areas/houston-tx" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
 ];
 
 export default function SouthwestHoustonClient({ faqData }: Props) {
@@ -186,7 +186,7 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
   return (
     <main style={{ backgroundColor: "#F7F8FA", fontFamily: "Inter, sans-serif" }}>
       {/* Breadcrumbs */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
         <Breadcrumbs items={breadcrumbItems} />
       </div>
 
@@ -239,7 +239,7 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
           >
             ENE Electrical brings 15+ years of licensed residential electrical expertise
             to Southwest Houston homeowners. Panel upgrades, EV chargers, emergency repairs,
-            and more — done right the first time.
+            and more, done right the first time.
           </p>
 
           {/* CTA buttons */}
@@ -258,7 +258,7 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
               Book an Appointment
             </Link>
             <a
-              href="tel:8327830303"
+              href="tel:+18327830303"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest border-2 hover:bg-white/10 active:scale-95 transition-all duration-200"
               style={{
                 borderColor: "rgba(255,255,255,0.4)",
@@ -360,8 +360,8 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
               </p>
               <p className="text-base leading-relaxed">
                 With <strong>15+ years of experience</strong> serving the Houston and Katy
-                metro areas, ENE Electrical brings a full credential suite — licensed, insured,
-                bonded, and staffed by background-checked technicians — to every job site in
+                metro areas, ENE Electrical brings a full credential suite (licensed, insured,
+                bonded, and staffed by background-checked technicians) to every job site in
                 Southwest Houston.
               </p>
               <p className="text-base leading-relaxed">
@@ -403,7 +403,7 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="What We Offer"
           title="Services in Southwest Houston"
-          subtitle="ENE Electrical provides a full range of residential electrical services to Southwest Houston homeowners — from routine repairs to complex installations."
+          subtitle="ENE Electrical provides a full range of residential electrical services to Southwest Houston homeowners, from routine repairs to complex installations."
           align="center"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -536,7 +536,7 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Customer Reviews"
           title="What Southwest Houston Homeowners Are Saying"
-          subtitle="Don't just take our word for it — hear from real customers in Southwest Houston and the surrounding area."
+          subtitle="Don't just take our word for it. Hear from real customers in Southwest Houston and the surrounding area."
           align="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -752,7 +752,7 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
 
               {/* Direct call CTA */}
               <a
-                href="tel:8327830303"
+                href="tel:+18327830303"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold uppercase tracking-widest transition-all duration-200 hover:opacity-90 active:scale-95"
                 style={{
                   backgroundColor: "#F5A623",

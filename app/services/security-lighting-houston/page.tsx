@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Protect your home with professional security lighting installation from ENE Electrical. Serving Katy & Houston, TX. Licensed, bonded & insured. Get a quote today.",
   alternates: {
-    canonical: "https://www.eneelectrical.com/services/security-lighting",
+    canonical: "/services/security-lighting-houston",
   },
 };
 
@@ -123,13 +123,13 @@ const lightingOptions = [
     icon: Sun,
     title: "Dusk-to-Dawn Fixtures",
     description:
-      "Photocell-controlled fixtures that automatically switch on at sunset and off at sunrise — providing effortless, all-night coverage without any manual operation.",
+      "Photocell-controlled fixtures that automatically switch on at sunset and off at sunrise, providing effortless, all-night coverage without any manual operation.",
   },
   {
     icon: Cpu,
     title: "Smart-Enabled Lighting",
     description:
-      "Wi-Fi or app-controlled security lights let you schedule, dim, or trigger lights remotely — compatible with popular smart home ecosystems.",
+      "Wi-Fi or app-controlled security lights let you schedule, dim, or trigger lights remotely, and are compatible with popular smart home ecosystems.",
   },
 ];
 
@@ -172,11 +172,11 @@ const processSteps = [
 ];
 
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear", href: "/service-areas/fulshear-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
@@ -187,7 +187,7 @@ const serviceAreas = [
 const testimonials = [
   {
     quote:
-      "ENE Electrical installed motion-sensor floodlights all around our home in Katy. The difference is night and day — we feel so much safer now. Professional, fast, and clean work!",
+      "ENE Electrical installed motion-sensor floodlights all around our home in Katy. The difference is night and day, we feel so much safer now. Professional, fast, and clean work!",
     authorName: "Melissa R.",
     authorLocation: "Katy, TX",
     rating: 5,
@@ -229,13 +229,16 @@ export default function SecurityLightingPage() {
 
       <Header />
 
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "Security Lighting", href: "/services/security-lighting" },
-        ]}
-      />
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Security Lighting", href: "/services/security-lighting-houston" },
+          ]}
+        />
+      </div>
 
       {/* ── HERO ── */}
       <section
@@ -274,7 +277,7 @@ export default function SecurityLightingPage() {
               ENE Electrical installs expert security lighting solutions for
               Houston and Katy, TX homeowners. Our licensed, insured, and
               bonded electricians help you deter intruders, improve safety, and
-              protect your property — night after night.
+              protect your property, night after night.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -324,8 +327,8 @@ export default function SecurityLightingPage() {
               className="text-base sm:text-lg text-[#1A2530] leading-relaxed"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              ENE Electrical installs residential security lighting — including
-              motion-sensor lights, floodlights, and dusk-to-dawn fixtures —
+              ENE Electrical installs residential security lighting, including
+              motion-sensor lights, floodlights, and dusk-to-dawn fixtures,
               for homeowners in Houston and Katy, TX. Our licensed and insured
               electricians assess your property, recommend the right fixtures,
               and handle all wiring and mounting. ENE Electrical has{" "}
@@ -435,7 +438,7 @@ export default function SecurityLightingPage() {
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Beyond security, proper exterior lighting prevents trips and
-              falls on steps, walkways, and driveways — protecting your family
+              falls on steps, walkways, and driveways, protecting your family
               and guests after dark. It also ensures guests and delivery
               drivers can safely navigate your property.
             </p>
@@ -561,8 +564,8 @@ export default function SecurityLightingPage() {
             >
               Houston and Katy, TX homeowners increasingly rely on exterior
               security lighting to protect their properties. ENE Electrical
-              serves the full Houston and Katy metro — including Cinco Ranch,
-              Fulshear, Memorial, Spring Branch, and Westchase — delivering
+              serves the full Houston and Katy metro, including Cinco Ranch,
+              Fulshear, Memorial, Spring Branch, and Westchase, delivering
               professional security lighting installations tailored to each
               home's layout and neighborhood environment.
             </p>
@@ -572,7 +575,7 @@ export default function SecurityLightingPage() {
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 <MapPin size={16} style={{ color: "#F5A623" }} />
-                <span>ENE Electrical — Katy, TX 77494</span>
+                <span>ENE Electrical, Katy, TX 77494</span>
               </p>
             </address>
 
@@ -720,7 +723,7 @@ export default function SecurityLightingPage() {
         </div>
       </Section>
 
-      <Footer address="Katy, TX — Serving Greater Houston & Surrounding Areas" />
+      <Footer address="Katy, TX, Serving Greater Houston & Surrounding Areas" />
     </>
   );
 }

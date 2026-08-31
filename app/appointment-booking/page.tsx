@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Schedule a licensed residential electrician in Katy or Houston TX with ENE Electrical. Book online for panel upgrades, EV chargers, repairs, lighting, and more.",
   alternates: {
-    canonical: "https://eneelectrical.com/appointment-booking",
+    canonical: "/appointment-booking",
   },
 };
 
@@ -47,12 +47,16 @@ export default function AppointmentBookingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Appointment Booking", href: "/appointment-booking" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Appointment Booking", href: "/appointment-booking" },
+          ]}
+        />
+      </div>
       <AppointmentBookingClient faqData={faqData} />
       <Footer />
     </>

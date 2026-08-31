@@ -7,9 +7,9 @@ import ContactUsClient from "./ContactUsClient";
 export const metadata: Metadata = {
   title: "Contact ENE Electrical | Katy & Houston TX Electrician",
   description:
-    "Get in touch with ENE Electrical for residential electrical services in Katy and Houston, TX. Request a free estimate or schedule service — licensed, insured, and bonded.",
+    "Get in touch with ENE Electrical for residential electrical services in Katy and Houston, TX. Request a free estimate or schedule service from a licensed, insured, and bonded team.",
   alternates: {
-    canonical: "https://eneelectrical.com/contact-us",
+    canonical: "/contact-us",
   },
 };
 
@@ -84,12 +84,16 @@ export default function ContactUsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Contact Us", href: "/contact-us" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Contact Us", href: "/contact-us" },
+          ]}
+        />
+      </div>
       <ContactUsClient faqData={faqData} />
       <Footer />
     </>

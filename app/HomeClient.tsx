@@ -104,28 +104,28 @@ const services = [
     description:
       "Upgrade your outdated panel to handle modern electrical demands safely and efficiently.",
     icon: PanelTop,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
       "Certified Level 2 EV charger installation for all major electric vehicle brands.",
     icon: Car,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Whole-home and standby generator installation to keep your family safe during outages.",
     icon: Cpu,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Professionally installed outdoor security and motion-activated lighting solutions.",
     icon: SunMedium,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed LED Lighting",
@@ -137,33 +137,33 @@ const services = [
   {
     title: "New Construction Electrician",
     description:
-      "Complete electrical services for new home builds — rough-in to final inspection.",
+      "Complete electrical services for new home builds, from rough-in to final inspection.",
     icon: Building2,
-    href: "/services/new-construction-electrician",
+    href: "/services/new-construction-electrician-houston",
   },
   {
     title: "Emergency Electrician",
     description:
       "24/7 emergency electrical service for urgent residential electrical problems.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Thorough home electrical inspections to ensure safety, code compliance, and peace of mind.",
     icon: ClipboardCheck,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
 // ── Service Areas ─────────────────────────────────────────────────────────────
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
@@ -175,7 +175,7 @@ const serviceAreas = [
 const testimonials = [
   {
     quote:
-      "ENE Electrical upgraded our entire panel in one day — professional, clean, and code-compliant. Could not be happier with the service!",
+      "ENE Electrical upgraded our entire panel in one day. Professional, clean, and code-compliant. Could not be happier with the service!",
     authorName: "Maria G.",
     authorLocation: "Katy, TX",
     rating: 5,
@@ -228,7 +228,7 @@ const whyChoose = [
     icon: Users,
     title: "Background-Checked Technicians",
     description:
-      "Every technician on our team passes thorough background checks — your home and family's safety is our priority.",
+      "Every technician on our team passes thorough background checks, because your home and family's safety is our priority.",
   },
   {
     icon: MapPin,
@@ -394,20 +394,20 @@ export default function HomeClient({ faqData }: HomeClientProps) {
         {/* Background image overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            alt="Licensed residential electrician working on electrical panel"
-            className="w-full h-full object-cover object-center opacity-20"
+            src="/ENE-Banner-image-copy.jpg"
+            alt="ENE Electrical service van parked outside a Houston-area home at dusk"
+            className="w-full h-full object-cover object-center"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(120deg, rgba(11,31,58,0.97) 0%, rgba(11,31,58,0.75) 60%, rgba(11,31,58,0.5) 100%)",
+                "linear-gradient(90deg, rgba(11,31,58,0.92) 0%, rgba(11,31,58,0.65) 45%, rgba(11,31,58,0.25) 100%)",
             }}
           />
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-24 py-20 md:py-28">
           <div className="max-w-3xl">
             {/* Eyebrow */}
             <span
@@ -440,7 +440,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
             >
               ENE Electrical is a licensed, insured, and bonded residential
               electrician serving Katy, TX and greater Houston. Over 15 years of
-              experience — panels, EV chargers, generators, and emergency service.
+              experience, covering panels, EV chargers, generators, and emergency service.
             </p>
 
             {/* CTA Buttons */}
@@ -459,7 +459,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
                 Book Free Estimate
               </Link>
               <a
-                href="tel:8327830303"
+                href="tel:+18327830303"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-200 active:scale-95"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
@@ -684,7 +684,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
             aria-hidden="true"
           />
           Based in{" "}
-          <strong style={{ color: "#1A2530" }}>Katy, TX 77494</strong> — Serving
+          <strong style={{ color: "#1A2530" }}>Katy, TX 77494</strong>, serving
           residential homeowners throughout the Houston metro.
         </p>
 
@@ -797,14 +797,14 @@ export default function HomeClient({ faqData }: HomeClientProps) {
                   className="text-sm text-red-100 mt-1"
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
-                  Don't wait — electrical emergencies are dangerous. Call a
+                  Don't wait. Electrical emergencies are dangerous. Call a
                   licensed electrician immediately.
                 </p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
               <a
-                href="tel:8327830303"
+                href="tel:+18327830303"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold uppercase tracking-widest text-sm shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
                 style={{
                   backgroundColor: "#FFFFFF",
@@ -816,7 +816,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
                 Call Now: (832) 783-0303
               </a>
               <Link
-                href="/services/emergency-electrician"
+                href="/services/emergency-electrician-houston"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold uppercase tracking-widest text-sm border-2 border-white/50 text-white hover:bg-white/10 transition-all duration-200"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
@@ -857,7 +857,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
                 "Free, no-obligation estimate",
                 "Licensed, insured & bonded electricians",
                 "Serving Katy, Houston & surrounding areas",
-                "Fast response — typically within 24 hours",
+                "Fast response, typically within 24 hours",
               ].map((point) => (
                 <li
                   key={point}
@@ -873,15 +873,6 @@ export default function HomeClient({ faqData }: HomeClientProps) {
                 </li>
               ))}
             </ul>
-
-            {/* Map image below bullet points */}
-            <div className="mt-8 rounded-xl overflow-hidden shadow-lg border border-gray-200">
-              <img
-                src="https://images.pexels.com/photos/17286412/pexels-photo-17286412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Katy, TX service area — ENE Electrical serves homeowners throughout the greater Houston metro"
-                className="w-full h-40 object-cover"
-              />
-            </div>
           </div>
 
           {/* Right column - contact form */}
@@ -904,13 +895,13 @@ export default function HomeClient({ faqData }: HomeClientProps) {
       >
         <SectionHeading
           eyebrow="Our Location"
-          title="Based in Katy, TX — Serving Greater Houston"
+          title="Based in Katy, TX, Serving Greater Houston"
           subtitle="ENE Electrical is headquartered in Katy, TX 77494 and serves residential homeowners across the Houston and Katy metro."
           align="center"
         />
         <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
           <iframe
-            title="ENE Electrical service area — Katy, TX 77494"
+            title="ENE Electrical service area, Katy, TX 77494"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110876.15559396704!2d-95.86481!3d29.785801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640da9f89b7bcf5%3A0xa9f1a6a3c9f0d5a2!2sKaty%2C%20TX%2077494!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
             width="100%"
             height="400"
@@ -931,7 +922,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
             style={{ color: "#F5A623" }}
             aria-hidden="true"
           />
-          ENE Electrical — Katy, TX 77494 | Serving Katy, Energy Corridor,
+          ENE Electrical, Katy, TX 77494 | Serving Katy, Energy Corridor,
           Cinco Ranch, Fulshear, Southwest Houston, Memorial, Spring Branch,
           Westchase, Brookshire, Richmond, and all of greater Houston, TX.
         </p>
@@ -975,8 +966,8 @@ export default function HomeClient({ faqData }: HomeClientProps) {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Licensed, insured, and bonded residential electrical service for
-            Katy and Houston homeowners. Schedule online or give us a call — we
-            make it easy.
+            Katy and Houston homeowners. Schedule online or give us a call.
+            We make it easy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -993,7 +984,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
               Book Appointment
             </Link>
             <a
-              href="tel:8327830303"
+              href="tel:+18327830303"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-200 active:scale-95"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >

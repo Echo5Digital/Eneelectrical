@@ -86,12 +86,12 @@ const testimonials = [
 
 // ── Service areas ──────────────────────────────────────────────────────────
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
   { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
@@ -165,7 +165,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
                 fontFamily: "Inter, sans-serif",
               }}
             >
-              Generator Installation — Houston &amp; Katy, TX
+              Generator Installation in Houston &amp; Katy, TX
             </span>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6"
@@ -180,7 +180,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
             >
               ENE Electrical installs whole-home standby generators that keep
               your family safe and comfortable through Texas storms, hurricanes,
-              and grid outages — fully permitted, fully tested, fully backed by
+              and grid outages, fully permitted, fully tested, and fully backed by
               15+ years of licensed expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -292,7 +292,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Texas Power Outages"
           title="Why Houston Homeowners Need a Standby Generator"
-          subtitle="Texas's electrical grid and severe weather create real risks for families. A whole-home generator isn't a luxury — it's essential protection."
+          subtitle="Texas's electrical grid and severe weather create real risks for families. A whole-home generator isn't a luxury; it's essential protection."
           align="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -310,7 +310,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
             {
               icon: AlertTriangle,
               title: "ERCOT Grid Vulnerabilities",
-              body: "Texas operates on an isolated power grid that faces growing strain. Outages can strike without warning — and last longer than rolling blackout estimates suggest.",
+              body: "Texas operates on an isolated power grid that faces growing strain. Outages can strike without warning and last longer than rolling blackout estimates suggest.",
             },
             {
               icon: ShieldCheck,
@@ -320,12 +320,12 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
             {
               icon: PlugZap,
               title: "Medical Equipment Dependence",
-              body: "Many families rely on powered medical devices — CPAP machines, oxygen concentrators, insulin storage, and more. Backup power can be a genuine lifesaver.",
+              body: "Many families rely on powered medical devices, such as CPAP machines, oxygen concentrators, insulin storage, and more. Backup power can be a genuine lifesaver.",
             },
             {
               icon: Zap,
               title: "Seamless, Automatic Backup",
-              body: "Unlike portable generators, standby units monitor the grid and switch on automatically within seconds of an outage — no cords, no manual startup required.",
+              body: "Unlike portable generators, standby units monitor the grid and switch on automatically within seconds of an outage, with no cords and no manual startup required.",
             },
           ].map(({ icon: Icon, title, body }) => (
             <div
@@ -384,14 +384,14 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
                 step: "02",
                 icon: FileText,
                 title: "Permitting & Code Compliance",
-                body: "ENE Electrical handles all permit applications and ensures installation meets local codes — so you have zero compliance headaches.",
+                body: "ENE Electrical handles all permit applications and ensures installation meets local codes, so you have zero compliance headaches.",
                 align: "right",
               },
               {
                 step: "03",
                 icon: Zap,
                 title: "Transfer Switch Installation",
-                body: "We install an automatic transfer switch that detects outages and instantly routes backup power to your entire home — no manual steps required.",
+                body: "We install an automatic transfer switch that detects outages and instantly routes backup power to your entire home, with no manual steps required.",
                 align: "left",
               },
               {
@@ -464,7 +464,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Generator Options"
           title="Generator Types We Install"
-          subtitle="ENE Electrical installs the full spectrum of residential standby generators — from compact units for essential circuits to whole-home powerhouses."
+          subtitle="ENE Electrical installs the full spectrum of residential standby generators, from compact units for essential circuits to whole-home powerhouses."
           align="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -498,7 +498,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
               title: "Large Whole-Home Generators",
               range: "24–48+ kW",
               description:
-                "For large custom homes, pools, EV chargers, and heavy electrical loads. Ensures no compromises on power — everything runs at full capacity, all the time.",
+                "For large custom homes, pools, EV chargers, and heavy electrical loads. Ensures no compromises on power: everything runs at full capacity, all the time.",
               features: [
                 "Supports all high-load appliances",
                 "Multiple unit paralleling available",
@@ -624,8 +624,8 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
           >
             Houston and Katy, TX homeowners face frequent power outages due to
             hurricane season, severe storms, and grid strain. ENE Electrical
-            serves the full Houston and Katy metro — including Cinco Ranch,
-            Fulshear, Energy Corridor, Southwest Houston, and Richmond —
+            serves the full Houston and Katy metro, including Cinco Ranch,
+            Fulshear, Energy Corridor, Southwest Houston, and Richmond,
             providing whole-home generator installations that keep families safe
             and comfortable during Texas weather events.
           </p>
@@ -660,7 +660,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
             >
               Contact us
             </Link>{" "}
-            — we likely serve your neighborhood too.
+            and we likely serve your neighborhood too.
           </p>
         </div>
       </Section>
@@ -952,7 +952,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
                 className="inline-block mr-1 align-middle"
                 aria-hidden="true"
               />
-              <span>Katy, TX 77494 — Serving Greater Houston &amp; Surrounding Areas</span>
+              <span>Katy, TX 77494, serving Greater Houston &amp; Surrounding Areas</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Zap, Phone } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Zap, Phone, ChevronDown } from "lucide-react";
 
 interface NavLink {
   label: string;
   route: string;
+  children?: NavLink[];
 }
 
 interface HeaderProps {
@@ -20,8 +22,39 @@ interface HeaderProps {
 const defaultNavLinks: NavLink[] = [
   { label: "Home", route: "/" },
   { label: "About Us", route: "/about-us" },
-  { label: "Services", route: "/services" },
-  { label: "Service Areas", route: "/service-areas/houston-tx" },
+  {
+    label: "Services",
+    route: "/services",
+    children: [
+      { label: "Electrical Repair & Installation", route: "/services/electrical-repair-installation" },
+      { label: "Electrical Panel Upgrade", route: "/services/electrical-panel-upgrade-houston" },
+      { label: "EV Charger Installation", route: "/services/ev-charger-installation-houston" },
+      { label: "Generator Installation", route: "/services/generator-installation-houston" },
+      { label: "Security Lighting", route: "/services/security-lighting-houston" },
+      { label: "Recessed LED Lighting", route: "/services/recessed-led-lighting" },
+      { label: "New Construction Electrician", route: "/services/new-construction-electrician-houston" },
+      { label: "New Construction Wiring", route: "/services/new-construction-wiring" },
+      { label: "Emergency Electrician", route: "/services/emergency-electrician-houston" },
+      { label: "Electrical Inspection", route: "/services/electrical-inspection-houston" },
+    ],
+  },
+  {
+    label: "Service Areas",
+    route: "/service-areas/houston-tx",
+    children: [
+      { label: "Katy, TX", route: "/service-areas/electrician-katy-tx" },
+      { label: "Houston, TX", route: "/service-areas/houston-tx" },
+      { label: "Energy Corridor", route: "/service-areas/electrician-energy-corridor-houston" },
+      { label: "Southwest Houston", route: "/service-areas/electrician-houston-southwest" },
+      { label: "Cinco Ranch, TX", route: "/service-areas/cinco-ranch-tx" },
+      { label: "Fulshear, TX", route: "/service-areas/fulshear-tx" },
+      { label: "Memorial Houston", route: "/service-areas/memorial-houston" },
+      { label: "Spring Branch", route: "/service-areas/spring-branch-houston" },
+      { label: "Westchase Houston", route: "/service-areas/westchase-houston" },
+      { label: "Brookshire, TX", route: "/service-areas/brookshire-tx" },
+      { label: "Richmond, TX", route: "/service-areas/richmond-tx" },
+    ],
+  },
   { label: "Testimonials", route: "/testimonials" },
   { label: "FAQs", route: "/faqs" },
   { label: "Contact Us", route: "/contact-us" },
@@ -33,10 +66,12 @@ export default function Header({
   navLinks = defaultNavLinks,
   ctaLabel = "Book Appointment",
   ctaRoute = "/appointment-booking",
-  logoSrc,
+  logoSrc = "/logo_ene_white.png",
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
@@ -73,7 +108,7 @@ export default function Header({
           style={{ backgroundColor: "#091629" }}
         >
           <a
-            href={`tel:${phone.replace(/\D/g, "")}`}
+            href={`tel:+1${phone.replace(/\D/g, "")}`}
             className="flex items-center gap-1.5 font-medium transition-colors duration-200 hover:opacity-80"
             style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
           >
@@ -87,40 +122,17 @@ export default function Header({
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 flex-shrink-0 group"
+            className="flex items-center flex-shrink-0 group"
             aria-label={`${businessName} – Home`}
           >
-            {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={`${businessName} logo`}
-                className="h-10 w-auto object-contain"
-              />
-            ) : (
-              <span
-                className="flex items-center justify-center w-10 h-10 rounded-xl"
-                style={{ backgroundColor: "#F5A623" }}
-              >
-                <Zap size={22} strokeWidth={2.5} style={{ color: "#0B1F3A" }} />
-              </span>
-            )}
-            <span
-              className="text-xl font-bold tracking-tight leading-none"
-              style={{
-                fontFamily: "Montserrat, sans-serif",
-                color: "#FFFFFF",
-              }}
-            >
-              {businessName.split(" ").map((word, i) =>
-                i === 0 ? (
-                  <span key={i} style={{ color: "#F5A623" }}>
-                    {word}{" "}
-                  </span>
-                ) : (
-                  <span key={i}>{word}</span>
-                )
-              )}
-            </span>
+            <Image
+              src={logoSrc}
+              alt={`${businessName} logo`}
+              width={188}
+              height={125}
+              priority
+              className="h-16 lg:h-20 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -128,25 +140,109 @@ export default function Header({
             className="hidden xl:flex items-center gap-1"
             aria-label="Primary navigation"
           >
-            {visibleNavLinks.map((link) => (
-              <Link
-                key={link.route}
-                href={link.route}
-                className="relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 group"
-                style={{
-                  color: "#E8EEF4",
-                  fontFamily: "Inter, sans-serif",
-                }}
-              >
-                <span className="relative z-10 group-hover:text-white transition-colors duration-200">
-                  {link.label}
-                </span>
-                <span
-                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{ backgroundColor: "rgba(245,166,35,0.12)" }}
-                />
-              </Link>
-            ))}
+            {visibleNavLinks.map((link) => {
+              const hasChildren = !!link.children?.length;
+              const isOpen = openDropdown === link.route;
+
+              return (
+                <div
+                  key={link.route}
+                  className="relative"
+                  onMouseEnter={() => hasChildren && setOpenDropdown(link.route)}
+                  onMouseLeave={() => hasChildren && setOpenDropdown(null)}
+                >
+                  <Link
+                    href={link.route}
+                    className="relative flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 group"
+                    style={{
+                      color: "#E8EEF4",
+                      fontFamily: "Inter, sans-serif",
+                    }}
+                    aria-haspopup={hasChildren ? "true" : undefined}
+                    aria-expanded={hasChildren ? isOpen : undefined}
+                  >
+                    <span className="relative z-10 group-hover:text-white transition-colors duration-200">
+                      {link.label}
+                    </span>
+                    {hasChildren && (
+                      <ChevronDown
+                        size={14}
+                        strokeWidth={2.5}
+                        className={`relative z-10 transition-transform duration-200 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                        style={{ color: isOpen ? "#F5A623" : "#E8EEF4" }}
+                        aria-hidden="true"
+                      />
+                    )}
+                    <span
+                      className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                      style={{ backgroundColor: "rgba(245,166,35,0.12)" }}
+                    />
+                  </Link>
+
+                  {/* Dropdown panel */}
+                  {hasChildren && (
+                    <div
+                      className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-all duration-200 ${
+                        isOpen
+                          ? "opacity-100 translate-y-0 pointer-events-auto"
+                          : "opacity-0 -translate-y-1 pointer-events-none"
+                      }`}
+                    >
+                      <div
+                        className="w-[560px] max-w-[90vw] rounded-2xl overflow-hidden shadow-2xl"
+                        style={{
+                          backgroundColor: "#0F2847",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                        }}
+                      >
+                        <div className="grid grid-cols-2 gap-1 p-3">
+                          {link.children!.map((child) => (
+                            <Link
+                              key={child.route}
+                              href={child.route}
+                              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm transition-all duration-150 group/item"
+                              style={{ color: "#CBD8E6", fontFamily: "Inter, sans-serif" }}
+                              onMouseEnter={(e) => {
+                                (e.currentTarget as HTMLElement).style.backgroundColor =
+                                  "rgba(245,166,35,0.1)";
+                                (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
+                              }}
+                              onMouseLeave={(e) => {
+                                (e.currentTarget as HTMLElement).style.backgroundColor =
+                                  "transparent";
+                                (e.currentTarget as HTMLElement).style.color = "#CBD8E6";
+                              }}
+                            >
+                              <span
+                                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                                style={{ backgroundColor: "#F5A623" }}
+                                aria-hidden="true"
+                              />
+                              <span className="leading-snug">{child.label}</span>
+                            </Link>
+                          ))}
+                        </div>
+                        <Link
+                          href={link.route}
+                          className="flex items-center justify-between px-6 py-3.5 text-xs font-bold uppercase tracking-widest transition-colors duration-150"
+                          style={{
+                            backgroundColor: "rgba(245,166,35,0.08)",
+                            color: "#F5A623",
+                            fontFamily: "Montserrat, sans-serif",
+                            borderTop: "1px solid rgba(255,255,255,0.06)",
+                          }}
+                        >
+                          View All {link.label}
+                          <ChevronDown size={14} className="-rotate-90" strokeWidth={2.5} aria-hidden="true" />
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -220,21 +316,16 @@ export default function Header({
         >
           <Link
             href="/"
-            className="flex items-center gap-2"
+            className="flex items-center"
             onClick={() => setMobileOpen(false)}
           >
-            <span
-              className="flex items-center justify-center w-8 h-8 rounded-lg"
-              style={{ backgroundColor: "#F5A623" }}
-            >
-              <Zap size={17} strokeWidth={2.5} style={{ color: "#0B1F3A" }} />
-            </span>
-            <span
-              className="text-lg font-bold"
-              style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
-            >
-              <span style={{ color: "#F5A623" }}>ENE</span> Electrical
-            </span>
+            <Image
+              src={logoSrc}
+              alt={`${businessName} logo`}
+              width={188}
+              height={125}
+              className="h-14 w-auto object-contain"
+            />
           </Link>
           <button
             onClick={() => setMobileOpen(false)}
@@ -252,7 +343,7 @@ export default function Header({
           style={{ borderColor: "rgba(255,255,255,0.08)", backgroundColor: "#091629" }}
         >
           <a
-            href={`tel:${phone.replace(/\D/g, "")}`}
+            href={`tel:+1${phone.replace(/\D/g, "")}`}
             className="flex items-center gap-2 text-sm font-semibold"
             style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
           >
@@ -263,29 +354,92 @@ export default function Header({
 
         {/* Nav links */}
         <nav className="flex-1 overflow-y-auto py-4 px-3">
-          {visibleNavLinks.map((link) => (
-            <Link
-              key={link.route}
-              href={link.route}
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center px-4 py-3 mb-1 rounded-xl text-sm font-medium transition-all duration-200 group"
-              style={{
-                color: "#CBD8E6",
-                fontFamily: "Inter, sans-serif",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor =
-                  "rgba(245,166,35,0.12)";
-                (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-                (e.currentTarget as HTMLElement).style.color = "#CBD8E6";
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {visibleNavLinks.map((link) => {
+            const hasChildren = !!link.children?.length;
+            const isExpanded = mobileExpanded === link.route;
+
+            if (!hasChildren) {
+              return (
+                <Link
+                  key={link.route}
+                  href={link.route}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center px-4 py-3 mb-1 rounded-xl text-sm font-medium transition-all duration-200 group"
+                  style={{
+                    color: "#CBD8E6",
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.backgroundColor =
+                      "rgba(245,166,35,0.12)";
+                    (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                    (e.currentTarget as HTMLElement).style.color = "#CBD8E6";
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={link.route} className="mb-1">
+                <div
+                  className="flex items-center rounded-xl text-sm font-medium transition-all duration-200"
+                  style={{ color: "#CBD8E6", fontFamily: "Inter, sans-serif" }}
+                >
+                  <Link
+                    href={link.route}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex-1 px-4 py-3"
+                  >
+                    {link.label}
+                  </Link>
+                  <button
+                    onClick={() =>
+                      setMobileExpanded(isExpanded ? null : link.route)
+                    }
+                    aria-label={`Toggle ${link.label} submenu`}
+                    aria-expanded={isExpanded}
+                    className="px-4 py-3"
+                  >
+                    <ChevronDown
+                      size={16}
+                      strokeWidth={2.5}
+                      className={`transition-transform duration-200 ${
+                        isExpanded ? "rotate-180" : ""
+                      }`}
+                      style={{ color: isExpanded ? "#F5A623" : "#CBD8E6" }}
+                    />
+                  </button>
+                </div>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isExpanded ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div
+                    className="ml-3 pl-3 my-1 flex flex-col gap-0.5"
+                    style={{ borderLeft: "1px solid rgba(255,255,255,0.1)" }}
+                  >
+                    {link.children!.map((child) => (
+                      <Link
+                        key={child.route}
+                        href={child.route}
+                        onClick={() => setMobileOpen(false)}
+                        className="px-3 py-2.5 rounded-lg text-sm transition-colors duration-150"
+                        style={{ color: "#9FB3C8", fontFamily: "Inter, sans-serif" }}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </nav>
 
         {/* CTA */}

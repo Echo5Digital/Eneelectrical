@@ -6,9 +6,9 @@ import ServicesClient from "./ServicesClient";
 export const metadata: Metadata = {
   title: "Residential Electrical Services | ENE Electrical Houston TX",
   description:
-    "ENE Electrical offers full residential electrical services in Houston & Katy TX — panel upgrades, EV chargers, generators, lighting, new construction wiring, emergency service & more.",
+    "ENE Electrical offers full residential electrical services in Houston & Katy TX: panel upgrades, EV chargers, generators, lighting, new construction wiring, emergency service & more.",
   alternates: {
-    canonical: "https://eneelectrical.com/services",
+    canonical: "/services",
   },
 };
 
@@ -48,7 +48,7 @@ const collectionPageSchema = {
   "@type": "CollectionPage",
   name: "Residential Electrical Services | ENE Electrical Houston TX",
   description:
-    "ENE Electrical offers full residential electrical services in Houston & Katy TX — panel upgrades, EV chargers, generators, lighting, new construction wiring, emergency service & more.",
+    "ENE Electrical offers full residential electrical services in Houston & Katy TX: panel upgrades, EV chargers, generators, lighting, new construction wiring, emergency service & more.",
   url: "https://eneelectrical.com/services",
   provider: {
     "@type": "LocalBusiness",

@@ -129,7 +129,7 @@ const services = [
 const testimonials = [
   {
     quote:
-      "ENE Electrical installed our EV charger and upgraded our panel — all in one day. Professional crew, clean work, and they explained everything. Highly recommend for any Richmond homeowner.",
+      "ENE Electrical installed our EV charger and upgraded our panel, all in one day. Professional crew, clean work, and they explained everything. Highly recommend for any Richmond homeowner.",
     authorName: "Marcus T.",
     authorLocation: "Richmond, TX",
     rating: 5,
@@ -159,8 +159,8 @@ const testimonials = [
 
 const neighborLinks = [
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
 ];
 
@@ -299,7 +299,7 @@ export default function RichmondClient({ faqData }: Props) {
               className="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed max-w-xl"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              ENE Electrical delivers expert residential electrical services to Richmond homeowners — panel upgrades, EV chargers, generators, new construction wiring, and 24/7 emergency response. Based in Katy, TX 77494.
+              ENE Electrical delivers expert residential electrical services to Richmond homeowners: panel upgrades, EV chargers, generators, new construction wiring, and 24/7 emergency response. Based in Katy, TX 77494.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -438,8 +438,6 @@ export default function RichmondClient({ faqData }: Props) {
               title={svc.title}
               description={svc.description}
               icon={svc.icon}
-              ctaLabel="Learn More"
-              onCtaClick={() => {}}
             />
           ))}
         </div>
@@ -478,7 +476,7 @@ export default function RichmondClient({ faqData }: Props) {
                 {
                   icon: TrendingUp,
                   heading: "Expert in Suburban Growth",
-                  body: "Richmond is one of Fort Bend County's fastest-growing cities. ENE Electrical specializes in the higher electrical demands of newer, larger suburban homes — from 200A+ panel installs to smart home wiring.",
+                  body: "Richmond is one of Fort Bend County's fastest-growing cities. ENE Electrical specializes in the higher electrical demands of newer, larger suburban homes, from 200A+ panel installs to smart home wiring.",
                 },
                 {
                   icon: HardHat,
@@ -493,7 +491,7 @@ export default function RichmondClient({ faqData }: Props) {
                 {
                   icon: ShieldCheck,
                   heading: "Licensed, Bonded & Background-Checked",
-                  body: "Every ENE Electrical technician is licensed, insured, bonded, and background-checked — giving Richmond homeowners total confidence in who enters their home.",
+                  body: "Every ENE Electrical technician is licensed, insured, bonded, and background-checked, giving Richmond homeowners total confidence in who enters their home.",
                 },
               ].map(({ icon: Icon, heading, body }) => (
                 <li key={heading} className="flex gap-4">
@@ -581,7 +579,7 @@ export default function RichmondClient({ faqData }: Props) {
           className="text-center text-sm text-gray-500 mt-4"
           style={{ fontFamily: "Inter, sans-serif" }}
         >
-          ENE Electrical — Based in{" "}
+          ENE Electrical Based in{" "}
           <strong style={{ color: "#0B1F3A" }}>Katy, TX 77494</strong>
           {" "}· Serving{" "}
           <strong style={{ color: "#0B1F3A" }}>Richmond, TX</strong>
@@ -698,7 +696,7 @@ export default function RichmondClient({ faqData }: Props) {
             >
               <MapPin size={15} style={{ color: "#F5A623" }} />
               <address className="not-italic">
-                ENE Electrical — Katy, TX 77494 · Serving Richmond, TX &amp; the Houston-Katy Metro
+                ENE Electrical, Katy, TX 77494 · Serving Richmond, TX &amp; the Houston-Katy Metro
               </address>
             </div>
           </div>

@@ -7,7 +7,7 @@ import RichmondClient from "./RichmondClient";
 export const metadata: Metadata = {
   title: "Electrician in Richmond TX | ENE Electrical Services",
   description:
-    "ENE Electrical brings licensed residential electrical services to Richmond, TX — panel upgrades, EV chargers, new construction wiring, generators & 24/7 emergency electrician. Katy-based.",
+    "ENE Electrical brings licensed residential electrical services to Richmond, TX: panel upgrades, EV chargers, new construction wiring, generators & 24/7 emergency electrician. Katy-based.",
   alternates: {
     canonical: "/service-areas/richmond-tx",
   },
@@ -98,13 +98,17 @@ export default function RichmondTXPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaJsonLd) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Service Areas", href: "/service-areas/houston-tx" },
-          { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Service Areas", href: "/service-areas/houston-tx" },
+            { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
+          ]}
+        />
+      </div>
       <RichmondClient faqData={faqData} />
       <Footer />
     </>

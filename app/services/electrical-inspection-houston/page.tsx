@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "ENE Electrical provides licensed residential electrical inspections in Houston & Katy, TX. Identify safety hazards, ensure code compliance, and protect your home. Book today.",
   alternates: {
-    canonical: "/services/electrical-inspection",
+    canonical: "/services/electrical-inspection-houston",
   },
 };
 
@@ -29,7 +29,7 @@ const faqSchema = {
       name: "Do I need a licensed electrician to perform a home electrical inspection?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. In Texas, electrical inspections should be performed by a licensed electrician to ensure the assessment is accurate, code-referenced, and legally credible — especially for real estate transactions or insurance purposes. ENE Electrical is licensed, insured, and bonded.",
+        text: "Yes. In Texas, electrical inspections should be performed by a licensed electrician to ensure the assessment is accurate, code-referenced, and legally credible, especially for real estate transactions or insurance purposes. ENE Electrical is licensed, insured, and bonded.",
       },
     },
     {

@@ -89,42 +89,42 @@ const services = [
     title: "Electrical Panel Upgrades",
     description:
       "Many Memorial Houston homes have aging panels that need upgrading for safety and capacity. We handle full panel replacements and upgrades to modern standards.",
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     icon: BatteryCharging,
     title: "EV Charger Installation",
     description:
       "Install a Level 2 home EV charger in your Memorial garage for fast, convenient overnight charging of your electric vehicle.",
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     icon: Zap,
     title: "Generator Installation",
     description:
       "Whole-home and standby generator installation to keep your Memorial Houston home powered during Texas storms and outages.",
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     icon: Lightbulb,
     title: "Security & Outdoor Lighting",
     description:
       "Enhance your home's curb appeal and safety with professionally installed security lighting and landscape lighting systems.",
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     icon: AlertTriangle,
     title: "Emergency Electrical Service",
     description:
-      "24/7 emergency electrical response for Memorial Houston homeowners. Sparks, outages, or tripped breakers — we're on call.",
-    href: "/services/emergency-electrician",
+      "24/7 emergency electrical response for Memorial Houston homeowners. Sparks, outages, or tripped breakers, we're on call.",
+    href: "/services/emergency-electrician-houston",
   },
   {
     icon: Search,
     title: "Electrical Inspection",
     description:
       "Full residential electrical inspections ideal for Memorial home buyers, sellers, or anyone concerned about aging wiring.",
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
   {
     icon: Home,
@@ -153,7 +153,7 @@ const testimonials = [
   },
   {
     quote:
-      "Our older home needed serious electrical work — rewiring and a full panel upgrade. ENE handled everything perfectly. They clearly know how to work with established neighborhood homes.",
+      "Our older home needed serious electrical work: rewiring and a full panel upgrade. ENE handled everything perfectly. They clearly know how to work with established neighborhood homes.",
     authorName: "Robert K.",
     authorLocation: "Memorial, Houston, TX",
     rating: 5,
@@ -169,7 +169,7 @@ const testimonials = [
 
 // ─── Neighbor Links ──────────────────────────────────────────────────────────
 const neighborAreas = [
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
@@ -253,7 +253,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Panel upgrades, EV chargers, generators, security lighting &amp;
-            24/7 emergency electrical service — from your trusted Katy, TX
+            24/7 emergency electrical service, from your trusted Katy, TX
             electrical contractor with 15+ years of experience.
           </p>
 
@@ -371,7 +371,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="What We Offer"
           title="Electrical Services in Memorial Houston"
-          subtitle="ENE Electrical brings a full suite of residential electrical solutions to Memorial-area homeowners — from essential repairs to modern upgrades."
+          subtitle="ENE Electrical brings a full suite of residential electrical solutions to Memorial-area homeowners, from essential repairs to modern upgrades."
           align="center"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -426,7 +426,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
                 Based in{" "}
                 <strong>Katy, TX 77494</strong>, ENE Electrical is close to
                 Memorial and delivers licensed and insured residential
-                electrical services across the Houston and Katy metro — without
+                electrical services across the Houston and Katy metro, without
                 the long wait times or big-company impersonal service.
               </p>
               <ul className="space-y-3 mt-4">
@@ -550,7 +550,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Our Location"
           title="Memorial Houston Service Area"
-          subtitle="ENE Electrical is based in Katy, TX 77494 — just minutes from Memorial Houston and serving the entire Houston metro."
+          subtitle="ENE Electrical is based in Katy, TX 77494, just minutes from Memorial Houston and serving the entire Houston metro."
           align="center"
         />
         <div className="rounded-[0.75rem] overflow-hidden shadow-lg border border-gray-200 aspect-[16/7]">
@@ -607,7 +607,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
       <Section background="white" spacing="lg" id="faq">
         <SectionHeading
           eyebrow="Common Questions"
-          title="FAQ — Memorial Houston Electrical Services"
+          title="FAQ: Memorial Houston Electrical Services"
           align="center"
         />
         <div className="max-w-3xl mx-auto space-y-3">
@@ -723,7 +723,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
                   Book an Appointment
                 </Link>
                 <Link
-                  href="/services/electrical-inspection"
+                  href="/services/electrical-inspection-houston"
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm font-bold uppercase tracking-wide border-2 border-white/30 text-white transition-all duration-200 hover:border-white/60 hover:bg-white/10 active:scale-95"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >

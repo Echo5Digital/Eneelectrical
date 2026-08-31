@@ -8,7 +8,7 @@ import SpringBranchHoustonClient from "./SpringBranchHoustonClient";
 export const metadata: Metadata = {
   title: "Electrician Spring Branch Houston TX | ENE Electrical",
   description:
-    "ENE Electrical offers licensed residential electrical services in Spring Branch, Houston TX — repairs, panel upgrades, EV chargers, generators & emergency response. 15+ yrs experience.",
+    "ENE Electrical offers licensed residential electrical services in Spring Branch, Houston TX, including repairs, panel upgrades, EV chargers, generators & emergency response. 15+ yrs experience.",
   alternates: {
     canonical: "/service-areas/spring-branch-houston",
   },
@@ -72,7 +72,7 @@ const serviceJsonLd = {
     name: "Spring Branch, Houston, TX",
   },
   description:
-    "ENE Electrical offers licensed residential electrical services in Spring Branch, Houston TX — repairs, panel upgrades, EV chargers, generators & emergency response. 15+ yrs experience.",
+    "ENE Electrical offers licensed residential electrical services in Spring Branch, Houston TX, including repairs, panel upgrades, EV chargers, generators & emergency response. 15+ yrs experience.",
   serviceType: [
     "Electrical Repair",
     "Panel Upgrade",
@@ -103,7 +103,11 @@ export default function SpringBranchHoustonPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <Header />
-      <Breadcrumbs items={breadcrumbItems} />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
       <SpringBranchHoustonClient faqData={faqData} />
       <Footer />
     </>

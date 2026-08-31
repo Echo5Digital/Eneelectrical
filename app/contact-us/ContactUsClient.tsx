@@ -26,12 +26,12 @@ interface Props {
 }
 
 const serviceAreas = [
-  { label: "Katy, TX", href: "/service-areas/katy-tx" },
+  { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { label: "Houston, TX", href: "/service-areas/houston-tx" },
-  { label: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
+  { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
   { label: "Fulshear, TX", href: "/service-areas/fulshear-tx" },
-  { label: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { label: "Memorial", href: "/service-areas/memorial-houston" },
   { label: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { label: "Westchase", href: "/service-areas/westchase-houston" },
@@ -94,7 +94,7 @@ export default function ContactUsClient({ faqData }: Props) {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="tel:8327830303"
+                href="tel:+18327830303"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold uppercase tracking-widest text-sm shadow-lg transition-all duration-200 hover:opacity-90 active:scale-95"
                 style={{
                   backgroundColor: "#F5A623",
@@ -194,11 +194,11 @@ export default function ContactUsClient({ faqData }: Props) {
           >
             Electrical Emergency?{" "}
             <span className="font-normal">
-              Do NOT submit the form — call us immediately for same-day emergency service.
+              Do NOT submit the form. Call us immediately for same-day emergency service.
             </span>
           </p>
           <a
-            href="tel:8327830303"
+            href="tel:+18327830303"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold uppercase tracking-widest text-xs whitespace-nowrap shadow transition-all hover:opacity-90 active:scale-95"
             style={{
               backgroundColor: "white",
@@ -271,7 +271,7 @@ export default function ContactUsClient({ faqData }: Props) {
                     Phone
                   </p>
                   <a
-                    href="tel:8327830303"
+                    href="tel:+18327830303"
                     className="text-sm font-medium hover:underline"
                     style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
                   >
@@ -428,14 +428,14 @@ export default function ContactUsClient({ faqData }: Props) {
           aria-label="Map showing ENE Electrical service area centered on Katy, TX 77494"
         >
           <iframe
-            title="ENE Electrical service area map — Katy, TX 77494"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55548.77!2d-95.8244!3d29.7858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640de0a23c956d9%3A0x80e39a0b20a17e17!2sKaty%2C%20TX%2077494!5e0!3m2!1sen!2sus!4v1"
+            title="ENE Electrical location map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495495.57775908493!2d-95.79568563305266!3d29.836279762588568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788147009746!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
       </Section>

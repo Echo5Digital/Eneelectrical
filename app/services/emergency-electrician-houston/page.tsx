@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "ENE Electrical provides emergency electrician services for Houston & Katy, TX homeowners. Licensed, insured & ready for urgent electrical repairs. Call now for fast response.",
   alternates: {
-    canonical: "https://www.eneelectrical.com/services/emergency-electrician",
+    canonical: "/services/emergency-electrician-houston",
   },
 };
 
@@ -95,13 +95,17 @@ export default function EmergencyElectricianPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <Header />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "Emergency Electrician", href: "/services/emergency-electrician" },
-        ]}
-      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Emergency Electrician", href: "/services/emergency-electrician-houston" },
+          ]}
+        />
+      </div>
       <EmergencyElectricianClient faqData={faqData} />
       <Footer />
     </>

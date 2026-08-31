@@ -73,28 +73,28 @@ const services = [
     description:
       "Upgrade your home's electrical panel to handle modern power demands safely. Ideal for older Houston homes.",
     icon: Zap,
-    href: "/services/electrical-panel-upgrade",
+    href: "/services/electrical-panel-upgrade-houston",
   },
   {
     title: "EV Charger Installation",
     description:
       "Professional Level 2 EV charger installation for Houston homeowners. Charge smarter at home.",
     icon: Car,
-    href: "/services/ev-charger-installation",
+    href: "/services/ev-charger-installation-houston",
   },
   {
     title: "Generator Installation",
     description:
       "Stay powered during Houston storms. Whole-home and standby generator installation by licensed professionals.",
     icon: AlertTriangle,
-    href: "/services/generator-installation",
+    href: "/services/generator-installation-houston",
   },
   {
     title: "Security Lighting",
     description:
       "Enhance your home's safety with professionally installed exterior and security lighting solutions.",
     icon: Sun,
-    href: "/services/security-lighting",
+    href: "/services/security-lighting-houston",
   },
   {
     title: "Recessed LED Lighting",
@@ -115,24 +115,24 @@ const services = [
     description:
       "Urgent electrical problems need immediate attention. ENE Electrical is available for Houston emergency calls.",
     icon: AlertTriangle,
-    href: "/services/emergency-electrician",
+    href: "/services/emergency-electrician-houston",
   },
   {
     title: "Electrical Inspection",
     description:
       "Pre-purchase, safety, or permit inspections performed by licensed Houston-area electricians.",
     icon: ClipboardCheck,
-    href: "/services/electrical-inspection",
+    href: "/services/electrical-inspection-houston",
   },
 ];
 
 const neighborhoods = [
-  { name: "Energy Corridor", href: "/service-areas/energy-corridor-houston" },
-  { name: "Southwest Houston", href: "/service-areas/southwest-houston" },
+  { name: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
+  { name: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
   { name: "Memorial", href: "/service-areas/memorial-houston" },
   { name: "Spring Branch", href: "/service-areas/spring-branch-houston" },
   { name: "Westchase", href: "/service-areas/westchase-houston" },
-  { name: "Katy, TX", href: "/service-areas/katy-tx" },
+  { name: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
   { name: "Cinco Ranch", href: "/service-areas/cinco-ranch-tx" },
   { name: "Fulshear", href: "/service-areas/fulshear-tx" },
   { name: "Brookshire", href: "/service-areas/brookshire-tx" },
@@ -142,7 +142,7 @@ const neighborhoods = [
 const testimonials = [
   {
     quote:
-      "ENE Electrical upgraded our panel in the Energy Corridor — professional, on time, and explained everything clearly. Highly recommend to any Houston homeowner!",
+      "ENE Electrical upgraded our panel in the Energy Corridor. Professional, on time, and explained everything clearly. Highly recommend to any Houston homeowner!",
     authorName: "Marcus T.",
     authorLocation: "Energy Corridor, Houston, TX",
     rating: 5,
@@ -175,7 +175,7 @@ const trustReasons = [
     icon: ShieldCheck,
     title: "Licensed, Insured & Bonded",
     description:
-      "Every job is performed by fully licensed, insured, and bonded electricians — protecting you, your home, and our team.",
+      "Every job is performed by fully licensed, insured, and bonded electricians, protecting you, your home, and our team.",
   },
   {
     icon: Award,
@@ -205,7 +205,7 @@ const trustReasons = [
     icon: Home,
     title: "Residential Specialists",
     description:
-      "We focus exclusively on residential electrical services — from older mid-century homes to new Houston-area construction.",
+      "We focus exclusively on residential electrical services, from older mid-century homes to new Houston-area construction.",
   },
 ];
 
@@ -322,16 +322,14 @@ export default function HoustonClient({ faqData }: Props) {
   return (
     <main>
       {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Service Areas", href: "/service-areas/houston-tx" },
-              { label: "Houston, TX", href: "/service-areas/houston-tx" },
-            ]}
-          />
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Service Areas", href: "/service-areas/houston-tx" },
+            { label: "Houston, TX", href: "/service-areas/houston-tx" },
+          ]}
+        />
       </div>
 
       {/* ── HERO ── */}
@@ -383,7 +381,7 @@ export default function HoustonClient({ faqData }: Props) {
             className="text-lg text-white/80 max-w-2xl mb-8 leading-relaxed"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            ENE Electrical is licensed, insured, and bonded — serving Houston
+            ENE Electrical is licensed, insured, and bonded, serving Houston
             homeowners with expert electrical repair, panel upgrades, EV charger
             installation, generators, and more. Based in Katy, TX with 15+ years
             of experience.
@@ -522,7 +520,7 @@ export default function HoustonClient({ faqData }: Props) {
                 With over{" "}
                 <strong style={{ color: "#0B1F3A" }}>15 years of experience</strong>{" "}
                 serving greater Houston, we understand the unique electrical
-                needs of the area's diverse housing stock — from mid-century
+                needs of the area's diverse housing stock, from mid-century
                 ranch homes in Spring Branch to new construction in Cinco Ranch
                 and Fulshear.
               </p>
@@ -653,7 +651,7 @@ export default function HoustonClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Service Area"
           title="Houston Neighborhoods We Serve"
-          subtitle="ENE Electrical provides residential electrical services throughout the Houston metro — from inner-city neighborhoods to outer suburbs."
+          subtitle="ENE Electrical provides residential electrical services throughout the Houston metro, from inner-city neighborhoods to outer suburbs."
           align="center"
           inverted
         />
@@ -687,7 +685,7 @@ export default function HoustonClient({ faqData }: Props) {
             neighborhoods such as the <strong className="text-white">Energy Corridor, Southwest Houston, Memorial,
             Spring Branch, and Westchase</strong>, as well as suburban communities like{" "}
             <strong className="text-white">Katy, Cinco Ranch, Fulshear, Brookshire, and Richmond, TX</strong>.
-            Houston's large housing stock — ranging from older mid-century homes to new construction — creates
+            Houston's large housing stock, ranging from older mid-century homes to new construction, creates
             consistent demand for the panel upgrades, EV charger installations, and electrical inspections that
             ENE Electrical specializes in.
           </p>
@@ -879,12 +877,12 @@ export default function HoustonClient({ faqData }: Props) {
               className="mt-2 text-gray-500 text-sm"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Based in Katy, TX 77494 — reaching every corner of the Houston metro
+              Based in Katy, TX 77494, reaching every corner of the Houston metro
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ height: "400px" }}>
             <iframe
-              title="ENE Electrical service area map — Katy, TX and Houston metro"
+              title="ENE Electrical service area map: Katy, TX and Houston metro"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221929.08499050856!2d-95.79999999999998!3d29.785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e4a28d23ace3%3A0xc3dd0bfc9cec39e9!2sKaty%2C%20TX%2077494!5e0!3m2!1sen!2sus!4v1700000000000"
               width="100%"
               height="100%"
@@ -938,7 +936,7 @@ export default function HoustonClient({ faqData }: Props) {
             >
               Ready to schedule service or get a quote? Fill out the form and an ENE
               Electrical team member will be in touch promptly. We serve the full
-              Houston metro area — no job too small or too complex.
+              Houston metro area, no job too small or too complex.
             </p>
             <ul className="space-y-3">
               {[

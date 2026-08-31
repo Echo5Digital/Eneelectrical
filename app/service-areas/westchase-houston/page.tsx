@@ -7,7 +7,7 @@ import WestchaseHoustonClient from "./WestchaseHoustonClient";
 export const metadata: Metadata = {
   title: "Electrician in Westchase Houston TX | ENE Electrical",
   description:
-    "ENE Electrical delivers licensed residential electrical services in Westchase, Houston TX — panel upgrades, EV chargers, generators, lighting & 24/7 emergency electrician. Katy-based, Houston-wide.",
+    "ENE Electrical delivers licensed residential electrical services in Westchase, Houston TX, including panel upgrades, EV chargers, generators, lighting & 24/7 emergency electrician. Katy-based, Houston-wide.",
   alternates: {
     canonical: "/service-areas/westchase-houston",
   },
@@ -57,7 +57,7 @@ const serviceSchema = {
     name: "Westchase, Houston, TX",
   },
   description:
-    "ENE Electrical delivers licensed residential electrical services in Westchase, Houston TX — panel upgrades, EV chargers, generators, lighting & 24/7 emergency electrician.",
+    "ENE Electrical delivers licensed residential electrical services in Westchase, Houston TX, including panel upgrades, EV chargers, generators, lighting & 24/7 emergency electrician.",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Residential Electrical Services",
@@ -105,7 +105,11 @@ export default function WestchaseHoustonPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <Breadcrumbs items={breadcrumbItems} />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
       <main>
         <WestchaseHoustonClient faqData={faqData} />
       </main>

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Need a 200-amp electrical panel upgrade in Houston or Katy, TX? ENE Electrical's licensed, bonded team upgrades residential panels safely and to code. Book now.",
   alternates: {
-    canonical: "/services/electrical-panel-upgrade",
+    canonical: "/services/electrical-panel-upgrade-houston",
   },
 };
 
@@ -106,7 +106,7 @@ const signs = [
     icon: Zap,
     title: "Outdated or Recalled Panel",
     description:
-      "Older panels (Federal Pacific, Zinsco, or fuse boxes) are fire hazards and often uninsurable — replacement is urgent.",
+      "Older panels (Federal Pacific, Zinsco, or fuse boxes) are fire hazards and often uninsurable, so replacement is urgent.",
   },
   {
     icon: ClipboardList,
@@ -145,7 +145,7 @@ const processSteps = [
     step: "02",
     title: "Custom Recommendation",
     description:
-      "We provide a clear, written estimate for the appropriate panel upgrade — typically a 200-amp panel for modern Houston-area homes.",
+      "We provide a clear, written estimate for the appropriate panel upgrade, typically a 200-amp panel for modern Houston-area homes.",
   },
   {
     step: "03",
@@ -227,16 +227,15 @@ export default function ElectricalPanelUpgradePage() {
 
       <Header />
 
-      <div className="bg-[#F7F8FA] px-4 sm:px-6 lg:px-8 pt-4">
-        <div className="max-w-6xl mx-auto">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Services", href: "/services" },
-              { label: "Electrical Panel Upgrade", href: "/services/electrical-panel-upgrade" },
-            ]}
-          />
-        </div>
+      {/* Breadcrumbs */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-2 lg:pt-16">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Electrical Panel Upgrade", href: "/services/electrical-panel-upgrade-houston" },
+          ]}
+        />
       </div>
 
       {/* ─── Hero ─── */}
@@ -419,7 +418,7 @@ export default function ElectricalPanelUpgradePage() {
               A 200-amp electrical panel is the standard upgrade for modern
               residential homes throughout the Houston and Katy metro area. Most
               older homes were built with 60- or 100-amp service panels, which
-              simply cannot support today's energy demands — including EV
+              simply cannot support today's energy demands, including EV
               chargers, smart home systems, central HVAC, and large kitchen
               appliances.
             </p>
@@ -477,7 +476,7 @@ export default function ElectricalPanelUpgradePage() {
                 className="text-white text-sm font-semibold"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                200-Amp Panel — The Houston Area Standard
+                200-Amp Panel: The Houston Area Standard
               </p>
             </div>
           </div>
@@ -596,9 +595,9 @@ export default function ElectricalPanelUpgradePage() {
               className="text-base leading-relaxed mb-6"
               style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
             >
-              Many older homes in the Katy, Houston, and surrounding TX suburbs —
-              including Cinco Ranch, Energy Corridor, Spring Branch, and Westchase
-              — have outdated electrical panels that can't support modern
+              Many older homes in the Katy, Houston, and surrounding TX suburbs,
+              including Cinco Ranch, Energy Corridor, Spring Branch, and Westchase,
+              have outdated electrical panels that can't support modern
               appliances, EV chargers, or home additions. ENE Electrical serves
               these communities with licensed panel upgrade services throughout the
               Houston and Katy metro service area.
@@ -614,7 +613,7 @@ export default function ElectricalPanelUpgradePage() {
                   style={{ color: "#F5A623" }}
                   aria-hidden="true"
                 />
-                <span>ENE Electrical — Katy, TX 77494</span>
+                <span>ENE Electrical, Katy, TX 77494</span>
               </div>
             </address>
           </div>
@@ -749,7 +748,7 @@ export default function ElectricalPanelUpgradePage() {
         </div>
       </Section>
 
-      <Footer address="Katy, TX — Serving Greater Houston & Surrounding Areas" />
+      <Footer address="Katy, TX, serving Greater Houston & Surrounding Areas" />
     </>
   );
 }

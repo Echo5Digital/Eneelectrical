@@ -670,7 +670,7 @@ export default function AppointmentBookingClient({ faqData }: AppointmentBooking
             }}
           >
             <Zap size={12} />
-            Houston &amp; Katy, TX — Residential Electricians
+            Houston &amp; Katy, TX: Residential Electricians
           </span>
 
           <h1
@@ -689,7 +689,7 @@ export default function AppointmentBookingClient({ faqData }: AppointmentBooking
           >
             ENE Electrical schedules residential electrical appointments for
             homeowners across Houston and Katy, TX. Panel upgrades, EV chargers,
-            repairs, lighting, and more — all with licensed, insured professionals.
+            repairs, lighting, and more, all with licensed, insured professionals.
           </p>
 
           {/* Stat pills */}
@@ -733,7 +733,7 @@ export default function AppointmentBookingClient({ faqData }: AppointmentBooking
               className="font-bold text-sm sm:text-base uppercase tracking-wide text-[#0B1F3A]"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              Electrical Emergency? Don't wait — call us directly for the fastest response.
+              Electrical Emergency? Don't wait. Call us directly for the fastest response.
             </p>
           </div>
           <a
@@ -772,8 +772,8 @@ export default function AppointmentBookingClient({ faqData }: AppointmentBooking
                 {[
                   "Licensed, insured & bonded electricians",
                   "15+ years serving Houston & Katy homeowners",
-                  "Background-checked technicians — every visit",
-                  "Upfront pricing — no hidden fees",
+                  "Background-checked technicians on every visit",
+                  "Upfront pricing, no hidden fees",
                   "Same-week appointments available",
                   "Residential specialists for all electrical needs",
                 ].map((point) => (
@@ -897,7 +897,7 @@ export default function AppointmentBookingClient({ faqData }: AppointmentBooking
             className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
-            You're In Good Hands — ENE Electrical Is Fully Credentialed
+            You're In Good Hands: ENE Electrical Is Fully Credentialed
           </p>
           <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
             {trustBadges.map((badge) => {
@@ -956,13 +956,13 @@ export default function AppointmentBookingClient({ faqData }: AppointmentBooking
               className="text-2xl md:text-3xl font-bold text-white mb-2"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              Don't Wait — Call ENE Electrical Directly
+              Don't Wait, Call ENE Electrical Directly
             </h2>
             <p
               className="text-blue-200 text-sm max-w-lg leading-relaxed"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              For urgent electrical issues — sparking outlets, breaker failures, power outages — skip the form and call us now. We dispatch quickly across the Houston and Katy area.
+              For urgent electrical issues, such as sparking outlets, breaker failures, or power outages, skip the form and call us now. We dispatch quickly across the Houston and Katy area.
             </p>
           </div>
           <div className="flex-shrink-0">

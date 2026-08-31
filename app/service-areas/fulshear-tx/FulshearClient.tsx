@@ -160,7 +160,7 @@ export default function FulshearClient({ faqData }: Props) {
       icon: Wrench,
       title: "Electrical Repairs",
       description:
-        "Fast, reliable electrical repairs for outlets, switches, wiring faults, and more — keeping your Fulshear home safe.",
+        "Fast, reliable electrical repairs for outlets, switches, wiring faults, and more, keeping your Fulshear home safe.",
       href: "/services/electrical-repair-installation",
     },
     {
@@ -168,21 +168,21 @@ export default function FulshearClient({ faqData }: Props) {
       title: "Panel Upgrades",
       description:
         "Upgrade your electrical panel to handle modern loads. Essential for Fulshear's newer, larger homes.",
-      href: "/services/electrical-panel-upgrade",
+      href: "/services/electrical-panel-upgrade-houston",
     },
     {
       icon: BatteryCharging,
       title: "EV Charger Installation",
       description:
-        "Level 2 home EV charger installation by certified electricians — perfect for Fulshear's growing EV community.",
-      href: "/services/ev-charger-installation",
+        "Level 2 home EV charger installation by certified electricians, perfect for Fulshear's growing EV community.",
+      href: "/services/ev-charger-installation-houston",
     },
     {
       icon: Home,
       title: "Generator Installation",
       description:
         "Whole-home standby generator installation so your family stays powered through Texas storms.",
-      href: "/services/generator-installation",
+      href: "/services/generator-installation-houston",
     },
     {
       icon: Lightbulb,
@@ -196,21 +196,21 @@ export default function FulshearClient({ faqData }: Props) {
       title: "Security Lighting",
       description:
         "Exterior and motion-sensor security lighting to keep your property protected day and night.",
-      href: "/services/security-lighting",
+      href: "/services/security-lighting-houston",
     },
     {
       icon: ClipboardCheck,
       title: "Electrical Inspections",
       description:
         "Comprehensive home electrical inspections for buyers, sellers, and homeowners in Fulshear.",
-      href: "/services/electrical-inspection",
+      href: "/services/electrical-inspection-houston",
     },
     {
       icon: AlertTriangle,
       title: "Emergency Electrical",
       description:
         "24/7 emergency electrical response for urgent issues across Fulshear and the greater Katy area.",
-      href: "/services/emergency-electrician",
+      href: "/services/emergency-electrician-houston",
     },
     {
       icon: TrendingUp,
@@ -246,7 +246,7 @@ export default function FulshearClient({ faqData }: Props) {
   ];
 
   const neighborAreas = [
-    { label: "Katy, TX", href: "/service-areas/katy-tx" },
+    { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
     { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
     { label: "Cinco Ranch, TX", href: "/service-areas/cinco-ranch-tx" },
     { label: "Brookshire, TX", href: "/service-areas/brookshire-tx" },
@@ -266,7 +266,7 @@ export default function FulshearClient({ faqData }: Props) {
       <section
         className="relative w-full overflow-hidden"
         style={{ backgroundColor: "#0B1F3A", minHeight: "520px" }}
-        aria-label="Hero — Electrician in Fulshear TX"
+        aria-label="Hero: Electrician in Fulshear TX"
       >
         {/* Background image */}
         <div className="absolute inset-0">
@@ -312,7 +312,7 @@ export default function FulshearClient({ faqData }: Props) {
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             ENE Electrical delivers licensed, insured, and bonded residential
-            electrical services to Fulshear homeowners — from panel upgrades
+            electrical services to Fulshear homeowners, from panel upgrades
             and EV chargers to 24/7 emergency response.
           </p>
 
@@ -509,7 +509,7 @@ export default function FulshearClient({ faqData }: Props) {
                 ENE Electrical, based in{" "}
                 <strong className="text-white">Katy, TX 77494</strong>, is
                 minutes from Fulshear and deeply familiar with the electrical
-                systems in the area's newer construction homes — including
+                systems in the area's newer construction homes, including
                 higher-amperage panels, EV-ready garages, and whole-home
                 generator hookups.
               </p>
@@ -524,7 +524,7 @@ export default function FulshearClient({ faqData }: Props) {
             <ul className="mt-6 space-y-3">
               {[
                 "Familiar with Fulshear's new construction electrical systems",
-                "Fast response times — based nearby in Katy, TX 77494",
+                "Fast response times, based nearby in Katy, TX 77494",
                 "24/7 emergency availability across the Fulshear area",
                 "Licensed, insured, bonded & background-checked technicians",
               ].map((point) => (
@@ -605,7 +605,7 @@ export default function FulshearClient({ faqData }: Props) {
               className="text-sm font-semibold"
               style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
             >
-              5-Star Rated — Katy / Fulshear Area
+              5-Star Rated: Katy / Fulshear Area
             </span>
           </div>
         </div>
@@ -616,7 +616,7 @@ export default function FulshearClient({ faqData }: Props) {
         <SectionHeading
           eyebrow="Our Location"
           title="Serving Fulshear from Katy, TX"
-          subtitle="ENE Electrical is based in Katy, TX 77494 — just minutes from Fulshear for fast, reliable service."
+          subtitle="ENE Electrical is based in Katy, TX 77494, just minutes from Fulshear for fast, reliable service."
           align="center"
         />
         <div className="rounded-2xl overflow-hidden shadow-lg border" style={{ borderColor: "#E2E8F0" }}>
@@ -637,7 +637,7 @@ export default function FulshearClient({ faqData }: Props) {
           className="mt-4 text-center text-sm"
           style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
         >
-          <strong>ENE Electrical</strong> — Based in{" "}
+          <strong>ENE Electrical</strong>, Based in{" "}
           <address className="inline not-italic font-medium">Katy, TX 77494</address>
           {" · "}Serving Fulshear, TX and surrounding communities
         </p>
@@ -691,7 +691,7 @@ export default function FulshearClient({ faqData }: Props) {
       <Section background="default" spacing="lg" maxWidth="xl">
         <SectionHeading
           eyebrow="Common Questions"
-          title="FAQ — Electrical Services in Fulshear, TX"
+          title="FAQ: Electrical Services in Fulshear, TX"
           subtitle="Answers to the most common questions Fulshear homeowners ask about ENE Electrical."
           align="center"
         />

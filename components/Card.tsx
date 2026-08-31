@@ -257,9 +257,16 @@ const Card: React.FC<CardProps> = (props) => {
 
   return (
     <div
-      className={`${baseCardClasses} border border-gray-100 ${className}`}
+      className={`relative bg-white rounded-2xl overflow-hidden flex flex-col border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#F5A623]/40 ${className}`}
       style={{ fontFamily: "Inter, sans-serif" }}
     >
+      {/* Top accent bar, brightens on hover */}
+      <div
+        className="h-1 w-full flex-shrink-0 opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ backgroundColor: "#F5A623" }}
+        aria-hidden="true"
+      />
+
       {/* Image (if provided) */}
       {imageSrc && !Icon && (
         <div className="relative w-full h-44 overflow-hidden flex-shrink-0">
@@ -267,28 +274,36 @@ const Card: React.FC<CardProps> = (props) => {
             src={imageSrc}
             alt={imageAlt || title || "Card image"}
             fill
-            className="object-cover transition-transform duration-300 hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
       )}
 
       {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-7 flex flex-col flex-grow">
         {/* Icon */}
         {Icon && (
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 flex-shrink-0"
-            style={{ backgroundColor: "#F5A623" }}
+            className="w-11 h-11 rounded-lg flex items-center justify-center mb-5 flex-shrink-0 ring-1 transition-colors duration-300 group-hover:bg-[#0B1F3A]"
+            style={{
+              backgroundColor: "rgba(11,31,58,0.05)",
+              borderColor: "rgba(11,31,58,0.08)",
+            }}
             aria-hidden="true"
           >
-            <Icon size={22} color="#0B1F3A" strokeWidth={2} />
+            <Icon
+              size={20}
+              className="transition-colors duration-300 group-hover:stroke-[#F5A623]"
+              color="#0B1F3A"
+              strokeWidth={1.75}
+            />
           </div>
         )}
 
         {/* Title */}
         {title && (
           <h3
-            className="text-lg font-bold mb-2 leading-snug"
+            className="text-lg font-bold mb-2.5 leading-snug tracking-tight"
             style={{
               color: "#0B1F3A",
               fontFamily: "Montserrat, sans-serif",
@@ -298,18 +313,9 @@ const Card: React.FC<CardProps> = (props) => {
           </h3>
         )}
 
-        {/* Accent line */}
-        {title && (
-          <div
-            className="w-10 h-0.5 mb-3 rounded-full"
-            style={{ backgroundColor: "#F5A623" }}
-            aria-hidden="true"
-          />
-        )}
-
         {/* Description */}
         {description && (
-          <p className="text-sm text-gray-500 leading-relaxed flex-grow mb-5">
+          <p className="text-sm text-gray-500 leading-relaxed flex-grow mb-6">
             {description}
           </p>
         )}
@@ -318,15 +324,27 @@ const Card: React.FC<CardProps> = (props) => {
         {ctaLabel && (
           <button
             onClick={onCtaClick}
-            className="mt-auto self-start px-5 py-2.5 rounded-xl text-sm font-semibold uppercase tracking-wide shadow-md hover:shadow-lg transition-all duration-200 hover:brightness-105"
+            className="mt-auto self-start inline-flex items-center gap-1.5 text-sm font-semibold tracking-wide transition-all duration-200"
             style={{
-              backgroundColor: "#F5A623",
               color: "#0B1F3A",
               fontFamily: "Montserrat, sans-serif",
             }}
             aria-label={ctaLabel}
           >
             {ctaLabel}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#F5A623"
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </button>
         )}
       </div>
