@@ -6,4 +6,5 @@ out
 .DS_Store
 dev-server.log
 backend/node_modules
+tsconfig.tsbuildinfo
 
