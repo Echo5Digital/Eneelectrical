@@ -526,7 +526,7 @@ export default function ElectricalInspectionClient() {
               </div>
             </div>
 
-            <div className="lg:max-w-md lg:justify-self-end w-full">
+            <div className="lg:max-w-lg lg:justify-self-end w-full">
               <ContactForm
                 compact
                 dark

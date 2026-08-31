@@ -210,7 +210,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
               </div>
             </div>
 
-            <div className="lg:max-w-md lg:justify-self-end w-full">
+            <div className="lg:max-w-lg lg:justify-self-end w-full">
               <ContactForm
                 compact
                 dark
