@@ -104,6 +104,8 @@ function BookingForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const todayStr = new Date().toISOString().split("T")[0];
 
@@ -128,15 +130,49 @@ function BookingForm() {
     setErrors((prev) => ({ ...prev, [name]: newErrors[name as keyof FormErrors] }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const allTouched: Record<string, boolean> = {};
     Object.keys(form).forEach((k) => (allTouched[k] = true));
     setTouched(allTouched);
     const validationErrors = validateForm(form);
     setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
+    if (Object.keys(validationErrors).length > 0) return;
+
+    setSubmitError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"}/api/leads`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            message: form.notes || `Appointment request for ${form.serviceType}`,
+            source: "appointment_booking",
+            serviceRequested: form.serviceType,
+            preferredDate: form.preferredDate,
+            preferredTime: form.preferredTime,
+            address: form.zipCode,
+          }),
+        }
+      );
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
       setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -520,9 +556,15 @@ function BookingForm() {
 
         {/* Submit */}
         <div className="md:col-span-2 flex flex-col gap-3">
+          {submitError && (
+            <p className="flex items-center gap-1.5 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2" style={{ fontFamily: "Inter, sans-serif" }}>
+              <AlertCircle size={14} className="flex-shrink-0" /> {submitError}
+            </p>
+          )}
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 py-4 px-8 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:brightness-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F5A623]"
+            disabled={submitting}
+            className="w-full flex items-center justify-center gap-2 py-4 px-8 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg transition-all duration-200 hover:brightness-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F5A623] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100"
             style={{
               backgroundColor: "#F5A623",
               color: "#0B1F3A",
@@ -530,7 +572,7 @@ function BookingForm() {
             }}
           >
             <Send size={16} strokeWidth={2.5} />
-            Book My Appointment
+            {submitting ? "Sending..." : "Book My Appointment"}
           </button>
           <p className="text-center text-xs text-gray-400" style={{ fontFamily: "Inter, sans-serif" }}>
             Your information is secure and will never be shared. We'll respond within 1 business day.

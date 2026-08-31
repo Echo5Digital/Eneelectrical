@@ -1,6 +1,8 @@
 node_modules
 .next
 out
+.env
 .env*.local
 .DS_Store
 dev-server.log
+backend/node_modules

@@ -40,6 +40,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (data: FormData): FormErrors => {
     const errs: FormErrors = {};
@@ -93,16 +95,40 @@ const ContactForm: React.FC<ContactFormProps> = ({
     setErrors((prev) => ({ ...prev, [name]: newErrors[name as keyof FormErrors] }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const allTouched = { name: true, email: true, phone: true, message: true };
     setTouched(allTouched);
     const validationErrors = validate(formData);
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
+    if (Object.keys(validationErrors).length > 0) return;
+
+    setSubmitError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"}/api/leads`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, source: "contact_form" }),
+        }
+      );
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
       onSubmit?.(formData);
       setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -337,9 +363,15 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </div>
 
         {/* Submit */}
+        {submitError && (
+          <p className="flex items-center gap-1.5 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2" style={{ fontFamily: "Inter, sans-serif" }}>
+            <AlertCircle size={14} className="flex-shrink-0" /> {submitError}
+          </p>
+        )}
         <button
           type="submit"
-          className="mt-1 w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-bold uppercase tracking-widest shadow-md transition-all duration-200 hover:brightness-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F5A623]"
+          disabled={submitting}
+          className="mt-1 w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-bold uppercase tracking-widest shadow-md transition-all duration-200 hover:brightness-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F5A623] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100"
           style={{
             backgroundColor: "#F5A623",
             color: "#0B1F3A",
@@ -348,7 +380,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           }}
         >
           <Send size={15} strokeWidth={2.5} />
-          {ctaLabel}
+          {submitting ? "Sending..." : ctaLabel}
         </button>
 
         <p
