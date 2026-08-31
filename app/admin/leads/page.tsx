@@ -3,16 +3,15 @@
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Search,
-  LogOut,
   Mail,
   Phone,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { apiFetch, clearToken, getToken, Lead, LeadsResponse } from "../lib/api";
+import { apiFetch, getToken, Lead, LeadsResponse } from "../lib/api";
+import AdminShell from "../components/AdminShell";
 
 const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
   new: { bg: "#EFF6FF", text: "#1D4ED8" },
@@ -68,44 +67,23 @@ export default function AdminLeadsPage() {
     fetchLeads();
   }, [fetchLeads]);
 
-  const handleLogout = () => {
-    clearToken();
-    router.push("/admin/login");
-  };
-
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F7F8FA" }}>
-      {/* Top bar */}
-      <header
-        className="sticky top-0 z-10 flex items-center justify-between px-6 py-4"
-        style={{ backgroundColor: "#0B1F3A" }}
-      >
-        <div className="flex items-center gap-3">
-          <Image
-            src="/logo_ene_white.png"
-            alt="ENE Electrical logo"
-            width={188}
-            height={125}
-            className="h-9 w-auto object-contain"
-          />
-          <span
-            className="text-sm font-semibold uppercase tracking-widest text-white/60 hidden sm:inline"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
+    <AdminShell>
+      <header className="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100">
+        <div>
+          <h1
+            className="text-xl font-bold"
+            style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
           >
-            Admin
-          </span>
+            Leads
+          </h1>
+          <p className="text-sm text-gray-500">{total} total submissions</p>
         </div>
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors"
-        >
-          <LogOut size={15} /> Log Out
-        </button>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
+      <main className="flex-1 px-8 py-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
             <h1
@@ -278,6 +256,6 @@ export default function AdminLeadsPage() {
           </div>
         )}
       </main>
-    </div>
+    </AdminShell>
   );
 }
