@@ -57,6 +57,7 @@ const defaultNavLinks: NavLink[] = [
     ],
   },
   { label: "Testimonials", route: "/testimonials" },
+  { label: "Blog", route: "/blog" },
   { label: "FAQs", route: "/faqs" },
   { label: "Contact Us", route: "/contact-us" },
 ];

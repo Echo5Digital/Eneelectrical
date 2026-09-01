@@ -50,6 +50,7 @@ const defaultLinks: FooterLink[] = [
   { label: "Brookshire, TX", route: "/service-areas/brookshire-tx" },
   { label: "Richmond, TX", route: "/service-areas/richmond-tx" },
   { label: "Testimonials", route: "/testimonials" },
+  { label: "Blog", route: "/blog" },
   { label: "FAQs", route: "/faqs" },
   { label: "Book Appointment", route: "/appointment-booking" },
   { label: "Contact Us", route: "/contact-us" },
@@ -85,7 +86,7 @@ const serviceAreaLinks = [
   "Richmond, TX",
 ];
 
-const companyLinks = ["Home", "About Us", "Services", "Testimonials", "FAQs", "Book Appointment", "Contact Us"];
+const companyLinks = ["Home", "About Us", "Services", "Testimonials", "Blog", "FAQs", "Book Appointment", "Contact Us"];
 
 const legalLinks = ["Privacy Policy", "Terms of Service"];
 

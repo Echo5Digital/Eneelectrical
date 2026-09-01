@@ -75,6 +75,37 @@ const nextConfig = {
         destination: "/service-areas/electrician-houston-southwest",
         permanent: true,
       },
+      // Old bare (root-level) blog slugs from eneelectrical.com -> new /blog/* pages
+      {
+        source: "/do-you-really-need-a-whole-house-surge-protector",
+        destination: "/blog/do-you-really-need-a-whole-house-surge-protector",
+        permanent: true,
+      },
+      {
+        source: "/why-your-home-s-wiring-may-not-meet-today-s-needs",
+        destination: "/blog/why-your-home-s-wiring-may-not-meet-today-s-needs",
+        permanent: true,
+      },
+      {
+        source: "/what-causes-electrical-fires-in-homes",
+        destination: "/blog/what-causes-electrical-fires-in-homes",
+        permanent: true,
+      },
+      {
+        source: "/is-your-home-safe-signs-your-electrical-panel-is-outdated",
+        destination: "/blog/is-your-home-safe-signs-your-electrical-panel-is-outdated",
+        permanent: true,
+      },
+      {
+        source: "/how-does-your-home-electrical-system-work",
+        destination: "/blog/how-does-your-home-electrical-system-work",
+        permanent: true,
+      },
+      {
+        source: "/when-should-you-upgrade-your-electrical-service",
+        destination: "/blog/when-should-you-upgrade-your-electrical-service",
+        permanent: true,
+      },
     ];
   },
 };

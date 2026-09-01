@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Section, { SectionHeading } from "@/components/Section";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
@@ -394,10 +395,13 @@ export default function HomeClient({ faqData }: HomeClientProps) {
       >
         {/* Background image overlay */}
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/ENE-Banner-image-copy.jpg"
             alt="ENE Electrical service van parked outside a Houston-area home at dusk"
-            className="w-full h-full object-cover object-center"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
           <div
             className="absolute inset-0"
