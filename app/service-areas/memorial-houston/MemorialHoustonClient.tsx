@@ -557,7 +557,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
         <div className="rounded-[0.75rem] overflow-hidden shadow-lg border border-gray-200 aspect-[16/7]">
           <iframe
             title="Memorial Houston, TX map relative to ENE Electrical base in Katy, TX"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55655.91206218576!2d-95.5854!3d29.7836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640db66cf6b3ac9%3A0x99e9c8c5e8a6c92f!2sMemorial%2C%20Houston%2C%20TX!5e0!3m2!1sen!2sus!4v1699900000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495496.49418776145!2d-95.465351!3d29.836095000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788230466922!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

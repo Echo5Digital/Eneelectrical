@@ -903,7 +903,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
         <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
           <iframe
             title="ENE Electrical service area, Katy, TX 77494"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110876.15559396704!2d-95.86481!3d29.785801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640da9f89b7bcf5%3A0xa9f1a6a3c9f0d5a2!2sKaty%2C%20TX%2077494!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495496.49418776145!2d-95.465351!3d29.836095000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788230466922!5m2!1sen!2sin"
             width="100%"
             height="400"
             style={{ border: 0 }}

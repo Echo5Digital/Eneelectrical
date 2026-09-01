@@ -569,7 +569,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
         <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
           <iframe
             title="Westchase Houston TX map: ENE Electrical service area"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55590.40!2d-95.5900!3d29.7370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c3a2d3a4e2d9%3A0xcb9afbc9ca28f7a!2sWestchase%2C%20Houston%2C%20TX!5e0!3m2!1sen!2sus!4v1714000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495496.49418776145!2d-95.465351!3d29.836095000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788230466922!5m2!1sen!2sin"
             width="100%"
             height="420"
             style={{ border: 0, display: "block" }}

@@ -660,7 +660,7 @@ export default function KatyClient({ faqData }: Props) {
         <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
           <iframe
             title="ENE Electrical location in Katy, TX 77494"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55545.70843099745!2d-95.84413!3d29.78531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86413f33af1e7c53%3A0x8dbf2e9a5f3d1b7c!2sKaty%2C%20TX%2077494!5e0!3m2!1sen!2sus!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495496.49418776145!2d-95.465351!3d29.836095000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788230466922!5m2!1sen!2sin"
             width="100%"
             height="400"
             style={{ border: 0 }}

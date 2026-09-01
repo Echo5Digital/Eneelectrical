@@ -565,7 +565,7 @@ export default function RichmondClient({ faqData }: Props) {
         />
         <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ height: "420px" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55887.31428955879!2d-95.77262!3d29.5819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640d7a5a0a4b1c3%3A0x4c0e8c5c0a3b6b2a!2sRichmond%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495496.49418776145!2d-95.465351!3d29.836095000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788230466922!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

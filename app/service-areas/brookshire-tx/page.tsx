@@ -487,7 +487,7 @@ export default function BrookshireTXPage() {
         <div className="rounded-[0.75rem] overflow-hidden shadow-lg border border-gray-100" style={{ height: "400px" }}>
           <iframe
             title="Brookshire TX map showing proximity to Katy TX"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55608.40!2d-96.0!3d29.78!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86412d1c6e9d7c0b%3A0x1234567890abcdef!2sBrookshire%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495496.49418776145!2d-95.465351!3d29.836095000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87edc16e279a22c1%3A0xa79d9e35ba6d5e51!2sE-N-E%20Electrical%2C%20LLC!5e1!3m2!1sen!2sin!4v1788230466922!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
