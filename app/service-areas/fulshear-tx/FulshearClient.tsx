@@ -591,7 +591,7 @@ export default function FulshearClient({ faqData }: Props) {
             className="inline-flex items-center gap-3 px-6 py-3 rounded-xl border"
             style={{ borderColor: "#E2E8F0", backgroundColor: "#F7F8FA" }}
           >
-            <div className="flex gap-0.5" aria-label="5 out of 5 stars">
+            <div className="flex gap-0.5" role="img" aria-label="5 out of 5 stars">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}

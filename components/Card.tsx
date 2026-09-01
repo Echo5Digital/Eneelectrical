@@ -59,7 +59,7 @@ type CardProps =
   | DefaultCardProps;
 
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => (
-  <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+  <div className="flex gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
     {Array.from({ length: 5 }).map((_, i) => (
       <svg
         key={i}

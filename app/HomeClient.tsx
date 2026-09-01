@@ -741,7 +741,7 @@ export default function HomeClient({ faqData }: HomeClientProps) {
         />
         {/* Star summary */}
         <div className="flex items-center justify-center gap-2 mb-10 -mt-6">
-          <div className="flex gap-0.5" aria-label="5 out of 5 stars average rating">
+          <div className="flex gap-0.5" role="img" aria-label="5 out of 5 stars average rating">
             {[1, 2, 3, 4, 5].map((s) => (
               <Star
                 key={s}

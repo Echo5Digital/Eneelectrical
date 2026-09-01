@@ -844,9 +844,9 @@ export default function HoustonClient({ faqData }: Props) {
 
         {/* Overall rating bar */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <div className="flex gap-1" aria-label="5 out of 5 stars overall">
+          <div className="flex gap-1" role="img" aria-label="5 out of 5 stars overall">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} size={22} fill="#F5A623" stroke="#F5A623" />
+              <Star key={i} size={22} fill="#F5A623" stroke="#F5A623" aria-hidden="true" />
             ))}
           </div>
           <p

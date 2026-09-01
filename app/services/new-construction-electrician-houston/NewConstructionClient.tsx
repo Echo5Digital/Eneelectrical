@@ -784,7 +784,7 @@ export default function NewConstructionClient({ faqData }: Props) {
             }}
           >
             {/* Stars */}
-            <div className="flex gap-1 mb-6" aria-label="5 out of 5 stars">
+            <div className="flex gap-1 mb-6" role="img" aria-label="5 out of 5 stars">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}

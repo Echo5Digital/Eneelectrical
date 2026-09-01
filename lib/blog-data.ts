@@ -201,8 +201,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-08-12",
     readTime: "6 min",
     category: "Home Wiring",
-    imageSrc:
-      "https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imageSrc: "/wire.jpg",
     imageAlt: "Electrician inspecting home wiring inside a wall panel",
     intro:
       "The average American home consumes substantially more electricity than it did a decade ago. Smart devices, home offices, EV chargers, and modern HVAC systems have dramatically increased residential power demands beyond what older wiring systems were designed to handle.",

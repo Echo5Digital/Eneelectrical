@@ -760,7 +760,7 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
               &ldquo;
             </div>
             {/* Stars */}
-            <div className="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+            <div className="flex gap-0.5 mb-4" role="img" aria-label="5 out of 5 stars">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
