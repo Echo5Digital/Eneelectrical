@@ -6,6 +6,12 @@ import Card from "@/components/Card";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import VanCta from "@/components/VanCta";
 import BrookshireClient from "./BrookshireClient";
+import {
+  BadgeCheck,
+  ShieldCheck,
+  CheckCircle,
+  Star,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Electrician in Brookshire TX | ENE Electrical",
@@ -216,18 +222,18 @@ export default function BrookshireTXPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <ul className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {[
-              { label: "Licensed", icon: "🏆" },
-              { label: "Insured", icon: "🛡️" },
-              { label: "Bonded", icon: "🔒" },
-              { label: "Background-Checked Technicians", icon: "✅" },
-              { label: "15+ Years Experience", icon: "⭐" },
+              { label: "Licensed", icon: BadgeCheck },
+              { label: "Insured", icon: ShieldCheck },
+              { label: "Bonded", icon: ShieldCheck },
+              { label: "Background-Checked Technicians", icon: CheckCircle },
+              { label: "15+ Years Experience", icon: Star },
             ].map((badge) => (
               <li
                 key={badge.label}
                 className="flex items-center gap-2"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                <span className="text-xl" aria-hidden="true">{badge.icon}</span>
+                <badge.icon size={20} style={{ color: "#F5A623" }} strokeWidth={2} aria-hidden="true" />
                 <span className="text-white text-sm font-bold uppercase tracking-wide">
                   {badge.label}
                 </span>

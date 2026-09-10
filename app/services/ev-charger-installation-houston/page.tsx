@@ -44,6 +44,15 @@ const faqData = [
     answer:
       "ENE Electrical installs EV charging stations compatible with all major electric vehicle brands. The licensed team can work with a variety of home charger hardware to meet your specific needs.",
   },
+  {
+    question: "Do you offer EV charger installation in Katy TX?",
+    answer: "Yes. We serve Katy (77494, 77450) and surrounding areas",
+  },
+  {
+    question: "Is professional installation required?",
+    answer:
+      "Yes. Level 2 chargers require proper wiring and permits to meet safety standards.",
+  },
 ];
 
 const faqJsonLd = {
@@ -308,6 +317,18 @@ export default function EVChargerInstallationPage() {
                 all major electric vehicles. ENE Electrical's licensed, insured, and bonded team
                 has 15+ years of experience serving the Houston metro area.
               </p>
+              <p
+                className="text-base sm:text-lg leading-relaxed mt-4"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                EV charger installation involves connecting a dedicated electrical circuit to a charging station for electric vehicles. Level 2 chargers require a 240-volt circuit and professional installation to ensure safe operation.
+              </p>
+              <p
+                className="text-base sm:text-lg leading-relaxed mt-4"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                The purpose of hiring a licensed electrician in Houston for EV charger installation is to protect your electrical system from overload and ensure compliance with Texas electrical codes. Proper installation improves charging efficiency, prevents fire hazards, and extends the life of your charging equipment.
+              </p>
             </div>
           </div>
         </div>
@@ -444,6 +465,39 @@ export default function EVChargerInstallationPage() {
             </ul>
           </div>
         </div>
+
+        {/* When to Consider EV Charger Installation */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <p
+            className="text-base leading-relaxed mb-5 text-center"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            Standard wall outlets charge slowly. A professionally installed Level 2 charger significantly reduces charging time. You may need EV charger installation if you:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {[
+              "Purchased a new electric vehicle",
+              "Want faster charging at home",
+              "Need a dedicated 240V outlet",
+              "Plan to install a Tesla wall connector",
+              "Are upgrading your electrical panel",
+              "Own a commercial property offering EV charging",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <CheckCircle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       {/* ── INSTALLATION PROCESS ── */}
@@ -495,6 +549,33 @@ export default function EVChargerInstallationPage() {
               </div>
             );
           })}
+        </div>
+
+        {/* What Happens After Installation */}
+        <div
+          className="mt-10 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E7EB" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#0B1F3A" }}
+          >
+            <CheckCircle size={26} color="#F5A623" strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Installation
+            </h3>
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              After installation, we test the charger to ensure safe operation and proper voltage supply. We also explain system usage and maintenance. Many homeowners choose to upgrade to 200-amp panels to support future EV charging needs. Our goal is to future-proof your electrical system while ensuring safe and efficient charging.
+            </p>
+          </div>
         </div>
       </Section>
 

@@ -56,6 +56,16 @@ const faqData = [
     answer:
       "ENE Electrical serves Katy, TX and the broader Houston metro, including Energy Corridor, Southwest Houston, Cinco Ranch, Fulshear, Memorial, Spring Branch, Westchase, Brookshire, and Richmond, TX.",
   },
+  {
+    question: "Do you offer emergency electrical repair in Houston?",
+    answer:
+      "Yes. We provide 24/7 emergency electrical repair services throughout Houston and surrounding areas.",
+  },
+  {
+    question: "Can faulty wiring cause a fire?",
+    answer:
+      "Yes. Damaged or outdated wiring can pose serious fire risks. Immediate professional repair is recommended.",
+  },
 ];
 
 const repairProblems = [
@@ -462,6 +472,18 @@ export default function ElectricalRepairPage() {
               resolve the most common residential electrical issues quickly
               and safely.
             </p>
+            <p
+              className="text-base leading-relaxed mt-4"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              Electrical repair involves diagnosing and fixing issues within your electrical system to restore safety, reliability, and performance. This may include repairing outlets, correcting faulty wiring, replacing damaged breakers, fixing lighting problems, or resolving panel issues.
+            </p>
+            <p
+              className="text-base leading-relaxed mt-4"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              The purpose of professional electrical repair in Houston is to eliminate fire hazards, prevent further system damage, and ensure compliance with Texas electrical codes. Attempting DIY electrical repairs can lead to serious safety risks. Licensed electricians ensure repairs are performed correctly and safely.
+            </p>
           </div>
           <div className="w-full">
             <img
@@ -481,6 +503,59 @@ export default function ElectricalRepairPage() {
               icon={item.icon}
             />
           ))}
+        </div>
+
+        {/* When to Call for Electrical Repair */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center mt-16">
+          <div>
+            <span
+              className="inline-block font-semibold text-sm uppercase tracking-widest mb-4"
+              style={{ color: "#F5A623", fontFamily: "Inter, sans-serif" }}
+            >
+              Know the Warning Signs
+            </span>
+            <h3
+              className="text-2xl sm:text-3xl font-bold leading-tight mb-4"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              When to Call for Electrical Repair
+            </h3>
+            <div
+              className="w-14 h-1 rounded-full mb-6"
+              style={{ backgroundColor: "#F5A623" }}
+            />
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              Electrical issues often worsen over time. Early repair prevents costly future damage. You should contact an electrician repair specialist in Houston if you:
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+            {[
+              "Have frequent breaker trips",
+              "Notice burning smells from outlets",
+              "Experience flickering lights",
+              "Have dead outlets",
+              "See exposed or damaged wiring",
+              "Hear buzzing from panels or switches",
+              "Lose partial power in your home",
+              "Have storm-related electrical damage",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <AlertTriangle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
@@ -532,6 +607,33 @@ export default function ElectricalRepairPage() {
               icon={item.icon}
             />
           ))}
+        </div>
+
+        {/* What Happens After Repair */}
+        <div
+          className="mt-16 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center"
+          style={{ backgroundColor: "#F7F8FA" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#F5A623" }}
+          >
+            <CheckCircle size={26} color="#0B1F3A" strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Repair
+            </h3>
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              After completing your electrical repair, we test all affected circuits to ensure safe operation. If additional upgrades are recommended, such as a panel upgrade or surge protection, we provide clear next steps and transparent pricing. Our goal is not only to fix the immediate issue but to strengthen your electrical system for long-term safety and performance.
+            </p>
+          </div>
         </div>
       </Section>
 

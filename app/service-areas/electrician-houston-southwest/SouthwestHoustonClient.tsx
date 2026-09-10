@@ -50,7 +50,7 @@ const services = [
   {
     title: "Panel Upgrades",
     description:
-      "Upgrade your electrical panel to safely handle modern power demands, essential for many Southwest Houston homes.",
+      "Upgrade your electrical panel to safely handle modern power demands, including whole-home surge protection, essential for many Southwest Houston homes.",
     icon: Zap,
     href: "/services/electrical-panel-upgrade-houston",
   },
@@ -85,9 +85,16 @@ const services = [
   {
     title: "New Construction Wiring",
     description:
-      "Complete electrical wiring solutions for new builds and major renovations across Southwest Houston.",
+      "Complete electrical wiring solutions for new builds and major renovations, including commercial electrical services, across Southwest Houston.",
     icon: Home,
     href: "/services/new-construction-wiring",
+  },
+  {
+    title: "Ceiling Fan Installation",
+    description:
+      "Professional ceiling fan installation and replacement for Southwest Houston homes, improving comfort and energy efficiency.",
+    icon: Wrench,
+    href: "/services/ceiling-fan-installation-houston",
   },
   {
     title: "Emergency Electrician",
@@ -170,6 +177,7 @@ const nearbyAreas = [
   { label: "Energy Corridor", href: "/service-areas/electrician-energy-corridor-houston" },
   { label: "Katy, TX", href: "/service-areas/electrician-katy-tx" },
 ];
+
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
@@ -371,6 +379,9 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
                 dispatches efficiently from our{" "}
                 <strong>Katy, TX 77494</strong> base to meet you when you need us most.
               </p>
+              <p className="text-base leading-relaxed">
+                As a local electrician serving Southwest Houston, we provide complete electrical solutions designed to improve safety, increase electrical capacity, and ensure compliance with Texas electrical codes. From minor electrical repairs to full panel replacements, our goal is to protect your property while strengthening overall system performance.
+              </p>
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
@@ -418,6 +429,102 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
                 ctaLabel="Learn More"
               />
             </Link>
+          ))}
+        </div>
+
+        {/* When Should You Upgrade Your Electrical Panel? */}
+        <div
+          className="mt-10 rounded-2xl p-6 md:p-8 border-l-4 max-w-4xl mx-auto"
+          style={{ backgroundColor: "#F7F8FA", borderLeftColor: "#F5A623" }}
+        >
+          <h3
+            className="text-lg font-bold mb-3"
+            style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+          >
+            When Should You Upgrade Your Electrical Panel?
+          </h3>
+          <p
+            className="text-sm text-gray-600 leading-relaxed mb-4"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            You should consider upgrading your electrical panel when your current system is outdated, overburdened, or no longer compliant with safety standards. Signs that it's time for an upgrade include frequent circuit breaker trips, flickering lights, the presence of a fuse box, or if your panel feels warm or emits a buzzing noise.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+            {[
+              "Your home or business is over 25 years old",
+              "You're dealing with frequent breaker trips or flickering lights",
+              "You've added new appliances or equipment",
+              "You plan to install an EV charger, a hot tub, or solar panels",
+              "Your panel is hot to the touch or produces buzzing sounds",
+              "You still use a fuse box or Federal Pacific/Eaton panel (known for safety issues)",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-600"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                <CheckCircle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* ── HOW IT WORKS ── */}
+      <Section background="primary" spacing="lg">
+        <SectionHeading
+          eyebrow="Our Process"
+          title="How It Works: Our Easy 3-Step Process"
+          align="center"
+          inverted
+        />
+        <div className="grid sm:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Tell Us What You Need",
+              description:
+                "Reach out online or by phone to describe your situation, whether your breakers are tripping, you're adding new appliances, or you need an overall system upgrade.",
+            },
+            {
+              title: "Receive Expert Advice & Clear Options",
+              description:
+                "Our experienced team evaluates your needs, walks you through the process, and provides a transparent quote with no hidden fees.",
+            },
+            {
+              title: "Complete Your Project With Confidence",
+              description:
+                "We complete the upgrade with code-compliant installation, thorough testing, and a satisfaction follow-up. We're not done until you're 100% confident in your system.",
+            },
+          ].map((step, i) => (
+            <div
+              key={step.title}
+              className="rounded-xl p-6 border border-white/10"
+              style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+            >
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 text-sm font-bold"
+                style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+              >
+                {i + 1}
+              </div>
+              <h3
+                className="text-base font-bold text-white mb-2"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                {step.title}
+              </h3>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.7)", fontFamily: "Inter, sans-serif" }}
+              >
+                {step.description}
+              </p>
+            </div>
           ))}
         </div>
       </Section>
@@ -529,6 +636,40 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
               </div>
             ))}
           </div>
+
+          {/* When to Call an Electrician in Southwest Houston */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <p
+              className="text-base leading-relaxed mb-5 text-center text-blue-100"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              You may need an electrician in 77074, 77031, or 77083 if you:
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+              {[
+                "Experience frequent breaker trips",
+                "Notice flickering lights",
+                "Have outdated wiring",
+                "Are remodeling or upgrading appliances",
+                "Need EV charger installation",
+                "Own a rental property requiring electrical repairs",
+                "Have storm-related electrical damage",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 text-sm leading-relaxed text-blue-100"
+                  style={{ fontFamily: "Inter, sans-serif" }}
+                >
+                  <CheckCircle
+                    size={16}
+                    style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                    strokeWidth={2.5}
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -588,6 +729,9 @@ export default function SouthwestHoustonClient({ faqData }: Props) {
                   ENE Electrical dispatches licensed, background-checked technicians from its{" "}
                   <strong className="text-white">Katy, TX 77494</strong> base to serve Southwest
                   Houston residents promptly and professionally.
+                </p>
+                <p>
+                  After completing your electrical service, we provide a summary of work performed and recommendations for future improvements. Many properties in Southwest Houston benefit from electrical capacity upgrades, especially older homes and commercial buildings. Our focus is long-term safety, performance, and compliance with Houston electrical codes.
                 </p>
               </div>
             </div>

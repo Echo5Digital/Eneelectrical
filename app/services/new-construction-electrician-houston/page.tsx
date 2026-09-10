@@ -40,6 +40,22 @@ const faqData = [
     answer:
       "Yes. ENE Electrical actively serves new construction projects in Fulshear, Cinco Ranch, Katy, and other rapidly developing west Houston communities.",
   },
+  {
+    question:
+      "How much does electrical installation cost for a new home in Houston?",
+    answer:
+      "Costs vary based on home size and electrical requirements. We provide detailed project estimates after reviewing plans.",
+  },
+  {
+    question: "Do you install 200 amp panels in new builds?",
+    answer:
+      "Yes. Many new homes require 200 amp panels to support modern electrical demand.",
+  },
+  {
+    question: "Can you install smart home wiring?",
+    answer:
+      "Yes. We can install dedicated wiring for smart systems and advanced electrical features.",
+  },
 ];
 
 const faqSchema = {

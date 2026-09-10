@@ -260,6 +260,12 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
                 powered during outages and severe Texas weather. We serve Katy,
                 Houston, Cinco Ranch, Fulshear, and surrounding communities.
               </p>
+              <p
+                className="text-base leading-relaxed mt-3"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                Generator installation involves connecting a standby or whole home generator to your electrical system through a transfer switch. When utility power fails, the generator automatically activates and restores power to selected circuits or your entire home. The purpose of hiring a licensed generator installer in Houston is to ensure proper sizing, safe wiring, and full compliance with Texas electrical codes.
+              </p>
             </div>
           </div>
         </div>
@@ -370,6 +376,40 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
             </div>
           ))}
         </div>
+
+        {/* When to Consider a Backup Generator */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <p
+            className="text-base leading-relaxed mb-5 text-center"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            A standby generator provides peace of mind during severe weather and unexpected grid failures. You may want backup generator installation in Houston if you:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {[
+              "Experience frequent power outages",
+              "Live in a storm-prone area",
+              "Work from home and rely on electricity",
+              "Own a business requiring uninterrupted power",
+              "Have medical equipment dependent on electricity",
+              "Want to protect refrigerated food and appliances",
+              "Have experienced hurricane-related outages",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <ShieldCheck
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       {/* ── WHAT'S INCLUDED ──────────────────────────────────────────────── */}
@@ -471,6 +511,33 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
                 <div className="flex-1 hidden lg:block" aria-hidden="true" />
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* What Happens After Installation */}
+        <div
+          className="mt-12 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E7EB" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#0B1F3A" }}
+          >
+            <Settings size={26} style={{ color: "#F5A623" }} strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Installation
+            </h3>
+            <p
+              className="text-sm text-gray-500 leading-relaxed"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              After installation, we test the system to ensure automatic activation and safe power transfer. We explain operation procedures and maintenance requirements to keep your generator reliable for years to come. Many homeowners choose whole home generators for complete protection, while others opt for partial-load systems focused on essential circuits. We help determine the best solution for your needs.
+            </p>
           </div>
         </div>
       </Section>
@@ -611,6 +678,22 @@ export default function GeneratorInstallationClient({ faqData }: Props) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Factors That May Impact Final Cost */}
+        <div className="max-w-4xl mx-auto mt-14 text-center">
+          <h3
+            className="text-2xl font-bold mb-4"
+            style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+          >
+            Factors That May Impact Final Cost
+          </h3>
+          <p
+            className="text-base leading-relaxed"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            While ENE Electrical provides transparent pricing, several variables can influence the final cost of your generator installation: site preparation (concrete pads, excavation, or landscaping), required permits (which vary by municipality), location accessibility (hard-to-reach areas like behind fences or sloped yards), fuel hook-up requirements (a long gas line run or a propane tank installation), and the brand and size of generator selected. We make sure every factor is considered in your quote, so there are no surprises, just solid, dependable power when you need it most.
+          </p>
         </div>
       </Section>
 

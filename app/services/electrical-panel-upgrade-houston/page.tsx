@@ -49,6 +49,16 @@ const faqData = [
     answer:
       "Yes, your electricity will need to be temporarily shut off during the panel upgrade for safety. ENE Electrical's team works efficiently to minimize downtime.",
   },
+  {
+    question: "Is upgrading my breaker box necessary for EV charger installation?",
+    answer:
+      "In some cases, yes. We perform load calculations to determine if your existing panel can support new equipment.",
+  },
+  {
+    question: "Is an old fuse box dangerous?",
+    answer:
+      "Older fuse boxes can pose safety risks and may not meet modern electrical code standards.",
+  },
 ];
 
 const faqJsonLd = {
@@ -361,6 +371,18 @@ export default function ElectricalPanelUpgradePage() {
             Their licensed, insured, and bonded technicians have 15+ years of
             experience and serve the entire Houston metro area.
           </p>
+          <p
+            className="text-base sm:text-lg leading-relaxed mt-4"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            An electrical panel upgrade involves replacing your existing breaker panel with a higher-capacity, modern system. The electrical panel is the central hub that distributes power throughout your property.
+          </p>
+          <p
+            className="text-base sm:text-lg leading-relaxed mt-4"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            The purpose of upgrading your panel is to increase electrical capacity, improve safety, and meet current Texas electrical codes. Older panels may not support modern appliances, HVAC systems, EV chargers, or home additions. A professional panel upgrade ensures reliable power distribution and reduces fire risk.
+          </p>
         </div>
       </Section>
 
@@ -407,6 +429,44 @@ export default function ElectricalPanelUpgradePage() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* When to Consider a Panel Upgrade */}
+        <div
+          className="mt-10 rounded-2xl p-6 sm:p-8"
+          style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E7EB" }}
+        >
+          <p
+            className="text-base leading-relaxed mb-5"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            You may need a panel upgrade in Houston or Katy if you:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {[
+              "Experience frequent breaker trips",
+              "Notice flickering or dimming lights",
+              "Have a fuse box instead of breakers",
+              "Are installing an EV charger",
+              "Are adding new appliances or remodeling",
+              "Have a panel older than 25–30 years",
+              "Notice burning smells near the breaker box",
+              "Have been advised by insurance to upgrade",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed list-none"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <AlertTriangle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
@@ -549,6 +609,33 @@ export default function ElectricalPanelUpgradePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* What Happens After the Upgrade */}
+        <div
+          className="mt-10 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center"
+          style={{ backgroundColor: "#F7F8FA" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#F5A623" }}
+          >
+            <BadgeCheck size={26} color="#0B1F3A" strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After the Upgrade
+            </h3>
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+            >
+              After installation, we thoroughly test all circuits to ensure proper function and safe load distribution. You'll receive a clear explanation of your new panel and guidance on future electrical capacity. Many Houston homeowners upgrade to 200 amp panels to support future expansions, EV charging, or whole home generators. Our goal is to future-proof your system for long-term reliability.
+            </p>
           </div>
         </div>
       </Section>

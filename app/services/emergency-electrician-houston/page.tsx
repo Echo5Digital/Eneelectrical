@@ -35,6 +35,26 @@ const faqData = [
     answer:
       "If it is safe to do so, avoid using the affected outlets or circuits, keep family away from the area, and if you smell burning or see sparks, consider shutting off the main breaker and evacuating until the electrician arrives.",
   },
+  {
+    question: "Are you available 24/7 for emergency electrical repair in Houston?",
+    answer:
+      "Yes. We provide 24/7 emergency electrician services throughout Houston and surrounding areas.",
+  },
+  {
+    question: "How fast can you respond to an electrical emergency?",
+    answer:
+      "Response times vary based on location and demand, but we prioritize urgent calls and aim for the fastest possible dispatch.",
+  },
+  {
+    question: "Can power surges damage my electrical system?",
+    answer:
+      "Yes. Surges can damage wiring, panels, and appliances. Emergency inspection is recommended after major surges.",
+  },
+  {
+    question: "Is a burning smell from an outlet dangerous?",
+    answer:
+      "Yes. Burning smells may indicate overheating or wiring failure and require immediate professional attention.",
+  },
 ];
 
 const faqSchema = {

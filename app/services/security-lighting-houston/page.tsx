@@ -47,6 +47,31 @@ const faqData = [
     answer:
       "We serve Katy, Houston, Cinco Ranch, Fulshear, Energy Corridor, Southwest Houston, Memorial, Spring Branch, Westchase, Brookshire, and Richmond, TX.",
   },
+  {
+    question: "Do you install outdoor security lights in Houston?",
+    answer:
+      "Yes. We provide outdoor security lighting installation throughout Houston and surrounding areas.",
+  },
+  {
+    question: "Do you install motion sensor lights in Katy TX?",
+    answer:
+      "Yes. We install motion-activated lighting systems in Katy and nearby communities.",
+  },
+  {
+    question: "Can security lighting help deter crime?",
+    answer:
+      "Yes. Properly placed lighting reduces dark areas and may deter unauthorized activity.",
+  },
+  {
+    question: "Do you provide security system installation in Katy TX?",
+    answer:
+      "We provide electrical installation for security lighting and related systems. For full alarm systems, we can recommend appropriate providers if needed.",
+  },
+  {
+    question: "Are outdoor fixtures weather resistant?",
+    answer:
+      "Yes. We install fixtures designed to withstand Texas weather conditions.",
+  },
 ];
 
 const serviceSchema = {
@@ -107,7 +132,7 @@ const lightingOptions = [
     icon: Eye,
     title: "Motion-Sensor Lights",
     description:
-      "Automatically activate when movement is detected, startling intruders and alerting homeowners. Ideal for driveways, side yards, and backyard perimeters.",
+      "Automatically activate when movement is detected, startling intruders and alerting homeowners. Ideal for driveways, side yards, and backyard perimeters. Motion sensor lights in Katy Texas and Houston activate when movement is detected, improving security while conserving energy, and are ideal for entry points, garages, and backyard areas.",
   },
   {
     icon: Sun,
@@ -352,6 +377,12 @@ export default function SecurityLightingPage() {
               families improve home safety and deter intruders with strategic
               exterior lighting.
             </p>
+            <p
+              className="text-base sm:text-lg text-[#1A2530] leading-relaxed mt-4"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              Security lighting installation involves strategically placing outdoor lighting fixtures to improve visibility and deter unauthorized activity. This often includes motion sensor lights, flood lights, perimeter lighting, and entryway illumination. Professional installation ensures proper wiring, weather-resistant fixtures, and compliance with Texas electrical codes.
+            </p>
           </div>
         </div>
       </Section>
@@ -461,6 +492,39 @@ export default function SecurityLightingPage() {
           </div>
         </div>
 
+        {/* When to Consider Outdoor Security Lighting */}
+        <div className="max-w-4xl mx-auto mt-14">
+          <p
+            className="text-base leading-relaxed mb-5 text-center"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            Security lighting is an effective deterrent and improves overall property safety. You may need outdoor security lights in Houston or Katy if you:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {[
+              "Have dark entryways or driveways",
+              "Want motion-activated lighting",
+              "Own a commercial property",
+              "Have experienced theft or vandalism",
+              "Want improved nighttime visibility",
+              "Need enhanced backyard or perimeter lighting",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <CheckCircle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Supporting image */}
         <div className="mt-14 rounded-2xl overflow-hidden shadow-lg">
           <img
@@ -506,6 +570,12 @@ export default function SecurityLightingPage() {
             </div>
           </div>
         </div>
+        <p
+          className="text-sm text-gray-500 leading-relaxed max-w-3xl mx-auto text-center mt-8"
+          style={{ fontFamily: "Inter, sans-serif" }}
+        >
+          Outdoor security lighting can also be integrated with smart controls for enhanced monitoring and automation.
+        </p>
       </Section>
 
       {/* ── INSTALLATION PROCESS ── */}
@@ -551,6 +621,33 @@ export default function SecurityLightingPage() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* What Happens After Installation */}
+        <div
+          className="mt-10 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#F5A623" }}
+          >
+            <CheckCircle size={26} style={{ color: "#0B1F3A" }} strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2 text-white"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Installation
+            </h3>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.7)", fontFamily: "Inter, sans-serif" }}
+            >
+              After installation, we test all lighting systems to ensure proper activation, brightness, and coverage. We provide guidance on fixture maintenance and optional upgrades. If additional electrical capacity or wiring adjustments are needed, we provide clear recommendations.
+            </p>
+          </div>
         </div>
       </Section>
 

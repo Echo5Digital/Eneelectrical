@@ -56,6 +56,30 @@ const faqSchema = {
         text: "Yes. ENE Electrical is licensed, insured, and bonded, and employs background-checked technicians throughout the Houston and Katy, TX metro area.",
       },
     },
+    {
+      "@type": "Question",
+      name: "How much does an electrical inspection cost in Houston?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Costs vary depending on property size and scope. We provide clear pricing before scheduling.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is an electrical inspection required when buying a home?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "While not always required, it is strongly recommended to identify hidden electrical issues.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide inspection reports?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We provide a clear summary of findings and recommended next steps.",
+      },
+    },
   ],
 };
 

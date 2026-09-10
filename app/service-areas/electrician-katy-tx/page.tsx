@@ -35,6 +35,26 @@ const faqData = [
     answer:
       "Yes. ENE Electrical offers emergency electrician services for Katy residents who need urgent electrical repairs.",
   },
+  {
+    question: "How quickly can an electrician come to my home in Katy?",
+    answer:
+      "We offer 24/7 emergency service in Katy and can often respond the same day depending on availability.",
+  },
+  {
+    question: "How much does an electrician cost in Katy TX?",
+    answer:
+      "Costs vary based on the service needed. We provide clear, upfront estimates before beginning any work.",
+  },
+  {
+    question: "Do you serve 77494 and 77450?",
+    answer:
+      "Yes. We serve all Katy neighborhoods including ZIP codes 77494 and 77450.",
+  },
+  {
+    question: "Do you offer commercial electrical services in Katy?",
+    answer:
+      "Yes. We provide commercial electrical repairs and installations throughout Katy.",
+  },
 ];
 
 const serviceSchema = {

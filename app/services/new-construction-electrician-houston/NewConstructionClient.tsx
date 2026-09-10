@@ -324,12 +324,6 @@ export default function NewConstructionClient({ faqData }: Props) {
           >
             Quick Answer
           </p>
-          <h2
-            className="text-xl md:text-2xl font-bold mb-4"
-            style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
-          >
-            What Is a New Construction Electrician?
-          </h2>
           <p
             className="text-base leading-relaxed"
             style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
@@ -341,6 +335,12 @@ export default function NewConstructionClient({ faqData }: Props) {
             inspection coordination. With 15+ years of experience, ENE
             Electrical is a trusted electrical partner for new home builds
             throughout the Houston and Katy metro area.
+          </p>
+          <p
+            className="text-base leading-relaxed mt-4"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            Electrical installation for new construction involves designing and installing the entire electrical system for a new home or commercial building. This includes wiring, breaker panels, circuits, outlets, lighting systems, and safety devices. The purpose of hiring a licensed new construction electrician in Houston is to ensure the system meets Texas electrical codes, supports modern electrical demand, and passes all required inspections.
           </p>
         </div>
       </Section>
@@ -468,7 +468,7 @@ export default function NewConstructionClient({ faqData }: Props) {
                 you'll make. ENE Electrical guides homeowners through every
                 electrical decision, from panel sizing and circuit planning to
                 smart home pre-wiring and EV charger rough-in, ensuring your
-                new home is wired exactly the way you want it.
+                new home is wired exactly the way you want it. New home wiring in Katy TX and Houston requires careful planning to support modern electrical needs such as EV chargers, whole home generators, smart home devices, and high-efficiency HVAC systems. We design systems with future expansion in mind, including 200 amp panel options and additional circuit capacity.
               </p>
             </div>
             <ul className="flex flex-col gap-2 mt-2">
@@ -493,6 +493,39 @@ export default function NewConstructionClient({ faqData }: Props) {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* When to Hire a New Construction Electrician */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <p
+            className="text-base leading-relaxed mb-5 text-center"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            Electrical installation should be completed early in the construction process to ensure safe integration with plumbing, HVAC, and structural systems. You may need new home wiring in Houston or Katy if you:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {[
+              "Are building a new home",
+              "Are developing residential or commercial property",
+              "Need electrical installation for an addition",
+              "Are remodeling and require full rewiring",
+              "Want to install smart home systems",
+              "Require code-compliant inspection approvals",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <CheckCircle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
@@ -588,6 +621,33 @@ export default function NewConstructionClient({ faqData }: Props) {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* What Happens After Installation */}
+        <div
+          className="mt-12 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(245,166,35,0.2)" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#F5A623" }}
+          >
+            <CheckCircle size={26} style={{ color: "#0B1F3A" }} strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2 text-white"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Installation
+            </h3>
+            <p
+              className="text-sm leading-relaxed text-blue-200"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              After completing the electrical installation, we conduct full system testing to ensure safe operation and inspection compliance. We coordinate with local inspectors to ensure all work meets Houston and Katy code requirements. Our goal is to deliver a fully operational, safe, and future-ready electrical system.
+            </p>
           </div>
         </div>
       </Section>

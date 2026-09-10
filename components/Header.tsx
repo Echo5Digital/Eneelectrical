@@ -68,7 +68,7 @@ export default function Header({
   navLinks = defaultNavLinks,
   ctaLabel = "Book Appointment",
   ctaRoute = "/appointment-booking",
-  logoSrc = "/logo_ene_white.png",
+  logoSrc = "/logo_ene.png",
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -124,7 +124,8 @@ export default function Header({
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center flex-shrink-0 group"
+            className="flex items-center flex-shrink-0 group rounded-xl px-3 py-2"
+            style={{ backgroundColor: "#FFFFFF" }}
             aria-label={`${businessName} – Home`}
           >
             <Image
@@ -133,7 +134,7 @@ export default function Header({
               width={188}
               height={125}
               priority
-              className="h-16 lg:h-20 w-auto object-contain"
+              className="h-12 lg:h-16 w-auto object-contain"
             />
           </Link>
 
@@ -322,7 +323,7 @@ export default function Header({
             onClick={() => setMobileOpen(false)}
           >
             <Image
-              src={logoSrc}
+              src="/logo_ene_white.png"
               alt={`${businessName} logo`}
               width={188}
               height={125}

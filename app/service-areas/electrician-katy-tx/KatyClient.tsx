@@ -25,6 +25,8 @@ import {
   Car,
   Lightbulb,
   Home,
+  Fan,
+  HardHat,
 } from "lucide-react";
 
 interface FaqItem {
@@ -47,9 +49,23 @@ const services = [
   {
     title: "Panel Upgrades",
     description:
-      "Upgrade your electrical panel to handle modern energy demands safely. Essential for Katy's growing homes and new appliances.",
+      "Upgrade your electrical panel to handle modern energy demands safely, including whole-home surge protection. Essential for Katy's growing homes and new appliances.",
     icon: Home,
     href: "/services/electrical-panel-upgrade-houston",
+  },
+  {
+    title: "Ceiling Fan Installation",
+    description:
+      "Professional ceiling fan installation and replacement for Katy homes, improving comfort and energy efficiency year-round.",
+    icon: Fan,
+    href: "/services/ceiling-fan-installation-houston",
+  },
+  {
+    title: "New Construction Wiring",
+    description:
+      "Complete electrical wiring for new builds and remodels in Katy, from rough-in to final trim, for both residential and commercial electrical services.",
+    icon: HardHat,
+    href: "/services/new-construction-wiring",
   },
   {
     title: "EV Charger Installation",
@@ -177,6 +193,7 @@ const nearbyAreas = [
   { label: "Richmond, TX", href: "/service-areas/richmond-tx" },
   { label: "Southwest Houston", href: "/service-areas/electrician-houston-southwest" },
 ];
+
 
 function FaqAccordion({ items }: { items: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -414,13 +431,19 @@ export default function KatyClient({ faqData }: Props) {
               power demands.
             </p>
             <p
-              className="text-base text-gray-600 leading-relaxed"
+              className="text-base text-gray-600 leading-relaxed mb-5"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Katy's expanding homeowner base demands reliable, licensed
               electrical contractors for new homes, EV charger installations,
               and electrical safety inspections. ENE Electrical is proud to be
               that trusted partner for our community.
+            </p>
+            <p
+              className="text-base text-gray-600 leading-relaxed"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              As a full-service home electrician in Katy, we provide comprehensive electrical solutions for homeowners and businesses. Our services are designed to improve safety, increase electrical capacity, and ensure compliance with Texas electrical codes. We handle everything from minor outlet repairs to complete panel replacements, protecting your property from electrical hazards while improving system performance and efficiency.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -512,6 +535,102 @@ export default function KatyClient({ faqData }: Props) {
                 className="h-full group-hover:shadow-xl transition-shadow duration-300"
               />
             </Link>
+          ))}
+        </div>
+
+        {/* When Should You Upgrade Your Electrical Panel? */}
+        <div
+          className="mt-10 rounded-2xl p-6 md:p-8 border-l-4 max-w-4xl mx-auto"
+          style={{ backgroundColor: "#FFFFFF", borderLeftColor: "#F5A623" }}
+        >
+          <h3
+            className="text-lg font-bold mb-3"
+            style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+          >
+            When Should You Upgrade Your Electrical Panel?
+          </h3>
+          <p
+            className="text-sm text-gray-600 leading-relaxed mb-4"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            You should consider upgrading your electrical panel when your current system is outdated, overburdened, or no longer compliant with safety standards. Signs that it's time for an upgrade include frequent circuit breaker trips, flickering lights, the presence of a fuse box, or if your panel feels warm or emits a buzzing noise.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+            {[
+              "Your home or business is over 25 years old",
+              "You're dealing with frequent breaker trips or flickering lights",
+              "You've added new appliances or equipment",
+              "You plan to install an EV charger, a hot tub, or solar panels",
+              "Your panel is hot to the touch or produces buzzing sounds",
+              "You still use a fuse box or Federal Pacific/Eaton panel (known for safety issues)",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-600"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                <CheckCircle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* ── HOW IT WORKS ── */}
+      <Section background="primary" spacing="lg">
+        <SectionHeading
+          eyebrow="Our Process"
+          title="How It Works: Our Easy 3-Step Process"
+          align="center"
+          inverted
+        />
+        <div className="grid sm:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Tell Us What You Need",
+              description:
+                "Reach out online or by phone to describe your situation, whether your breakers are tripping, you're adding new appliances, or you need an overall system upgrade.",
+            },
+            {
+              title: "Receive Expert Advice & Clear Options",
+              description:
+                "Our experienced team evaluates your needs, walks you through the process, and provides a transparent quote with no hidden fees.",
+            },
+            {
+              title: "Complete Your Project With Confidence",
+              description:
+                "We complete the upgrade with code-compliant installation, thorough testing, and a satisfaction follow-up. We're not done until you're 100% confident in your system.",
+            },
+          ].map((step, i) => (
+            <div
+              key={step.title}
+              className="rounded-xl p-6 border border-white/10"
+              style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+            >
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 text-sm font-bold"
+                style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+              >
+                {i + 1}
+              </div>
+              <h3
+                className="text-base font-bold text-white mb-2"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                {step.title}
+              </h3>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.7)", fontFamily: "Inter, sans-serif" }}
+              >
+                {step.description}
+              </p>
+            </div>
           ))}
         </div>
       </Section>
@@ -625,6 +744,40 @@ export default function KatyClient({ faqData }: Props) {
             Richmond, and the greater Houston metro area.
           </p>
         </div>
+
+        {/* When to Call an Electrician in Katy */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <p
+            className="text-base leading-relaxed mb-5 text-center"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            You may need a residential electrician in Katy TX if you:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {[
+              "Experience frequent breaker trips",
+              "Notice flickering or dim lights",
+              "Have outdated wiring or fuse boxes",
+              "Need to install an EV charger",
+              "Are remodeling or upgrading appliances",
+              "Smell burning odors from outlets or panels",
+              "Have storm-related electrical damage",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2.5 text-sm leading-relaxed"
+                style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+              >
+                <CheckCircle
+                  size={16}
+                  style={{ color: "#F5A623", flexShrink: 0, marginTop: 2 }}
+                  strokeWidth={2.5}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       {/* ── TESTIMONIALS ── */}
@@ -699,7 +852,7 @@ export default function KatyClient({ faqData }: Props) {
             Your Trusted Local Electrician in Katy
           </h2>
           <p
-            className="text-base text-gray-600 leading-relaxed max-w-3xl"
+            className="text-base text-gray-600 leading-relaxed max-w-3xl mb-5"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             ENE Electrical is based in Katy, TX 77494 and serves the Katy community directly,
@@ -708,6 +861,12 @@ export default function KatyClient({ faqData }: Props) {
             essential for new construction wiring, panel upgrades to meet modern loads, and EV
             charger installations for the area's expanding homeowner base. When you work with ENE
             Electrical, you're working with a team that is genuinely part of the Katy community.
+          </p>
+          <p
+            className="text-base text-gray-600 leading-relaxed max-w-3xl"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            After your electrical service is completed, you'll receive a clear explanation of the work performed and any recommended improvements. Our goal is not just to fix immediate issues but to strengthen your electrical system for long-term safety. Many Katy homeowners upgrade their panels to support modern appliances and EV chargers, and we provide guidance on future-proofing your home's electrical capacity.
           </p>
         </div>
       </Section>

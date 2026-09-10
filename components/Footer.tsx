@@ -151,13 +151,16 @@ export default function Footer({
           {/* Brand Column */}
           <div className="lg:col-span-1">
             {/* Logo / Business Name */}
-            <div className="flex items-center mb-4">
+            <div
+              className="inline-flex items-center mb-4 px-4 py-3 rounded-xl"
+              style={{ backgroundColor: "#FFFFFF" }}
+            >
               <Image
-                src="/logo_ene_white.png"
+                src="/logo_ene.png"
                 alt={`${businessName} logo`}
                 width={188}
                 height={125}
-                className="h-20 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
 

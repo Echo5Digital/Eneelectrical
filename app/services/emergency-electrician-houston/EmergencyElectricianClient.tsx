@@ -25,6 +25,7 @@ import {
   MapPin,
   Eye,
   OctagonAlert,
+  CheckCircle,
 } from "lucide-react";
 
 interface FAQItem {
@@ -375,6 +376,12 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
             throughout the Houston and Katy metro area. With 15+ years of experience, ENE
             Electrical responds quickly to protect your home and family.
           </p>
+          <p
+            className="text-base sm:text-lg leading-relaxed mt-4"
+            style={{ color: "#1A2530", fontFamily: "Inter, sans-serif" }}
+          >
+            An electrical emergency involves any situation that presents an immediate safety risk, power loss, or potential fire hazard, including electrical buzzing or popping sounds and storm-related electrical damage. The purpose of calling a licensed emergency electrician in Houston is to prevent property damage, fire risk, and electrical injury.
+          </p>
         </div>
       </section>
 
@@ -457,6 +464,33 @@ export default function EmergencyElectricianClient({ faqData }: Props) {
               description={desc}
             />
           ))}
+        </div>
+
+        {/* What Happens After Emergency Service */}
+        <div
+          className="mt-10 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "#FFFFFF", border: "1px solid #E5E7EB" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#0B1F3A" }}
+          >
+            <CheckCircle size={26} style={{ color: "#F5A623" }} strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2"
+              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Emergency Service
+            </h3>
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              We arrive prepared to identify the issue quickly and implement safe repairs on-site whenever possible. Once the immediate hazard is resolved, we thoroughly inspect your system to ensure no additional safety risks remain. If upgrades are recommended such as panel replacement or surge protection, we provide clear next steps and upfront pricing. Our goal is not only to restore power but to strengthen your system against future emergencies.
+            </p>
+          </div>
         </div>
       </Section>
 

@@ -134,7 +134,7 @@ const wiringServices = [
     icon: Zap,
     title: "Sub-Panel Feeds",
     description:
-      "We install and feed sub-panels for large homes, garages, or detached structures, sized correctly from the ground up.",
+      "We install and feed sub-panels for large homes, garages, or detached structures, sized correctly from the ground up. The service panel distributes power to different areas of your building, and we install main electrical panels with proper load distribution alongside sub-panels when your building needs additional circuits to manage electricity for specific areas like a garage or secondary floor.",
   },
   {
     icon: Sun,
@@ -146,13 +146,19 @@ const wiringServices = [
     icon: Cpu,
     title: "Low-Voltage & Smart-Home Pre-Wiring",
     description:
-      "Cat6, coax, speaker, and smart-home control wiring rough-in handled during framing so your home is future-ready.",
+      "Cat6, coax, speaker, and smart-home control wiring rough-in handled during framing so your home is future-ready. In today's connected world, a robust wiring system is essential for smooth communication, entertainment, and smart home operations, providing centralized wiring that supports internet and networking, cable TV and satellite distribution, smart home devices, and telephone and intercom systems.",
   },
   {
     icon: BatteryCharging,
     title: "EV Charger Pre-Wiring",
     description:
       "Conduit runs and dedicated circuits for Level 2 EV chargers installed during new construction for seamless future hookup.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Surge Protection & Grounding",
+    description:
+      "Protecting your property from power surges is a critical part of a secure electrical system. We offer complete surge protection installation and grounding services to prevent damage to your devices and ensure safety in case of an electrical fault or surge.",
   },
 ];
 
@@ -237,6 +243,21 @@ const faqs = [
     question: "Which TX communities do you serve for new construction wiring?",
     answer:
       "ENE Electrical serves new construction wiring projects in Katy, Fulshear, Cinco Ranch, Houston, Energy Corridor, Memorial, Westchase, Spring Branch, Southwest Houston, Brookshire, and Richmond, TX.",
+  },
+  {
+    question: "What types of properties do you provide new construction wiring for?",
+    answer:
+      "We provide new construction wiring services for residential homes, commercial buildings, and industrial properties.",
+  },
+  {
+    question: "How long will the wiring take?",
+    answer:
+      "The time depends on the size of the project, but we work efficiently to meet deadlines.",
+  },
+  {
+    question: "Can you upgrade existing electrical systems during construction?",
+    answer:
+      "Yes, we can upgrade and integrate electrical systems into ongoing construction projects.",
   },
 ];
 

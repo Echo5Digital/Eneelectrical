@@ -234,6 +234,21 @@ const faqs = [
     answer:
       "Yes. ENE Electrical is licensed, insured, and bonded, and employs background-checked technicians throughout the Houston and Katy, TX metro area.",
   },
+  {
+    question: "How much does an electrical inspection cost in Houston?",
+    answer:
+      "Costs vary depending on property size and scope. We provide clear pricing before scheduling.",
+  },
+  {
+    question: "Is an electrical inspection required when buying a home?",
+    answer:
+      "While not always required, it is strongly recommended to identify hidden electrical issues.",
+  },
+  {
+    question: "Do you provide inspection reports?",
+    answer:
+      "Yes. We provide a clear summary of findings and recommended next steps.",
+  },
 ];
 
 // ─── Animated counter hook ───────────────────────────────────────────────────
@@ -578,6 +593,12 @@ export default function ElectricalInspectionClient() {
                 With 15+ years of experience, ENE Electrical's background-checked technicians
                 deliver detailed, reliable assessments.
               </p>
+              <p
+                className="text-sm sm:text-base leading-relaxed font-medium mt-3"
+                style={{ fontFamily: "Inter, sans-serif", color: "#0B1F3A" }}
+              >
+                An electrical inspection is a comprehensive evaluation of your electrical system to assess safety, functionality, and code compliance. This includes examining panels, breakers, wiring, outlets, grounding systems, and visible electrical components. The purpose of a professional electrical inspection in Houston is to identify potential hazards before they become serious issues. Inspections are commonly required during home purchases, renovations, insurance reviews, or when electrical concerns arise.
+              </p>
             </div>
           </div>
         </div>
@@ -612,7 +633,7 @@ export default function ElectricalInspectionClient() {
             {
               icon: Home,
               title: "Home Sales & Purchases",
-              body: "Buyers and real estate agents increasingly request electrical inspections. Sellers benefit from knowing their system's status before listing; buyers gain confidence before closing.",
+              body: "Buyers and real estate agents increasingly request electrical inspections. Sellers benefit from knowing their system's status before listing; buyers gain confidence before closing. When purchasing a property, a home electrical inspection in Katy TX or Houston can uncover hidden issues not visible during general home inspections. We assess whether the panel capacity meets modern demand, identify outdated wiring, and check for safety risks. Our detailed evaluations help buyers negotiate repairs and protect long-term investment value.",
             },
           ].map((item) => (
             <div
@@ -752,6 +773,33 @@ export default function ElectricalInspectionClient() {
             Schedule My Inspection
           </Link>
         </div>
+
+        {/* What Happens After the Inspection */}
+        <div
+          className="mt-12 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#F5A623" }}
+          >
+            <FileText size={26} style={{ color: "#0B1F3A" }} strokeWidth={2} />
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2 text-white"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After the Inspection
+            </h3>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ fontFamily: "Inter, sans-serif", color: "rgba(255,255,255,0.75)" }}
+            >
+              After completing your electrical inspection, we provide a summary of findings and recommended next steps. If upgrades or repairs are necessary such as panel replacement or wiring repair, we offer transparent estimates. Our goal is to ensure your electrical system is safe, compliant, and reliable.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* ── WHEN YOU NEED AN INSPECTION ───────────────────────────────────── */}
@@ -794,6 +842,12 @@ export default function ElectricalInspectionClient() {
             </div>
           ))}
         </div>
+        <p
+          className="text-base leading-relaxed mt-10 max-w-3xl mx-auto text-center"
+          style={{ fontFamily: "Inter, sans-serif", color: "#1A2530" }}
+        >
+          Real estate electrical inspections in Houston are especially valuable before closing on a property. You may need an electrical safety inspection in Houston or Katy if you need documentation for insurance or simply want peace of mind about system safety.
+        </p>
       </Section>
 
       {/* ── TRUST INDICATORS ─────────────────────────────────────────────── */}

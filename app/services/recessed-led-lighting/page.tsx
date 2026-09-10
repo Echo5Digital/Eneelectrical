@@ -6,6 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
 import VanCta from "@/components/VanCta";
 import RecessedLEDLightingClient, { ServiceAreaGrid } from "./RecessedLEDLightingClient";
+import {
+  BadgeCheck,
+  ShieldCheck,
+  CheckCircle,
+  Star,
+  Lightbulb,
+  Home,
+  TrendingUp,
+  Sparkles,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Recessed LED Lighting Installation | ENE Electrical Houston TX",
@@ -36,6 +46,31 @@ const faqData = [
     question: "What areas in Houston do you serve for recessed lighting installation?",
     answer:
       "We serve Katy, Houston, Cinco Ranch, Fulshear, Energy Corridor, Memorial, Spring Branch, Westchase, Southwest Houston, Brookshire, and Richmond, TX.",
+  },
+  {
+    question: "How much does lighting installation cost in Houston?",
+    answer:
+      "Costs vary depending on the number of fixtures and wiring requirements. We provide detailed estimates before beginning work.",
+  },
+  {
+    question: "Is LED lighting more energy efficient?",
+    answer:
+      "Yes. LED lighting uses less energy and lasts longer than traditional bulbs.",
+  },
+  {
+    question: "Do you install ceiling fans in Katy?",
+    answer:
+      "Yes. We provide professional ceiling fan installation in Katy and Houston.",
+  },
+  {
+    question: "Can you install outdoor landscape lighting?",
+    answer:
+      "Yes. We design and install outdoor lighting systems for homes in Houston and Katy.",
+  },
+  {
+    question: "Do I need a new circuit for recessed lighting?",
+    answer:
+      "In some cases, yes. We evaluate load capacity before installation.",
   },
 ];
 
@@ -198,6 +233,12 @@ export default function RecessedLEDLightingPage() {
             >
               ENE Electrical provides professional recessed LED lighting installation for residential homeowners in Houston and Katy, TX. Our licensed electricians handle layout planning, wiring, fixture installation, and dimmer integration for kitchens, living rooms, hallways, and more. With 15+ years of experience, ENE Electrical delivers energy-efficient, aesthetically polished lighting upgrades throughout the Houston and Katy metro area.
             </p>
+            <p
+              className="text-base leading-relaxed mt-4"
+              style={{ fontFamily: "Inter, sans-serif", color: "#1A2530" }}
+            >
+              Lighting installation involves safely wiring and installing new light fixtures, recessed lighting, ceiling fans, LED upgrades, and outdoor lighting systems. Professional installation ensures proper voltage, secure mounting, and compliance with Texas electrical codes. The purpose of working with a licensed electrician in Houston for lighting installation is to prevent wiring hazards, improve energy efficiency, and enhance overall home value.
+            </p>
           </div>
         </div>
       </Section>
@@ -207,18 +248,18 @@ export default function RecessedLEDLightingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { label: "Licensed", icon: "🏅" },
-              { label: "Insured", icon: "🛡️" },
-              { label: "Bonded", icon: "🔐" },
-              { label: "Background-Checked Technicians", icon: "✅" },
-              { label: "15+ Years Experience", icon: "⭐" },
+              { label: "Licensed", icon: BadgeCheck },
+              { label: "Insured", icon: ShieldCheck },
+              { label: "Bonded", icon: ShieldCheck },
+              { label: "Background-Checked Technicians", icon: CheckCircle },
+              { label: "15+ Years Experience", icon: Star },
             ].map((badge) => (
               <div
                 key={badge.label}
                 className="flex flex-col items-center justify-center gap-2 py-4 px-3 rounded-xl text-center"
                 style={{ backgroundColor: "rgba(255,255,255,0.07)" }}
               >
-                <span className="text-2xl" role="img" aria-hidden="true">{badge.icon}</span>
+                <badge.icon size={24} style={{ color: "#F5A623" }} strokeWidth={2} aria-hidden="true" />
                 <span
                   className="text-xs font-semibold uppercase tracking-wide text-white"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -239,28 +280,34 @@ export default function RecessedLEDLightingPage() {
           subtitle="Discover why Houston-area homeowners choose recessed LED lighting for their interior upgrades."
           align="center"
         />
+        <p
+          className="text-base leading-relaxed max-w-3xl mx-auto text-center mb-12 -mt-6"
+          style={{ fontFamily: "Inter, sans-serif", color: "#1A2530" }}
+        >
+          Recessed lighting installation in Katy TX and Houston is one of our most requested upgrades. Recessed lights provide a clean, modern appearance while improving room brightness. LED lighting installation reduces energy consumption and lasts significantly longer than traditional bulbs.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              icon: "💡",
+              icon: Lightbulb,
               title: "Energy Efficiency",
               description:
                 "LED fixtures use up to 75% less energy than traditional incandescent bulbs, significantly reducing your monthly electricity bills.",
             },
             {
-              icon: "🏡",
+              icon: Home,
               title: "Elevated Aesthetics",
               description:
                 "Recessed lighting delivers a sleek, modern look that eliminates clutter and complements any interior design style.",
             },
             {
-              icon: "📈",
+              icon: TrendingUp,
               title: "Increased Home Value",
               description:
                 "Professional lighting upgrades are a proven return-on-investment, making your home more attractive to future buyers.",
             },
             {
-              icon: "🌟",
+              icon: Sparkles,
               title: "Uniform Illumination",
               description:
                 "Strategically placed recessed lights eliminate dark corners and shadows for consistent, comfortable lighting throughout every room.",
@@ -270,7 +317,13 @@ export default function RecessedLEDLightingPage() {
               key={benefit.title}
               className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100"
             >
-              <span className="text-3xl mb-4 block" role="img" aria-hidden="true">{benefit.icon}</span>
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                style={{ backgroundColor: "#0B1F3A" }}
+                aria-hidden="true"
+              >
+                <benefit.icon size={22} style={{ color: "#F5A623" }} strokeWidth={2} />
+              </div>
               <h3
                 className="text-lg font-bold mb-2"
                 style={{ fontFamily: "Montserrat, sans-serif", color: "#0B1F3A" }}
@@ -362,6 +415,36 @@ export default function RecessedLEDLightingPage() {
             </div>
           ))}
         </div>
+
+        {/* Ceiling Fan & Outdoor Lighting Installation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div
+            className="rounded-2xl p-6 border border-gray-100 bg-[#F7F8FA]"
+          >
+            <h3
+              className="text-lg font-bold mb-2"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "#0B1F3A" }}
+            >
+              Ceiling Fan Installation
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+              Ceiling fan installation in Katy and Houston improves airflow and energy efficiency. Proper installation ensures secure mounting and balanced operation.
+            </p>
+          </div>
+          <div
+            className="rounded-2xl p-6 border border-gray-100 bg-[#F7F8FA]"
+          >
+            <h3
+              className="text-lg font-bold mb-2"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "#0B1F3A" }}
+            >
+              Outdoor Landscape Lighting
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+              Outdoor landscape lighting enhances curb appeal, improves safety, and highlights walkways and architectural features. We design and install durable outdoor lighting systems built to withstand Texas weather conditions.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* Our Installation Process */}
@@ -441,6 +524,33 @@ export default function RecessedLEDLightingPage() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* What Happens After Installation */}
+        <div
+          className="mt-10 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center max-w-4xl mx-auto"
+          style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
+        >
+          <div
+            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#F5A623" }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B1F3A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h3
+              className="text-xl font-bold mb-2 text-white"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              What Happens After Installation
+            </h3>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ fontFamily: "Inter, sans-serif", color: "rgba(255,255,255,0.75)" }}
+            >
+              After installation, we test all fixtures and circuits to ensure safe operation and proper load distribution. If additional upgrades are recommended such as panel expansion or surge protection, we provide clear guidance. Our goal is to deliver lighting solutions that improve both function and aesthetics.
+            </p>
+          </div>
         </div>
       </Section>
 

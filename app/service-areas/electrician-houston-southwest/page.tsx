@@ -30,6 +30,32 @@ const faqData = [
     answer:
       "Yes. ENE Electrical is licensed, insured, and bonded in Texas, with background-checked technicians serving all areas of its service region, including Southwest Houston.",
   },
+  {
+    question: "Do you serve ZIP code 77074?",
+    answer:
+      "Yes. We provide electrical services in 77074 and surrounding Southwest Houston neighborhoods.",
+  },
+  {
+    question:
+      "Are you available for emergency electrical repairs in Southwest Houston?",
+    answer:
+      "Yes. We offer 24/7 emergency electrician services throughout the area.",
+  },
+  {
+    question: "Do you install EV chargers in 77031?",
+    answer:
+      "Yes. We provide professional EV charger installation for homes and businesses in 77031 and 77083.",
+  },
+  {
+    question: "Do you serve Alief and Sharpstown?",
+    answer:
+      "Yes. We provide electrical services throughout Alief, Sharpstown, and nearby Southwest Houston communities.",
+  },
+  {
+    question: "Do you handle commercial electrical services in this area?",
+    answer:
+      "Yes. We provide commercial electrical repairs and installations across Southwest Houston.",
+  },
 ];
 
 const serviceSchema = {

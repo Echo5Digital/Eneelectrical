@@ -35,6 +35,26 @@ const faqData = [
     answer:
       "ENE Electrical installs automatic transfer switches as part of standby generator installations, ensuring your home seamlessly switches to backup power when the grid goes down.",
   },
+  {
+    question: "How much does generator installation cost in Houston?",
+    answer:
+      "Costs vary based on generator size and installation complexity. We provide clear, upfront estimates after evaluating your property.",
+  },
+  {
+    question: "What is a whole home generator?",
+    answer:
+      "A whole home generator powers your entire house during an outage, while smaller systems power selected circuits.",
+  },
+  {
+    question: "Do generators turn on automatically?",
+    answer:
+      "Yes. Standby generators with automatic transfer switches activate when power is lost.",
+  },
+  {
+    question: "Do you install Generac generators in Katy?",
+    answer:
+      "Yes. We install Generac and other major standby generator brands.",
+  },
 ];
 
 const serviceSchema = {
