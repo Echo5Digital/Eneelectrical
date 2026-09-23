@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Home, Zap, PhoneCall, Wrench } from "lucide-react";
+import { Home, PhoneCall, Wrench } from "lucide-react";
 
 const popularLinks = [
   { label: "Electrical Panel Upgrade", href: "/services/electrical-panel-upgrade-houston" },
@@ -30,14 +30,6 @@ export default function NotFound() {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-28 flex flex-col items-center text-center gap-6">
-          <span
-            className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
-            style={{ backgroundColor: "rgba(245,166,35,0.15)" }}
-            aria-hidden="true"
-          >
-            <Zap size={28} color="#F5A623" strokeWidth={2.25} />
-          </span>
-
           <span
             className="text-6xl sm:text-7xl font-bold leading-none"
             style={{ color: "#F5A623", fontFamily: "Montserrat, sans-serif" }}
