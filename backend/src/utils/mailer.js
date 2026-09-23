@@ -1,4 +1,11 @@
 const nodemailer = require("nodemailer");
+const dns = require("dns");
+
+// Some cloud hosts resolve smtp.gmail.com to an IPv6 address first, and
+// Gmail's SMTP servers are known to silently drop/time out IPv6 connections
+// from unfamiliar cloud IP ranges far more often than IPv4. Forcing IPv4
+// resolution order avoids that class of "Connection timeout" failure.
+dns.setDefaultResultOrder("ipv4first");
 
 function getTransport() {
   if (!process.env.SMTP_HOST) return null;
@@ -10,6 +17,9 @@ function getTransport() {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 15000,
   });
 }
 

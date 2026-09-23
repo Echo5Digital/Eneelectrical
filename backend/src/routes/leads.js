@@ -52,7 +52,7 @@ router.post("/", submitLimiter, async (req, res) => {
     });
 
     sendLeadNotification(lead).catch((err) =>
-      console.error("Failed to send lead notification email:", err.message)
+      console.error("Failed to send lead notification email:", err.code || err.message, err.command || "")
     );
 
     res.status(201).json({ ok: true, id: lead._id });

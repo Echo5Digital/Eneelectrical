@@ -12,6 +12,11 @@ const notificationTemplateRoutes = require("./routes/notificationTemplates");
 
 const app = express();
 
+// Render (and most PaaS hosts) sit behind a reverse proxy that sets
+// X-Forwarded-For. Without trusting exactly one hop, express-rate-limit
+// refuses to key requests by IP and throws ERR_ERL_UNEXPECTED_X_FORWARDED_FOR.
+app.set("trust proxy", 1);
+
 const allowedOrigins = (process.env.FRONTEND_ORIGIN || "")
   .split(",")
   .map((o) => o.trim())

@@ -53,7 +53,7 @@ async function sendBookingStatusEmail(booking) {
       text: body,
     });
   } catch (err) {
-    console.error("Failed to send booking status email:", err.message);
+    console.error("Failed to send booking status email:", err.code || err.message, err.command || "");
   }
 }
 
