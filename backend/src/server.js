@@ -5,6 +5,9 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/auth");
 const leadRoutes = require("./routes/leads");
+const bookingRoutes = require("./routes/bookings");
+const employeeRoutes = require("./routes/employees");
+const serviceRoutes = require("./routes/services");
 
 const app = express();
 
@@ -24,6 +27,9 @@ app.get("/health", (req, res) => res.json({ ok: true }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/leads", leadRoutes);
+app.use("/api/bookings", bookingRoutes);
+app.use("/api/employees", employeeRoutes);
+app.use("/api/services", serviceRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);

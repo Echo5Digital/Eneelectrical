@@ -56,3 +56,70 @@ export interface LeadsResponse {
   page: number;
   limit: number;
 }
+
+export interface Booking {
+  _id: string;
+  customerName: string;
+  email: string;
+  phone: string;
+  serviceCategory: "Residential" | "Commercial";
+  serviceType: string;
+  date: string;
+  timeSlot: string;
+  zipCode: string;
+  notes: string;
+  status: "approved" | "pending" | "cancelled";
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface BookingsResponse {
+  items: Booking[];
+  total: number;
+  page: number;
+  limit: number;
+}
+
+export interface BookingStats {
+  range: { start: string; end: string };
+  totalAppointments: number;
+  customers: number;
+  statusCounts: Record<string, number>;
+  upcoming: Booking[];
+}
+
+export interface Employee {
+  _id: string;
+  name: string;
+  phone: string;
+  email: string;
+  photoUrl: string;
+  visibility: "visible" | "hidden";
+  availability: "available" | "away";
+  services: string[];
+  notes: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface EmployeesResponse {
+  items: Employee[];
+  total: number;
+}
+
+export interface Service {
+  _id: string;
+  name: string;
+  category: "Residential" | "Commercial";
+  durationMinutes: number;
+  price: number;
+  description: string;
+  visibility: "visible" | "hidden";
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ServicesResponse {
+  items: Service[];
+  total: number;
+}

@@ -4,7 +4,18 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { LayoutDashboard, Users, LogOut, ChevronLeft } from "lucide-react";
+import {
+  LayoutDashboard,
+  Users,
+  LogOut,
+  ChevronLeft,
+  ChevronDown,
+  CalendarClock,
+  CalendarDays,
+  ClipboardList,
+  UserCog,
+  Package,
+} from "lucide-react";
 import { clearToken, getToken } from "../lib/api";
 
 const NAV_ITEMS = [
@@ -12,11 +23,30 @@ const NAV_ITEMS = [
   { label: "Leads", href: "/admin/leads", icon: Users },
 ];
 
+const BOOKING_SYSTEM_GROUP = {
+  label: "Booking System",
+  icon: CalendarClock,
+  basePath: "/admin/booking-system",
+  items: [
+    { label: "Dashboard", href: "/admin/booking-system/dashboard", icon: LayoutDashboard },
+    { label: "Calendar", href: "/admin/booking-system/calendar", icon: CalendarDays },
+    { label: "Bookings", href: "/admin/booking-system/bookings", icon: ClipboardList },
+    { label: "Employee", href: "/admin/booking-system/employee", icon: UserCog },
+    { label: "Catalog", href: "/admin/booking-system/catalog", icon: Package },
+  ],
+};
+
 export default function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
   const [ready, setReady] = useState(false);
+  const bookingGroupActive = pathname?.startsWith(BOOKING_SYSTEM_GROUP.basePath) ?? false;
+  const [bookingGroupOpen, setBookingGroupOpen] = useState(bookingGroupActive);
+
+  useEffect(() => {
+    if (bookingGroupActive) setBookingGroupOpen(true);
+  }, [bookingGroupActive]);
 
   useEffect(() => {
     if (!getToken()) {
@@ -87,6 +117,61 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
               </Link>
             );
           })}
+
+          {/* Booking System group */}
+          <div className="mt-1">
+            <button
+              type="button"
+              onClick={() => {
+                if (collapsed) {
+                  router.push(BOOKING_SYSTEM_GROUP.items[0].href);
+                  return;
+                }
+                setBookingGroupOpen((o) => !o);
+              }}
+              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors duration-150"
+              style={{
+                backgroundColor: bookingGroupActive ? "rgba(245,166,35,0.14)" : "transparent",
+                color: bookingGroupActive ? "#F5A623" : "#CBD8E6",
+              }}
+              aria-expanded={bookingGroupOpen}
+            >
+              <BOOKING_SYSTEM_GROUP.icon size={18} strokeWidth={2} className="flex-shrink-0" />
+              {!collapsed && (
+                <>
+                  <span className="flex-1 text-left">{BOOKING_SYSTEM_GROUP.label}</span>
+                  <ChevronDown
+                    size={15}
+                    className={`flex-shrink-0 transition-transform duration-150 ${
+                      bookingGroupOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </>
+              )}
+            </button>
+
+            {!collapsed && bookingGroupOpen && (
+              <div className="mt-1 ml-4 pl-3 border-l border-white/10 flex flex-col gap-1">
+                {BOOKING_SYSTEM_GROUP.items.map(({ label, href, icon: Icon }) => {
+                  const active = pathname === href || pathname?.startsWith(href + "/");
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150"
+                      style={{
+                        backgroundColor: active ? "rgba(245,166,35,0.14)" : "transparent",
+                        color: active ? "#F5A623" : "#CBD8E6",
+                      }}
+                    >
+                      <Icon size={15} strokeWidth={2} className="flex-shrink-0" />
+                      <span>{label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </nav>
 
         <div className="px-3 py-4 border-t border-white/10 flex flex-col gap-1">
