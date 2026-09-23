@@ -32,27 +32,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "test-echo5-ene-bodyimage-recheck",
-    title: "Test Echo5 ENE BodyImage Recheck",
-    excerpt: "",
-    date: "2026-09-23",
-    readTime: "1 min",
-    category: "Electrical Safety",
-    imageSrc: "/test-echo5-ene-bodyimage-recheck.jpg",
-    imageAlt: "Test Echo5 ENE BodyImage Recheck",
-    intro: "",
-    bodyImage: "/test-echo5-ene-bodyimage-recheck-body.jpg",
-    bodyImageAlt: "Test Echo5 ENE BodyImage Recheck",
-    content: [
-
-    ],
-    faqs: [
-
-    ],
-    relatedServiceHref: "/services/electrical-panel-upgrade-houston",
-    relatedServiceLabel: "Electrical Panel Upgrades",
-  },
-  {
     slug: "what-should-you-expect-from-a-houston-electrician",
     title: "What Should You Expect From a Houston Electrician?",
     excerpt: "Learn what to expect from a professional electrician in Houston TX. Licensing, pricing, services, and quality standards for residential and commercial work.",
