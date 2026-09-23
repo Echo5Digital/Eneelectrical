@@ -27,29 +27,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "test-echo5-ene-bodyimage-check",
-    title: "Test Echo5 ENE Body Image Check",
-    excerpt: "A real test publish verifying the second/body image fix.",
-    date: "2026-09-23",
-    readTime: "1 min",
-    category: "Electrical Safety",
-    imageSrc: "/test-echo5-ene-bodyimage-check.jpg",
-    imageAlt: "Test Echo5 ENE Body Image Check",
-    intro: "This is a real test publish used to verify the second/body image fix for E-N-E Electrical. This test post will be removed after verification.",
-    bodyImage: "/test-echo5-ene-bodyimage-check-body.jpg",
-    bodyImageAlt: "Test Echo5 ENE Body Image Check",
-    content: [
-      { type: "heading", text: "Why Ceiling Fan Wiring Matters" },
-      { type: "paragraph", text: "Ceiling fans need dedicated electrical boxes rated for the weight and vibration of a spinning motor." },
-      { type: "paragraph", text: "ENE Electrical ensures every installation meets code with proper support and grounding." },
-    ],
-    faqs: [
-
-    ],
-    relatedServiceHref: "/services/ceiling-fan-installation-houston",
-    relatedServiceLabel: "Ceiling Fan Installation",
-  },
-  {
     slug: "your-houston-tx-electrical-project-deserves-a-pro",
     title: "Your Houston TX Electrical Project Deserves a Pro",
     excerpt: "Need a professional electrician in Houston TX? E-N-E Electrical offers licensed residential, commercial, and emergency electrical services across Houston.",
