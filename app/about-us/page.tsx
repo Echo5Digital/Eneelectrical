@@ -18,7 +18,7 @@ import {
   Heart,
 } from "lucide-react";
 
-export const metadata: Metadata = { 
+export const metadata: Metadata = {
   title: "About ENE Electrical | 15+ Years Serving Houston Homeowners",
   description:
     "Learn about ENE Electrical, a licensed, insured, and bonded residential electrician based in Katy, TX with 15+ years of experience serving the greater Houston metro area.",
