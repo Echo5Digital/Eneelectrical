@@ -155,6 +155,16 @@ export default function BlogPostClient({ post, prev, next, relatedPosts }: Props
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-12 items-start">
           {/* ── Main column ── */}
           <div>
+            {post.bodyImage && (
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6">
+                <Image
+                  src={post.bodyImage}
+                  alt={post.bodyImageAlt || post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
             <article className="flex flex-col gap-5">
               <p
                 className="text-lg leading-relaxed font-medium"

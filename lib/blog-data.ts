@@ -19,6 +19,11 @@ export interface BlogPost {
   imageSrc: string;
   imageAlt: string;
   intro: string;
+  // Optional second photo shown once, above the article body — separate
+  // from imageSrc (the hero background). Older posts have neither field,
+  // so both stay optional rather than requiring a data migration.
+  bodyImage?: string;
+  bodyImageAlt?: string;
   content: BlogContentBlock[];
   faqs: BlogFaqItem[];
   relatedServiceHref: string;
