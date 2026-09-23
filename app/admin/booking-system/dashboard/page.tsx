@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CalendarCheck, Users, Percent, ArrowRight } from "lucide-react";
 import { apiFetch, BookingStats } from "../../lib/api";
 import AdminShell from "../../components/AdminShell";
-import { STATUS_COLORS } from "../constants";
+import { STATUS_COLORS, formatBookingDate } from "../constants";
 
 export default function AdminBookingDashboardPage() {
   const [stats, setStats] = useState<BookingStats | null>(null);
@@ -131,7 +131,7 @@ export default function AdminBookingDashboardPage() {
                           </span>
                         </td>
                         <td className="px-6 py-3.5 text-gray-400 whitespace-nowrap text-right">
-                          {new Date(booking.date).toLocaleDateString(undefined, { month: "short", day: "numeric" })}
+                          {formatBookingDate(booking.date, { month: "short", day: "numeric" })}
                         </td>
                       </tr>
                     );

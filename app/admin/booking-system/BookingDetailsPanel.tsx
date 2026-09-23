@@ -16,7 +16,7 @@ import {
   Check,
 } from "lucide-react";
 import { apiFetch, Booking } from "../lib/api";
-import { STATUS_COLORS } from "./constants";
+import { STATUS_COLORS, formatBookingDate } from "./constants";
 
 interface BookingDetailsPanelProps {
   booking: Booking;
@@ -115,7 +115,7 @@ export default function BookingDetailsPanel({
             <div className="flex flex-col gap-2 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <CalendarDays size={15} className="text-gray-400" />
-                {new Date(booking.date).toLocaleDateString(undefined, {
+                {formatBookingDate(booking.date, {
                   weekday: "long",
                   month: "long",
                   day: "numeric",

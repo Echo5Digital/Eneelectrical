@@ -76,6 +76,13 @@ function buildCalendarDays(monthOffset: number) {
   return { cells, label: viewDate.toLocaleDateString("en-US", { month: "long", year: "numeric" }) };
 }
 
+function toLocalDateString(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 const TIME_SLOTS = [
   "9:00 AM",
   "10:00 AM",
@@ -226,7 +233,7 @@ export default function ScheduleWizard() {
     setSubmitting(true);
     try {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
-      const dateStr = form.date ? form.date.toISOString().split("T")[0] : "";
+      const dateStr = form.date ? toLocalDateString(form.date) : "";
 
       const leadRes = await fetch(`${apiBase}/api/leads`, {
         method: "POST",
@@ -250,22 +257,31 @@ export default function ScheduleWizard() {
       }
 
       // Also create a Booking record so it appears in the admin Booking System
-      // (dashboard/calendar/bookings). Non-fatal if this fails.
-      fetch(`${apiBase}/api/bookings/public`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customerName: form.name,
-          email: form.email,
-          phone: form.phone,
-          serviceCategory: form.category,
-          serviceType: form.service,
-          date: dateStr,
-          timeSlot: form.time,
-          zipCode: form.zipCode,
-          notes: form.notes,
-        }),
-      }).catch((err) => console.error("Failed to create booking record:", err));
+      // (dashboard/calendar/bookings). Non-fatal if this fails: the lead above
+      // is the source of truth for the user-facing success state.
+      try {
+        const bookingRes = await fetch(`${apiBase}/api/bookings/public`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            customerName: form.name,
+            email: form.email,
+            phone: form.phone,
+            serviceCategory: form.category,
+            serviceType: form.service,
+            date: dateStr,
+            timeSlot: form.time,
+            zipCode: form.zipCode,
+            notes: form.notes,
+          }),
+        });
+        if (!bookingRes.ok) {
+          const data = await bookingRes.json().catch(() => ({}));
+          console.error("Failed to create booking record:", data);
+        }
+      } catch (err) {
+        console.error("Failed to create booking record:", err);
+      }
 
       setCompletedSteps((prev) => new Set(prev).add("info"));
       setSubmitted(true);

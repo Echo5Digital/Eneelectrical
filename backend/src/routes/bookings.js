@@ -87,12 +87,16 @@ router.post("/public", submitLimiter, async (req, res) => {
 
 // Admin: aggregate stats for the booking-system dashboard
 router.get("/stats", requireAuth, async (req, res) => {
-  const todayStart = new Date();
-  todayStart.setHours(0, 0, 0, 0);
+  // Booking dates are stored as UTC-midnight date-only values, so "today"
+  // must be computed in UTC too -- using the server's local timezone here
+  // would shift the boundary and drop/include bookings depending on where
+  // the process happens to be hosted.
+  const now = new Date();
+  const todayStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 
   const defaultEnd = new Date(todayStart);
-  defaultEnd.setDate(defaultEnd.getDate() + 30);
-  defaultEnd.setHours(23, 59, 59, 999);
+  defaultEnd.setUTCDate(defaultEnd.getUTCDate() + 30);
+  defaultEnd.setUTCHours(23, 59, 59, 999);
 
   const start = req.query.start ? new Date(req.query.start) : todayStart;
   const end = req.query.end ? new Date(req.query.end) : defaultEnd;

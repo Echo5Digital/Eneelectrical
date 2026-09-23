@@ -32,3 +32,20 @@ export function formatDuration(minutes: number): string {
 export function formatPrice(price: number): string {
   return `$${price.toFixed(2)}`;
 }
+
+// Booking dates are stored as UTC-midnight date-only values (the actual
+// appointment time lives in timeSlot). Reading them with local-timezone
+// getters shifts the displayed day for anyone west of UTC, so every display
+// of a booking date must go through a UTC-based Date to stay stable
+// regardless of the viewer's timezone.
+export function utcDateAsLocal(dateStr: string): Date {
+  const d = new Date(dateStr);
+  return new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+}
+
+export function formatBookingDate(
+  dateStr: string,
+  options: Intl.DateTimeFormatOptions = { month: "short", day: "numeric", year: "numeric" }
+): string {
+  return utcDateAsLocal(dateStr).toLocaleDateString(undefined, options);
+}

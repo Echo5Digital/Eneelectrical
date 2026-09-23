@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { apiFetch, Booking, BookingsResponse } from "../../lib/api";
 import AdminShell from "../../components/AdminShell";
-import { STATUS_COLORS } from "../constants";
+import { STATUS_COLORS, formatBookingDate } from "../constants";
 import BookingFormModal from "../BookingFormModal";
 import BookingDetailsPanel from "../BookingDetailsPanel";
 
@@ -177,11 +177,7 @@ export default function AdminBookingsPage() {
                         className="border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer"
                       >
                         <td className="px-5 py-4 text-gray-700 whitespace-nowrap">
-                          {new Date(booking.date).toLocaleDateString(undefined, {
-                            month: "short",
-                            day: "numeric",
-                            year: "numeric",
-                          })}
+                          {formatBookingDate(booking.date)}
                         </td>
                         <td className="px-5 py-4 text-gray-500 whitespace-nowrap">{booking.timeSlot}</td>
                         <td className="px-5 py-4">

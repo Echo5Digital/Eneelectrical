@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { apiFetch, Booking, BookingsResponse } from "../../lib/api";
 import AdminShell from "../../components/AdminShell";
-import { STATUS_COLORS } from "../constants";
+import { STATUS_COLORS, utcDateAsLocal } from "../constants";
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -86,7 +86,7 @@ export default function AdminCalendarPage() {
   }, [fetchMonthBookings]);
 
   const bookingsByDay = bookings.reduce<Record<string, Booking[]>>((acc, b) => {
-    const key = dateKey(new Date(b.date));
+    const key = dateKey(utcDateAsLocal(b.date));
     if (!acc[key]) acc[key] = [];
     acc[key].push(b);
     return acc;
