@@ -123,3 +123,17 @@ export interface ServicesResponse {
   items: Service[];
   total: number;
 }
+
+export interface NotificationTemplate {
+  _id: string;
+  status: "approved" | "pending" | "cancelled";
+  subject: string;
+  body: string;
+  enabled: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface NotificationTemplatesResponse {
+  items: NotificationTemplate[];
+}

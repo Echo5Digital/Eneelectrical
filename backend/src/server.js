@@ -8,6 +8,7 @@ const leadRoutes = require("./routes/leads");
 const bookingRoutes = require("./routes/bookings");
 const employeeRoutes = require("./routes/employees");
 const serviceRoutes = require("./routes/services");
+const notificationTemplateRoutes = require("./routes/notificationTemplates");
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use("/api/leads", leadRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/services", serviceRoutes);
+app.use("/api/notification-templates", notificationTemplateRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);

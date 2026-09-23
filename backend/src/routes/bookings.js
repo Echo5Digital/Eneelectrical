@@ -2,6 +2,7 @@ const express = require("express");
 const rateLimit = require("express-rate-limit");
 const Booking = require("../models/Booking");
 const requireAuth = require("../middleware/auth");
+const { sendBookingStatusEmail } = require("../utils/notifyCustomer");
 
 const router = express.Router();
 
@@ -78,6 +79,9 @@ router.post("/public", submitLimiter, async (req, res) => {
 
   try {
     const booking = await Booking.create(payload);
+    sendBookingStatusEmail(booking).catch((err) =>
+      console.error("Failed to send booking status email:", err)
+    );
     res.status(201).json({ ok: true, id: booking._id });
   } catch (err) {
     console.error("Failed to create public booking:", err);
@@ -182,6 +186,9 @@ router.post("/", requireAuth, async (req, res) => {
 
   try {
     const booking = await Booking.create(payload);
+    sendBookingStatusEmail(booking).catch((err) =>
+      console.error("Failed to send booking status email:", err)
+    );
     res.status(201).json(booking);
   } catch (err) {
     console.error("Failed to create booking:", err);
@@ -202,6 +209,9 @@ router.post("/:id/duplicate", requireAuth, async (req, res) => {
 
   try {
     const duplicate = await Booking.create(copy);
+    sendBookingStatusEmail(duplicate).catch((err) =>
+      console.error("Failed to send booking status email:", err)
+    );
     res.status(201).json(duplicate);
   } catch (err) {
     console.error("Failed to duplicate booking:", err);
@@ -221,11 +231,22 @@ router.patch("/:id", requireAuth, async (req, res) => {
     if (req.body[key] !== undefined) updates[key] = req.body[key];
   }
 
+  const existing = await Booking.findById(req.params.id);
+  if (!existing) return res.status(404).json({ error: "Booking not found" });
+  const statusChanged = updates.status !== undefined && updates.status !== existing.status;
+
   const booking = await Booking.findByIdAndUpdate(req.params.id, updates, {
     new: true,
     runValidators: true,
   });
   if (!booking) return res.status(404).json({ error: "Booking not found" });
+
+  if (statusChanged) {
+    sendBookingStatusEmail(booking).catch((err) =>
+      console.error("Failed to send booking status email:", err)
+    );
+  }
+
   res.json(booking);
 });
 

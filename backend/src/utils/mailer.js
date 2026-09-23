@@ -40,4 +40,4 @@ async function sendLeadNotification(lead) {
   });
 }
 
-module.exports = { sendLeadNotification };
+module.exports = { sendLeadNotification, getTransport };

@@ -790,7 +790,7 @@ export default function ScheduleWizard() {
         <aside className="hidden lg:flex flex-col p-6 gap-5">
           <div className="rounded-xl overflow-hidden aspect-[4/3]">
             <img
-              src="/Generator-Be-Installed.jpg"
+              src="/enee.jpeg"
               alt="ENE Electrical technician installing a generator for a residential customer"
               className="w-full h-full object-cover"
             />

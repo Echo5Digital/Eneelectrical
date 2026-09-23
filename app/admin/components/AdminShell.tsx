@@ -15,6 +15,7 @@ import {
   ClipboardList,
   UserCog,
   Package,
+  Bell,
 } from "lucide-react";
 import { clearToken, getToken } from "../lib/api";
 
@@ -33,6 +34,7 @@ const BOOKING_SYSTEM_GROUP = {
     { label: "Bookings", href: "/admin/booking-system/bookings", icon: ClipboardList },
     { label: "Employee", href: "/admin/booking-system/employee", icon: UserCog },
     { label: "Catalog", href: "/admin/booking-system/catalog", icon: Package },
+    { label: "Notifications", href: "/admin/booking-system/notifications", icon: Bell },
   ],
 };
 
