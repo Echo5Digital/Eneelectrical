@@ -27,36 +27,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "test-echo5-ene-connectivity-check",
-    title: "Test Echo5 ENE Connectivity Check",
-    excerpt: "A real end-to-end test publish for the new eneBlog publish mode.",
-    date: "2026-09-23",
-    readTime: "1 min",
-    category: "Electrical Safety",
-    imageSrc: "/test-echo5-ene-connectivity-check.jpg",
-    imageAlt: "Test Echo5 ENE Connectivity Check",
-    intro: "This is a real test publish used to verify the eneBlog publish mode end-to-end for E-N-E Electrical — the AI blog publishing integration built this session. This test post will be removed after verification.",
-    content: [
-      { type: "heading", text: "What Is a Whole House Fan Ventilation System?" },
-      { type: "paragraph", text: "A whole house fan pulls cool outside air through open windows and exhausts hot attic air, reducing the need for air conditioning during mild weather." },
-      { type: "paragraph", text: "ENE Electrical installs and wires these systems as part of our home ventilation and energy-efficiency services." },
-      { type: "heading", text: "Types of Ventilation Fan Circuits" },
-      { type: "subheading", text: "Standard Timer-Controlled Circuits" },
-      { type: "paragraph", text: "These circuits use a simple wall timer to run the fan for a set duration, ideal for basic attic cooling needs." },
-      { type: "subheading", text: "Smart-Controlled Circuits" },
-      { type: "paragraph", text: "Smart circuits connect to home automation systems and can be scheduled or controlled remotely for more precise energy management." },
-      { type: "heading", text: "Benefits of Proper Fan Circuit Installation" },
-      { type: "paragraph", text: "A correctly wired fan circuit improves safety and performance. Here's what you gain with proper installation:" },
-      { type: "list", items: ["Dedicated circuit protection preventing overloads","Reduced fire risk from properly rated wiring","Consistent airflow and reliable operation","Compliance with current electrical codes"] },
-    ],
-    faqs: [
-      { question: "Do I need a licensed electrician for this?", answer: "Yes, ventilation fan circuits require proper load calculations and code-compliant wiring that only a licensed electrician should perform." },
-      { question: "How long does installation take?", answer: "Most installations take two to four hours depending on attic access and existing wiring." },
-    ],
-    relatedServiceHref: "/services/electrical-repair-installation",
-    relatedServiceLabel: "Electrical Repair & Installation",
-  },
-  {
     slug: "do-you-really-need-a-whole-house-surge-protector",
     title: "Do You Really Need a Whole House Surge Protector?",
     excerpt:
