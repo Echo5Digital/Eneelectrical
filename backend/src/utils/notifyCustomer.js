@@ -1,7 +1,11 @@
+const path = require("path");
 const NotificationTemplate = require("../models/NotificationTemplate");
 const { getTransport } = require("./mailer");
+const { buildBookingEmailHtml } = require("./emailTemplate");
 
 const COMPANY_NAME = process.env.SMTP_FROM_NAME || "ENE Electrical";
+const LOGO_PATH = path.join(__dirname, "../../../public/logo_ene.png");
+const LOGO_CID = "ene-logo";
 
 // Booking dates are stored as UTC-midnight date-only values (see backend
 // routes/bookings.js stats comment) -- format via UTC getters so the email
@@ -45,12 +49,27 @@ async function sendBookingStatusEmail(booking) {
     if (!transport) return;
 
     const { subject, body } = applyPlaceholders(template, booking);
+    const html = buildBookingEmailHtml({
+      booking,
+      subject,
+      body,
+      dateText: formatBookingDate(booking.date),
+      logoCid: LOGO_CID,
+    });
 
     await transport.sendMail({
       from: `"${COMPANY_NAME}" <${process.env.SMTP_USER}>`,
       to: booking.email,
       subject,
       text: body,
+      html,
+      attachments: [
+        {
+          filename: "logo.png",
+          path: LOGO_PATH,
+          cid: LOGO_CID,
+        },
+      ],
     });
   } catch (err) {
     console.error("Failed to send booking status email:", err.code || err.message, err.command || "");

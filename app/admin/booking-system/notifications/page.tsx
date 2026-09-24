@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Bell, Check, Info } from "lucide-react";
+import { Bell, Check, Info, Sparkles, Mail } from "lucide-react";
 import { apiFetch, NotificationTemplate, NotificationTemplatesResponse } from "../../lib/api";
 import AdminShell from "../../components/AdminShell";
+import { STATUS_COLORS } from "../constants";
 
 const STATUS_LABELS: Record<string, string> = {
   new: "New",
@@ -107,16 +108,37 @@ export default function AdminNotificationsPage() {
 
   return (
     <AdminShell>
-      <header className="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100">
-        <div>
-          <h1 className="text-xl font-bold" style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}>
+      <header
+        className="relative overflow-hidden px-8 py-8"
+        style={{
+          background: "linear-gradient(135deg, #0B1F3A 0%, #14305C 55%, #1B3E75 100%)",
+        }}
+      >
+        <div
+          className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #F5A623 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full opacity-10 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #2E5FE8 0%, transparent 70%)" }}
+        />
+        <div className="relative">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg" style={{ backgroundColor: "rgba(245,166,35,0.18)" }}>
+              <Sparkles size={14} style={{ color: "#F5A623" }} />
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#F5A623", fontFamily: "Montserrat, sans-serif" }}>
+              Booking System
+            </span>
+          </div>
+          <h1 className="text-2xl font-bold text-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
             Notifications
           </h1>
-          <p className="text-sm text-gray-500">Email templates sent to customers on appointment status changes</p>
+          <p className="text-sm text-blue-100/80 mt-1">Email templates sent to customers on appointment status changes</p>
         </div>
       </header>
 
-      <main className="flex-1 px-8 py-6">
+      <main className="flex-1 px-8 py-7" style={{ backgroundColor: "#F7F8FA" }}>
         {error && (
           <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3 mb-4">{error}</p>
         )}
@@ -127,19 +149,29 @@ export default function AdminNotificationsPage() {
             {STATUS_ORDER.map((status) => {
               const template = templates.find((t) => t.status === status);
               const active = selectedStatus === status;
+              const color = STATUS_COLORS[status] || STATUS_COLORS.approved;
               return (
-                <button
+                <div
                   key={status}
-                  type="button"
+                  role="button"
+                  tabIndex={0}
                   onClick={() => setSelectedStatus(status)}
-                  className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-left transition-colors"
-                  style={{ backgroundColor: active ? "#FFF8EC" : "transparent" }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") setSelectedStatus(status);
+                  }}
+                  className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-left transition-colors mb-1 last:mb-0 cursor-pointer"
+                  style={{ backgroundColor: active ? color.bg : "transparent" }}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Bell size={15} style={{ color: active ? "#F5A623" : "#9CA3AF" }} />
+                    <span
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: active ? "#ffffff" : "#F7F8FA" }}
+                    >
+                      <Bell size={14} style={{ color: active ? color.text : "#9CA3AF" }} />
+                    </span>
                     <span
                       className="text-sm font-semibold"
-                      style={{ color: active ? "#0B1F3A" : "#374151" }}
+                      style={{ color: active ? color.text : "#374151" }}
                     >
                       {STATUS_LABELS[status]}
                     </span>
@@ -159,7 +191,7 @@ export default function AdminNotificationsPage() {
                       style={{ left: template?.enabled ? "18px" : "2px" }}
                     />
                   </button>
-                </button>
+                </div>
               );
             })}
           </div>
@@ -172,9 +204,20 @@ export default function AdminNotificationsPage() {
               <p className="text-sm text-gray-400">Template not found.</p>
             ) : (
               <div className="flex flex-col gap-5">
-                <h2 className="text-lg font-bold" style={{ fontFamily: "Montserrat, sans-serif", color: "#0B1F3A" }}>
-                  {STATUS_LABELS[selectedStatus]}
-                </h2>
+                <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                  <span
+                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: (STATUS_COLORS[selectedStatus] || STATUS_COLORS.approved).bg }}
+                  >
+                    <Mail size={17} style={{ color: (STATUS_COLORS[selectedStatus] || STATUS_COLORS.approved).text }} />
+                  </span>
+                  <div>
+                    <h2 className="text-lg font-bold" style={{ fontFamily: "Montserrat, sans-serif", color: "#0B1F3A" }}>
+                      {STATUS_LABELS[selectedStatus]} Email
+                    </h2>
+                    <p className="text-xs text-gray-400">Sent automatically when a booking's status changes to {STATUS_LABELS[selectedStatus].toLowerCase()}</p>
+                  </div>
+                </div>
 
                 <div className="flex flex-col gap-1">
                   <label className="text-xs font-semibold uppercase tracking-wide" style={{ fontFamily: "Montserrat, sans-serif", color: "#0B1F3A" }}>
