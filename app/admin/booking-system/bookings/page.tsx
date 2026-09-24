@@ -10,12 +10,40 @@ import {
   Trash2,
   ChevronLeft,
   ChevronRight,
+  ClipboardList,
+  Sparkles,
 } from "lucide-react";
 import { apiFetch, Booking, BookingsResponse } from "../../lib/api";
 import AdminShell from "../../components/AdminShell";
 import { STATUS_COLORS, formatBookingDate } from "../constants";
 import BookingFormModal from "../BookingFormModal";
 import BookingDetailsPanel from "../BookingDetailsPanel";
+
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
+const AVATAR_PALETTE = [
+  { bg: "#EFF6FF", text: "#2563EB" },
+  { bg: "#F0FDF4", text: "#16A34A" },
+  { bg: "#FFFBEB", text: "#D97706" },
+  { bg: "#FDF2F8", text: "#DB2777" },
+  { bg: "#F5F3FF", text: "#7C3AED" },
+];
+
+const STATUS_FILTERS = [
+  { value: "", label: "All" },
+  { value: "new", label: "New" },
+  { value: "approved", label: "Approved" },
+  { value: "pending", label: "Pending" },
+  { value: "cancelled", label: "Cancelled" },
+];
 
 export default function AdminBookingsPage() {
   const [bookings, setBookings] = useState<Booking[]>([]);
@@ -86,29 +114,52 @@ export default function AdminBookingsPage() {
 
   return (
     <AdminShell>
-      <header className="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100">
-        <div>
-          <h1 className="text-xl font-bold" style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}>
-            Bookings
-          </h1>
-          <p className="text-sm text-gray-500">{total} total appointments</p>
+      <header
+        className="relative overflow-hidden px-8 py-8"
+        style={{
+          background: "linear-gradient(135deg, #0B1F3A 0%, #14305C 55%, #1B3E75 100%)",
+        }}
+      >
+        <div
+          className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #F5A623 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full opacity-10 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #2E5FE8 0%, transparent 70%)" }}
+        />
+        <div className="relative flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg" style={{ backgroundColor: "rgba(245,166,35,0.18)" }}>
+                <Sparkles size={14} style={{ color: "#F5A623" }} />
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#F5A623", fontFamily: "Montserrat, sans-serif" }}>
+                Booking System
+              </span>
+            </div>
+            <h1 className="text-2xl font-bold text-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Bookings
+            </h1>
+            <p className="text-sm text-blue-100/80 mt-1">{total} total appointments</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setEditingBooking(null);
+              setModalMode("create");
+            }}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg transition-all duration-150 hover:brightness-105 active:scale-95"
+            style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
+          >
+            <Plus size={16} strokeWidth={2.5} /> Book Appointment
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={() => {
-            setEditingBooking(null);
-            setModalMode("create");
-          }}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold shadow-sm transition-all duration-150 hover:brightness-105 active:scale-95"
-          style={{ backgroundColor: "#F5A623", color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
-        >
-          <Plus size={16} strokeWidth={2.5} /> Book Appointment
-        </button>
       </header>
 
-      <main className="flex-1 px-8 py-6">
+      <main className="flex-1 px-8 py-7" style={{ backgroundColor: "#F7F8FA" }}>
         {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-5">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-3 mb-5">
           <div className="relative flex-1">
             <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
@@ -122,20 +173,32 @@ export default function AdminBookingsPage() {
               className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623]"
             />
           </div>
-          <select
-            value={statusFilter}
-            onChange={(e) => {
-              setPage(1);
-              setStatusFilter(e.target.value);
-            }}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:ring-2 focus:ring-[#F5A623]"
-          >
-            <option value="">All Statuses</option>
-            <option value="new">New</option>
-            <option value="approved">Approved</option>
-            <option value="pending">Pending</option>
-            <option value="cancelled">Cancelled</option>
-          </select>
+          <div className="flex items-center gap-2 flex-wrap">
+            {STATUS_FILTERS.map((filter) => {
+              const active = statusFilter === filter.value;
+              const color = filter.value ? STATUS_COLORS[filter.value] : null;
+              return (
+                <button
+                  key={filter.value || "all"}
+                  type="button"
+                  onClick={() => {
+                    setPage(1);
+                    setStatusFilter(filter.value);
+                  }}
+                  className="px-3.5 py-2 rounded-full text-xs font-bold transition-all duration-150 border"
+                  style={
+                    active
+                      ? color
+                        ? { backgroundColor: color.bg, color: color.text, borderColor: color.text + "33" }
+                        : { backgroundColor: "#0B1F3A", color: "#ffffff", borderColor: "#0B1F3A" }
+                      : { backgroundColor: "#ffffff", color: "#6B7280", borderColor: "#E5E7EB" }
+                  }
+                >
+                  {filter.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {(error || actionError) && (
@@ -162,15 +225,21 @@ export default function AdminBookingsPage() {
               <tbody>
                 {loading ? (
                   <tr>
-                    <td colSpan={7} className="px-5 py-10 text-center text-gray-400">Loading...</td>
+                    <td colSpan={7} className="px-5 py-14 text-center text-gray-400">Loading...</td>
                   </tr>
                 ) : bookings.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="px-5 py-10 text-center text-gray-400">No bookings found.</td>
+                    <td colSpan={7} className="px-5 py-14 text-center text-gray-400">
+                      <div className="flex flex-col items-center gap-2">
+                        <ClipboardList size={28} className="text-gray-300" />
+                        No bookings found.
+                      </div>
+                    </td>
                   </tr>
                 ) : (
-                  bookings.map((booking) => {
+                  bookings.map((booking, idx) => {
                     const statusColor = STATUS_COLORS[booking.status] || STATUS_COLORS.approved;
+                    const avatar = AVATAR_PALETTE[idx % AVATAR_PALETTE.length];
                     return (
                       <tr
                         key={booking._id}
@@ -182,8 +251,18 @@ export default function AdminBookingsPage() {
                         </td>
                         <td className="px-5 py-4 text-gray-500 whitespace-nowrap">{booking.timeSlot}</td>
                         <td className="px-5 py-4">
-                          <div className="font-semibold" style={{ color: "#0B1F3A" }}>{booking.customerName}</div>
-                          <div className="text-xs text-gray-400">{booking.email}</div>
+                          <div className="flex items-center gap-3">
+                            <div
+                              className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                              style={{ backgroundColor: avatar.bg, color: avatar.text }}
+                            >
+                              {initials(booking.customerName)}
+                            </div>
+                            <div>
+                              <div className="font-semibold" style={{ color: "#0B1F3A" }}>{booking.customerName}</div>
+                              <div className="text-xs text-gray-400">{booking.email}</div>
+                            </div>
+                          </div>
                         </td>
                         <td className="px-5 py-4 text-gray-600">{booking.serviceType}</td>
                         <td className="px-5 py-4 text-gray-500">{booking.serviceCategory}</td>

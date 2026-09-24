@@ -84,14 +84,17 @@ function toLocalDateString(date: Date): string {
 }
 
 const TIME_SLOTS = [
-  "9:00 AM",
-  "10:00 AM",
-  "11:00 AM",
-  "1:00 PM",
-  "2:00 PM",
-  "3:00 PM",
-  "4:00 PM",
-  "5:00 PM",
+  "9:00 AM - 12:00 PM",
+  "9:30 AM - 12:30 PM",
+  "10:00 AM - 1:00 PM",
+  "10:30 AM - 1:30 PM",
+  "11:00 AM - 2:00 PM",
+  "11:30 AM - 2:30 PM",
+  "12:00 PM - 3:00 PM",
+  "12:30 PM - 3:30 PM",
+  "1:00 PM - 4:00 PM",
+  "1:30 PM - 4:30 PM",
+  "2:00 PM - 5:00 PM",
 ];
 
 interface WizardFormState {
@@ -620,7 +623,7 @@ export default function ScheduleWizard() {
                       <strong>{form.date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</strong>
                       {loadingSlots && <span className="text-gray-400 font-normal"> (checking availability…)</span>}
                     </p>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {TIME_SLOTS.map((slot) => {
                         const isBooked = bookedSlots.includes(slot);
                         return (
@@ -842,7 +845,7 @@ export default function ScheduleWizard() {
         </div>
 
         {/* ── RIGHT PANEL: image + info ── */}
-        <aside className="hidden lg:flex flex-col p-6 gap-5">
+        <aside className="flex flex-col p-6 gap-5 border-t lg:border-t-0 border-gray-100">
           <div className="rounded-xl overflow-hidden aspect-[4/3]">
             <img
               src="/enee.jpeg"

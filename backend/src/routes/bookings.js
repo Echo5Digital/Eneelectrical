@@ -25,6 +25,23 @@ const PHONE_RE = /^[\d\s\-()+]{7,20}$/;
 const CATEGORIES = ["Residential", "Commercial"];
 const STATUSES = ["new", "approved", "pending", "cancelled"];
 
+// Must stay in sync with the public wizard's TIME_SLOTS
+// (app/appointment-booking/ScheduleWizard.tsx): 3-hour arrival windows
+// spaced 30 minutes apart, 9 AM through the 2-5 PM window.
+const TIME_SLOTS = [
+  "9:00 AM - 12:00 PM",
+  "9:30 AM - 12:30 PM",
+  "10:00 AM - 1:00 PM",
+  "10:30 AM - 1:30 PM",
+  "11:00 AM - 2:00 PM",
+  "11:30 AM - 2:30 PM",
+  "12:00 PM - 3:00 PM",
+  "12:30 PM - 3:30 PM",
+  "1:00 PM - 4:00 PM",
+  "1:30 PM - 4:30 PM",
+  "2:00 PM - 5:00 PM",
+];
+
 function validateBookingInput(body, { partial = false } = {}) {
   const errors = {};
   const has = (key) => body[key] !== undefined;
@@ -74,8 +91,39 @@ const ALLOWED_FIELDS = [
 // booking frees it back up for other customers to select.
 const SLOT_BLOCKING_STATUSES = ["new", "pending", "approved"];
 
-// Public: list which time slots are already booked for a given date, so the
-// booking wizard can grey them out before the customer picks one.
+// The public wizard's slots are 3-hour arrival windows spaced 30 minutes
+// apart (e.g. "9:00 AM - 12:00 PM", "9:30 AM - 12:30 PM"), so two different
+// slot labels can still cover the same clock time. Booking one window must
+// block every other label that overlaps it, not just an identical label --
+// this parses "<start> - <end>" into minutes-since-midnight for that check.
+function parseTimeToMinutes(text) {
+  const match = /^(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec(text.trim());
+  if (!match) return null;
+  let [, hours, minutes, meridiem] = match;
+  hours = parseInt(hours, 10) % 12;
+  if (meridiem.toUpperCase() === "PM") hours += 12;
+  return hours * 60 + parseInt(minutes, 10);
+}
+
+function parseSlotRange(slot) {
+  const [startText, endText] = String(slot).split(" - ");
+  if (!startText || !endText) return null;
+  const start = parseTimeToMinutes(startText);
+  const end = parseTimeToMinutes(endText);
+  if (start === null || end === null) return null;
+  return { start, end };
+}
+
+function slotsOverlap(a, b) {
+  const rangeA = parseSlotRange(a);
+  const rangeB = parseSlotRange(b);
+  if (!rangeA || !rangeB) return a === b;
+  return rangeA.start < rangeB.end && rangeB.start < rangeA.end;
+}
+
+// Public: list which time slots are already booked (or overlap a booked
+// window) for a given date, so the booking wizard can grey them out before
+// the customer picks one.
 router.get("/availability", availabilityLimiter, async (req, res) => {
   const { date } = req.query;
   if (!date || Number.isNaN(new Date(date).getTime())) {
@@ -86,10 +134,14 @@ router.get("/availability", availabilityLimiter, async (req, res) => {
   const dayEnd = new Date(dayStart);
   dayEnd.setUTCHours(23, 59, 59, 999);
 
-  const bookedSlots = await Booking.distinct("timeSlot", {
+  const takenSlots = await Booking.distinct("timeSlot", {
     date: { $gte: dayStart, $lte: dayEnd },
     status: { $in: SLOT_BLOCKING_STATUSES },
   });
+
+  const bookedSlots = TIME_SLOTS.filter((slot) =>
+    takenSlots.some((taken) => slotsOverlap(slot, taken))
+  );
 
   res.json({ bookedSlots });
 });
@@ -110,16 +162,16 @@ router.post("/public", submitLimiter, async (req, res) => {
 
   try {
     // Re-check the slot right before creating: a race between two customers
-    // submitting the same slot is only closed by checking at write time, not
-    // by the earlier /availability read the wizard used to grey it out.
+    // submitting overlapping windows is only closed by checking at write
+    // time, not by the earlier /availability read used to grey slots out.
     const dayStart = new Date(payload.date);
     const dayEnd = new Date(dayStart);
     dayEnd.setUTCHours(23, 59, 59, 999);
-    const conflict = await Booking.findOne({
+    const existing = await Booking.find({
       date: { $gte: dayStart, $lte: dayEnd },
-      timeSlot: payload.timeSlot,
       status: { $in: SLOT_BLOCKING_STATUSES },
     });
+    const conflict = existing.some((b) => slotsOverlap(b.timeSlot, payload.timeSlot));
     if (conflict) {
       return res.status(409).json({ error: "That time slot was just booked. Please pick another." });
     }
