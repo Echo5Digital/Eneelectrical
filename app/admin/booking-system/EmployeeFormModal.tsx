@@ -162,7 +162,7 @@ export default function EmployeeFormModal({ employee, onClose, onSaved }: Employ
                 <input
                   name="name"
                   type="text"
-                  placeholder="Steve Jones"
+                  placeholder="Alex Rivera"
                   value={form.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -183,7 +183,7 @@ export default function EmployeeFormModal({ employee, onClose, onSaved }: Employ
                 <input
                   name="phone"
                   type="tel"
-                  placeholder="(555) 000-0000"
+                  placeholder="(713) 555-0148"
                   value={form.phone}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -204,7 +204,7 @@ export default function EmployeeFormModal({ employee, onClose, onSaved }: Employ
                 <input
                   name="email"
                   type="email"
-                  placeholder="steve@eneelectrical.com"
+                  placeholder="alex.rivera@eneelectrical.com"
                   value={form.email}
                   onChange={handleChange}
                   onBlur={handleBlur}

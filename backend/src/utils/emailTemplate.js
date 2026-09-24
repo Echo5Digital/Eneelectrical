@@ -32,7 +32,7 @@ function bodyToHtmlParagraphs(body) {
     .join("");
 }
 
-function buildBookingEmailHtml({ booking, subject, body, dateText, logoCid }) {
+function buildBookingEmailHtml({ booking, subject, body, dateText }) {
   const status = STATUS_HEADING[booking.status] || STATUS_HEADING.approved;
   const serviceName = escapeHtml(booking.serviceType);
 
@@ -45,13 +45,10 @@ function buildBookingEmailHtml({ booking, subject, body, dateText, logoCid }) {
           <table role="presentation" width="100%" style="max-width:520px;background-color:#ffffff;border:1px solid #E5EAF0;border-radius:16px;" cellpadding="0" cellspacing="0">
             <tr>
               <td style="padding:32px 32px 0;text-align:center;">
-                ${
-                  logoCid
-                    ? `<div style="display:inline-block;border:1px solid #E5EAF0;border-radius:12px;padding:16px 24px;">
-                        <img src="cid:${logoCid}" alt="ENE Electrical" height="56" style="display:block;" />
-                      </div>`
-                    : `<div style="font-size:22px;font-weight:bold;color:#0B1F3A;">ENE Electrical</div>`
-                }
+                <div style="display:inline-block;border:1px solid #E5EAF0;border-radius:12px;padding:16px 28px;">
+                  <span style="font-size:24px;font-weight:bold;color:#0B1F3A;font-family:Arial,Helvetica,sans-serif;letter-spacing:0.5px;">ENE</span>
+                  <div style="font-size:10px;font-weight:bold;color:#0B1F3A;letter-spacing:2px;margin-top:-2px;">ELECTRICAL</div>
+                </div>
               </td>
             </tr>
             <tr>
@@ -77,29 +74,11 @@ function buildBookingEmailHtml({ booking, subject, body, dateText, logoCid }) {
                 <table role="presentation" width="100%" style="background-color:#F0F5FB;border-radius:12px;" cellpadding="0" cellspacing="0">
                   <tr>
                     <td style="padding:20px 24px;">
-                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                        <tr>
-                          <td width="40" style="vertical-align:top;padding-top:2px;">
-                            <div style="width:32px;height:32px;border-radius:8px;background-color:#ffffff;border:1px solid #D6E0EC;text-align:center;line-height:32px;font-size:16px;">📅</div>
-                          </td>
-                          <td style="padding-left:12px;">
-                            <div style="color:#8A97A8;font-size:12px;">Date</div>
-                            <div style="color:#0B1F3A;font-size:15px;font-weight:bold;">${escapeHtml(dateText)}</div>
-                          </td>
-                        </tr>
-                      </table>
+                      <div style="color:#8A97A8;font-size:12px;">Date</div>
+                      <div style="color:#0B1F3A;font-size:15px;font-weight:bold;">${escapeHtml(dateText)}</div>
                       <hr style="border:none;border-top:1px solid #D6E0EC;margin:16px 0;" />
-                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                        <tr>
-                          <td width="40" style="vertical-align:top;padding-top:2px;">
-                            <div style="width:32px;height:32px;border-radius:50%;border:2px solid #0B1F3A;text-align:center;line-height:28px;font-size:14px;">🕐</div>
-                          </td>
-                          <td style="padding-left:12px;">
-                            <div style="color:#8A97A8;font-size:12px;">Time</div>
-                            <div style="color:#0B1F3A;font-size:15px;font-weight:bold;">${escapeHtml(booking.timeSlot)}</div>
-                          </td>
-                        </tr>
-                      </table>
+                      <div style="color:#8A97A8;font-size:12px;">Time</div>
+                      <div style="color:#0B1F3A;font-size:15px;font-weight:bold;">${escapeHtml(booking.timeSlot)}</div>
                     </td>
                   </tr>
                 </table>
@@ -114,19 +93,13 @@ function buildBookingEmailHtml({ booking, subject, body, dateText, logoCid }) {
                       <p style="margin:0 0 16px;color:#8A97A8;font-size:14px;">Feel free to contact us.</p>
                       <table role="presentation" align="center" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td style="padding-bottom:10px;">
-                            <a href="tel:${COMPANY_PHONE_TEL}" style="color:#0B1F3A;font-size:14px;text-decoration:none;">
-                              <span style="display:inline-block;width:24px;height:24px;border-radius:50%;background-color:#0B1F3A;color:#ffffff;text-align:center;line-height:24px;font-size:12px;margin-right:8px;vertical-align:middle;">☎</span>
-                              <span style="text-decoration:underline;vertical-align:middle;">${COMPANY_PHONE}</span>
-                            </a>
+                          <td style="padding-bottom:8px;">
+                            <a href="tel:${COMPANY_PHONE_TEL}" style="color:#0B1F3A;font-size:14px;text-decoration:underline;">${COMPANY_PHONE}</a>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <a href="mailto:${COMPANY_EMAIL}" style="color:#0B1F3A;font-size:14px;text-decoration:none;">
-                              <span style="display:inline-block;width:24px;height:24px;border-radius:50%;background-color:#0B1F3A;color:#ffffff;text-align:center;line-height:24px;font-size:12px;margin-right:8px;vertical-align:middle;">✉</span>
-                              <span style="text-decoration:underline;vertical-align:middle;">${COMPANY_EMAIL}</span>
-                            </a>
+                            <a href="mailto:${COMPANY_EMAIL}" style="color:#0B1F3A;font-size:14px;text-decoration:underline;">${COMPANY_EMAIL}</a>
                           </td>
                         </tr>
                       </table>

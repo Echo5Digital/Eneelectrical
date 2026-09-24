@@ -1,11 +1,18 @@
-const path = require("path");
 const NotificationTemplate = require("../models/NotificationTemplate");
+const Employee = require("../models/Employee");
 const { getTransport } = require("./mailer");
 const { buildBookingEmailHtml } = require("./emailTemplate");
 
 const COMPANY_NAME = process.env.SMTP_FROM_NAME || "ENE Electrical";
-const LOGO_PATH = path.join(__dirname, "../../../public/logo_ene.png");
-const LOGO_CID = "ene-logo";
+
+const EMPLOYEE_NOTIFICATION_TEMPLATE = [
+  "Hi %employee_full_name%,",
+  "",
+  "You have one confirmed %service_name% appointment on %appointment_date% at %appointment_start_time%. The appointment is added to your schedule.",
+  "",
+  "Thank you,",
+  "%company_name%",
+].join("\n");
 
 // Booking dates are stored as UTC-midnight date-only values (see backend
 // routes/bookings.js stats comment) -- format via UTC getters so the email
@@ -54,7 +61,6 @@ async function sendBookingStatusEmail(booking) {
       subject,
       body,
       dateText: formatBookingDate(booking.date),
-      logoCid: LOGO_CID,
     });
 
     await transport.sendMail({
@@ -63,17 +69,57 @@ async function sendBookingStatusEmail(booking) {
       subject,
       text: body,
       html,
-      attachments: [
-        {
-          filename: "logo.png",
-          path: LOGO_PATH,
-          cid: LOGO_CID,
-        },
-      ],
     });
   } catch (err) {
     console.error("Failed to send booking status email:", err.code || err.message, err.command || "");
   }
 }
 
-module.exports = { sendBookingStatusEmail };
+// Notifies every visible, available employee assigned to the booked service
+// (there's no per-booking employee assignment yet, so this matches on the
+// employee's `services` list rather than a single specific person).
+async function notifyEmployeesOfNewBooking(booking) {
+  try {
+    const transport = getTransport();
+    if (!transport) return;
+
+    const employees = await Employee.find({
+      services: booking.serviceType,
+      visibility: "visible",
+      availability: "available",
+    });
+    if (employees.length === 0) return;
+
+    const startTime = String(booking.timeSlot).split(" - ")[0].trim();
+    const values = {
+      "%service_name%": booking.serviceType,
+      "%appointment_date%": formatBookingDate(booking.date),
+      "%appointment_start_time%": startTime,
+      "%company_name%": COMPANY_NAME,
+    };
+
+    await Promise.all(
+      employees.map((employee) => {
+        const body = Object.entries({
+          ...values,
+          "%employee_full_name%": employee.name,
+        }).reduce((acc, [token, value]) => acc.split(token).join(value), EMPLOYEE_NOTIFICATION_TEMPLATE);
+
+        return transport
+          .sendMail({
+            from: `"${COMPANY_NAME}" <${process.env.SMTP_USER}>`,
+            to: employee.email,
+            subject: `New ${booking.serviceType} Appointment Scheduled`,
+            text: body,
+          })
+          .catch((err) =>
+            console.error(`Failed to send employee notification to ${employee.email}:`, err.code || err.message)
+          );
+      })
+    );
+  } catch (err) {
+    console.error("Failed to notify employees of new booking:", err.code || err.message, err.command || "");
+  }
+}
+
+module.exports = { sendBookingStatusEmail, notifyEmployeesOfNewBooking };

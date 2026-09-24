@@ -2,7 +2,7 @@ const express = require("express");
 const rateLimit = require("express-rate-limit");
 const Booking = require("../models/Booking");
 const requireAuth = require("../middleware/auth");
-const { sendBookingStatusEmail } = require("../utils/notifyCustomer");
+const { sendBookingStatusEmail, notifyEmployeesOfNewBooking } = require("../utils/notifyCustomer");
 
 const router = express.Router();
 
@@ -179,6 +179,9 @@ router.post("/public", submitLimiter, async (req, res) => {
     const booking = await Booking.create(payload);
     sendBookingStatusEmail(booking).catch((err) =>
       console.error("Failed to send booking status email:", err)
+    );
+    notifyEmployeesOfNewBooking(booking).catch((err) =>
+      console.error("Failed to notify employees of new booking:", err)
     );
     res.status(201).json({ ok: true, id: booking._id });
   } catch (err) {
