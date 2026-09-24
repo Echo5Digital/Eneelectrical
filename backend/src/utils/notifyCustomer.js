@@ -1,7 +1,7 @@
 const NotificationTemplate = require("../models/NotificationTemplate");
 const Employee = require("../models/Employee");
 const { getTransport } = require("./mailer");
-const { buildBookingEmailHtml } = require("./emailTemplate");
+const { buildBookingEmailHtml, buildInternalNotificationEmailHtml } = require("./emailTemplate");
 
 const COMPANY_NAME = process.env.SMTP_FROM_NAME || "ENE Electrical";
 
@@ -105,12 +105,24 @@ async function notifyEmployeesOfNewBooking(booking) {
           "%employee_full_name%": employee.name,
         }).reduce((acc, [token, value]) => acc.split(token).join(value), EMPLOYEE_NOTIFICATION_TEMPLATE);
 
+        const html = buildInternalNotificationEmailHtml({
+          heading: "New Appointment Scheduled",
+          subtitle: `A ${booking.serviceType} appointment has been added to your schedule.`,
+          body,
+          details: [
+            { label: "Service", value: booking.serviceType },
+            { label: "Date", value: values["%appointment_date%"] },
+            { label: "Start Time", value: startTime },
+          ],
+        });
+
         return transport
           .sendMail({
             from: `"${COMPANY_NAME}" <${process.env.SMTP_USER}>`,
             to: employee.email,
             subject: `New ${booking.serviceType} Appointment Scheduled`,
             text: body,
+            html,
           })
           .catch((err) =>
             console.error(`Failed to send employee notification to ${employee.email}:`, err.code || err.message)
