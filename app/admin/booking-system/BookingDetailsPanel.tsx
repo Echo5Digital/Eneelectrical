@@ -27,7 +27,7 @@ interface BookingDetailsPanelProps {
   onDelete: (id: string) => void;
 }
 
-const STATUS_OPTIONS: Booking["status"][] = ["approved", "pending", "cancelled"];
+const STATUS_OPTIONS: Booking["status"][] = ["new", "approved", "pending", "cancelled"];
 
 export default function BookingDetailsPanel({
   booking,

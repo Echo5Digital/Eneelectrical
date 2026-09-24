@@ -68,7 +68,7 @@ export interface Booking {
   timeSlot: string;
   zipCode: string;
   notes: string;
-  status: "approved" | "pending" | "cancelled";
+  status: "new" | "approved" | "pending" | "cancelled";
   createdAt: string;
   updatedAt: string;
 }
@@ -126,7 +126,7 @@ export interface ServicesResponse {
 
 export interface NotificationTemplate {
   _id: string;
-  status: "approved" | "pending" | "cancelled";
+  status: "new" | "approved" | "pending" | "cancelled";
   subject: string;
   body: string;
   enabled: boolean;

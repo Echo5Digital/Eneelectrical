@@ -6,6 +6,7 @@ export const TIME_SLOTS = [
 ];
 
 export const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
+  new: { bg: "#DBEAFE", text: "#1D4ED8" },
   approved: { bg: "#DCFCE7", text: "#15803D" },
   pending: { bg: "#FEF3C7", text: "#B45309" },
   cancelled: { bg: "#FEE2E2", text: "#B91C1C" },

@@ -144,6 +144,8 @@ export default function ScheduleWizard() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [infoErrors, setInfoErrors] = useState<InfoErrors>({});
+  const [bookedSlots, setBookedSlots] = useState<string[]>([]);
+  const [loadingSlots, setLoadingSlots] = useState(false);
 
   const [form, setForm] = useState<WizardFormState>({
     category: "",
@@ -174,6 +176,35 @@ export default function ScheduleWizard() {
       })),
     [remoteServices]
   );
+
+  useEffect(() => {
+    if (!form.date) {
+      setBookedSlots([]);
+      return;
+    }
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+    const dateStr = toLocalDateString(form.date);
+    let cancelled = false;
+
+    setLoadingSlots(true);
+    fetch(`${apiBase}/api/bookings/availability?date=${dateStr}`)
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error("Failed to load availability"))))
+      .then((data: { bookedSlots: string[] }) => {
+        if (cancelled) return;
+        setBookedSlots(data.bookedSlots);
+        setForm((f) => (f.time && data.bookedSlots.includes(f.time) ? { ...f, time: "" } : f));
+      })
+      .catch((err) => {
+        if (!cancelled) console.error("Failed to load slot availability:", err);
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingSlots(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [form.date]);
 
   const currentStep = STEPS[stepIndex].key;
   const today = new Date();
@@ -235,6 +266,35 @@ export default function ScheduleWizard() {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
       const dateStr = form.date ? toLocalDateString(form.date) : "";
 
+      // Create the Booking first: it's the one that enforces slot exclusivity
+      // (a 409 here means someone else just took this date+time), so it must
+      // succeed before we commit to the lead record below.
+      const bookingRes = await fetch(`${apiBase}/api/bookings/public`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customerName: form.name,
+          email: form.email,
+          phone: form.phone,
+          serviceCategory: form.category,
+          serviceType: form.service,
+          date: dateStr,
+          timeSlot: form.time,
+          zipCode: form.zipCode,
+          notes: form.notes,
+        }),
+      });
+
+      if (!bookingRes.ok) {
+        const data = await bookingRes.json().catch(() => ({}));
+        if (bookingRes.status === 409) {
+          setBookedSlots((prev) => (prev.includes(form.time) ? prev : [...prev, form.time]));
+          setForm((f) => ({ ...f, time: "" }));
+          setStepIndex(STEPS.findIndex((s) => s.key === "datetime"));
+        }
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
       const leadRes = await fetch(`${apiBase}/api/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -253,34 +313,7 @@ export default function ScheduleWizard() {
 
       if (!leadRes.ok) {
         const data = await leadRes.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong. Please try again.");
-      }
-
-      // Also create a Booking record so it appears in the admin Booking System
-      // (dashboard/calendar/bookings). Non-fatal if this fails: the lead above
-      // is the source of truth for the user-facing success state.
-      try {
-        const bookingRes = await fetch(`${apiBase}/api/bookings/public`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            customerName: form.name,
-            email: form.email,
-            phone: form.phone,
-            serviceCategory: form.category,
-            serviceType: form.service,
-            date: dateStr,
-            timeSlot: form.time,
-            zipCode: form.zipCode,
-            notes: form.notes,
-          }),
-        });
-        if (!bookingRes.ok) {
-          const data = await bookingRes.json().catch(() => ({}));
-          console.error("Failed to create booking record:", data);
-        }
-      } catch (err) {
-        console.error("Failed to create booking record:", err);
+        console.error("Failed to create lead record:", data);
       }
 
       setCompletedSteps((prev) => new Set(prev).add("info"));
@@ -313,6 +346,7 @@ export default function ScheduleWizard() {
     setSubmitted(false);
     setSubmitError(null);
     setMonthOffset(0);
+    setBookedSlots([]);
   };
 
   const { cells, label: monthLabel } = buildCalendarDays(monthOffset);
@@ -352,16 +386,18 @@ export default function ScheduleWizard() {
                       {step.label}
                     </span>
                   )}
-                  <span
-                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{
-                      border: isDone ? "none" : `1.5px solid ${isActive ? "#F5A623" : "rgba(255,255,255,0.35)"}`,
-                      backgroundColor: isDone ? "#22c55e" : "transparent",
-                    }}
-                    aria-hidden="true"
-                  >
-                    {isDone && <CheckCircle2 size={14} className="text-white" strokeWidth={2.5} />}
-                  </span>
+                  {!collapsed && (
+                    <span
+                      className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
+                      style={{
+                        border: isDone ? "none" : `1.5px solid ${isActive ? "#F5A623" : "rgba(255,255,255,0.35)"}`,
+                        backgroundColor: isDone ? "#22c55e" : "transparent",
+                      }}
+                      aria-hidden="true"
+                    >
+                      {isDone && <CheckCircle2 size={14} className="text-white" strokeWidth={2.5} />}
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -498,6 +534,11 @@ export default function ScheduleWizard() {
             {/* STEP 2: Date & Time */}
             {currentStep === "datetime" && (
               <div className="flex flex-col gap-6">
+                {submitError && (
+                  <p className="flex items-center gap-1.5 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                    <AlertCircle size={14} className="flex-shrink-0" /> {submitError}
+                  </p>
+                )}
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <button
@@ -549,7 +590,10 @@ export default function ScheduleWizard() {
                           key={idx}
                           type="button"
                           disabled={disabled}
-                          onClick={() => setForm((f) => ({ ...f, date }))}
+                          onClick={() => {
+                            setForm((f) => ({ ...f, date }));
+                            setSubmitError(null);
+                          }}
                           className={`relative aspect-square rounded-lg text-sm flex items-center justify-center transition-colors ${
                             !inMonth ? "text-gray-300" : disabled ? "text-gray-300 cursor-not-allowed" : "text-[#1A2530] hover:bg-[#FFF8EC]"
                           } ${isSelected ? "font-bold" : ""}`}
@@ -574,23 +618,34 @@ export default function ScheduleWizard() {
                     <p className="text-sm font-medium mb-3" style={{ fontFamily: "Inter, sans-serif", color: "#1A2530" }}>
                       <span className="text-red-500">*</span> Available times for{" "}
                       <strong>{form.date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</strong>
+                      {loadingSlots && <span className="text-gray-400 font-normal"> (checking availability…)</span>}
                     </p>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                      {TIME_SLOTS.map((slot) => (
-                        <button
-                          key={slot}
-                          type="button"
-                          onClick={() => setForm((f) => ({ ...f, time: slot }))}
-                          className={`px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors ${
-                            form.time === slot
-                              ? "border-[#F5A623] bg-[#FFF8EC] text-[#0B1F3A]"
-                              : "border-gray-200 text-gray-600 hover:border-gray-300"
-                          }`}
-                          style={{ fontFamily: "Inter, sans-serif" }}
-                        >
-                          {slot}
-                        </button>
-                      ))}
+                      {TIME_SLOTS.map((slot) => {
+                        const isBooked = bookedSlots.includes(slot);
+                        return (
+                          <button
+                            key={slot}
+                            type="button"
+                            disabled={isBooked}
+                            onClick={() => {
+                              setForm((f) => ({ ...f, time: slot }));
+                              setSubmitError(null);
+                            }}
+                            className={`px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors ${
+                              isBooked
+                                ? "border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed line-through"
+                                : form.time === slot
+                                  ? "border-[#F5A623] bg-[#FFF8EC] text-[#0B1F3A]"
+                                  : "border-gray-200 text-gray-600 hover:border-gray-300"
+                            }`}
+                            style={{ fontFamily: "Inter, sans-serif" }}
+                            title={isBooked ? "This time slot is already booked" : undefined}
+                          >
+                            {slot}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                 )}

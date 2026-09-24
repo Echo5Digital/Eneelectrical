@@ -17,8 +17,8 @@ const bookingSchema = new mongoose.Schema(
     notes: { type: String, trim: true, default: "" },
     status: {
       type: String,
-      enum: ["approved", "pending", "cancelled"],
-      default: "approved",
+      enum: ["new", "approved", "pending", "cancelled"],
+      default: "new",
     },
   },
   { timestamps: true }

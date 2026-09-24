@@ -25,6 +25,7 @@ export default function AdminEmployeePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
+  const [menuPosition, setMenuPosition] = useState<{ top: number; right: number } | null>(null);
   const [modalMode, setModalMode] = useState<"create" | "edit" | null>(null);
   const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
@@ -176,22 +177,44 @@ export default function AdminEmployeePage() {
                         <td className="px-5 py-4 text-right relative" onClick={(e) => e.stopPropagation()}>
                           <button
                             type="button"
-                            onClick={() => setOpenMenuId(openMenuId === employee._id ? null : employee._id)}
+                            onClick={(e) => {
+                              if (openMenuId === employee._id) {
+                                setOpenMenuId(null);
+                                setMenuPosition(null);
+                                return;
+                              }
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              setMenuPosition({
+                                top: rect.bottom + 4,
+                                right: window.innerWidth - rect.right,
+                              });
+                              setOpenMenuId(employee._id);
+                            }}
                             className="w-8 h-8 rounded-lg inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
                             aria-label="Actions"
                           >
                             <MoreVertical size={16} />
                           </button>
-                          {openMenuId === employee._id && (
+                          {openMenuId === employee._id && menuPosition && (
                             <>
-                              <div className="fixed inset-0 z-10" onClick={() => setOpenMenuId(null)} />
-                              <div className="absolute right-5 top-11 z-20 w-40 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden text-left">
+                              <div
+                                className="fixed inset-0 z-10"
+                                onClick={() => {
+                                  setOpenMenuId(null);
+                                  setMenuPosition(null);
+                                }}
+                              />
+                              <div
+                                className="fixed z-20 w-40 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden text-left"
+                                style={{ top: menuPosition.top, right: menuPosition.right }}
+                              >
                                 <button
                                   type="button"
                                   onClick={() => {
                                     setEditingEmployee(employee);
                                     setModalMode("edit");
                                     setOpenMenuId(null);
+                                    setMenuPosition(null);
                                   }}
                                   className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                                 >
@@ -202,6 +225,7 @@ export default function AdminEmployeePage() {
                                   onClick={() => {
                                     setDeletingId(employee._id);
                                     setOpenMenuId(null);
+                                    setMenuPosition(null);
                                   }}
                                   className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors"
                                 >

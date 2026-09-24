@@ -4,7 +4,7 @@ const notificationTemplateSchema = new mongoose.Schema(
   {
     status: {
       type: String,
-      enum: ["approved", "pending", "cancelled"],
+      enum: ["new", "approved", "pending", "cancelled"],
       required: true,
       unique: true,
     },

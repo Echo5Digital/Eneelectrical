@@ -21,7 +21,7 @@ interface FormState {
   timeSlot: string;
   zipCode: string;
   notes: string;
-  status: "approved" | "pending" | "cancelled";
+  status: "new" | "approved" | "pending" | "cancelled";
 }
 
 interface FormErrors {
@@ -353,6 +353,7 @@ export default function BookingFormModal({ booking, onClose, onSaved }: BookingF
                 onChange={handleChange}
                 className={`${selectBase} ${normalBorder} pl-4`}
               >
+                <option value="new">New</option>
                 <option value="approved">Approved</option>
                 <option value="pending">Pending</option>
                 <option value="cancelled">Cancelled</option>

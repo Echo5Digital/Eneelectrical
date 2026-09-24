@@ -13,10 +13,17 @@ const submitLimiter = rateLimit({
   legacyHeaders: false,
 });
 
+const availabilityLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 120,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[\d\s\-()+]{7,20}$/;
 const CATEGORIES = ["Residential", "Commercial"];
-const STATUSES = ["approved", "pending", "cancelled"];
+const STATUSES = ["new", "approved", "pending", "cancelled"];
 
 function validateBookingInput(body, { partial = false } = {}) {
   const errors = {};
@@ -63,6 +70,30 @@ const ALLOWED_FIELDS = [
   "status",
 ];
 
+// Bookings in any of these statuses hold their time slot; a cancelled
+// booking frees it back up for other customers to select.
+const SLOT_BLOCKING_STATUSES = ["new", "pending", "approved"];
+
+// Public: list which time slots are already booked for a given date, so the
+// booking wizard can grey them out before the customer picks one.
+router.get("/availability", availabilityLimiter, async (req, res) => {
+  const { date } = req.query;
+  if (!date || Number.isNaN(new Date(date).getTime())) {
+    return res.status(400).json({ error: "A valid date is required" });
+  }
+
+  const dayStart = new Date(date);
+  const dayEnd = new Date(dayStart);
+  dayEnd.setUTCHours(23, 59, 59, 999);
+
+  const bookedSlots = await Booking.distinct("timeSlot", {
+    date: { $gte: dayStart, $lte: dayEnd },
+    status: { $in: SLOT_BLOCKING_STATUSES },
+  });
+
+  res.json({ bookedSlots });
+});
+
 // Public: submit a new booking (from the site's appointment wizard)
 router.post("/public", submitLimiter, async (req, res) => {
   const errors = validateBookingInput(req.body || {});
@@ -75,9 +106,24 @@ router.post("/public", submitLimiter, async (req, res) => {
     if (key === "status") continue;
     if (req.body[key] !== undefined) payload[key] = req.body[key];
   }
-  payload.status = "approved";
+  payload.status = "new";
 
   try {
+    // Re-check the slot right before creating: a race between two customers
+    // submitting the same slot is only closed by checking at write time, not
+    // by the earlier /availability read the wizard used to grey it out.
+    const dayStart = new Date(payload.date);
+    const dayEnd = new Date(dayStart);
+    dayEnd.setUTCHours(23, 59, 59, 999);
+    const conflict = await Booking.findOne({
+      date: { $gte: dayStart, $lte: dayEnd },
+      timeSlot: payload.timeSlot,
+      status: { $in: SLOT_BLOCKING_STATUSES },
+    });
+    if (conflict) {
+      return res.status(409).json({ error: "That time slot was just booked. Please pick another." });
+    }
+
     const booking = await Booking.create(payload);
     sendBookingStatusEmail(booking).catch((err) =>
       console.error("Failed to send booking status email:", err)
@@ -114,7 +160,7 @@ router.get("/stats", requireAuth, async (req, res) => {
       { $group: { _id: "$status", count: { $sum: 1 } } },
     ]),
     Booking.find({ date: { $gte: todayStart } })
-      .sort({ date: 1 })
+      .sort({ createdAt: -1 })
       .limit(10),
     Booking.distinct("email", rangeFilter),
   ]);
@@ -156,7 +202,7 @@ router.get("/", requireAuth, async (req, res) => {
 
   const [items, total] = await Promise.all([
     Booking.find(filter)
-      .sort({ date: 1 })
+      .sort({ createdAt: -1 })
       .skip((pageNum - 1) * limitNum)
       .limit(limitNum),
     Booking.countDocuments(filter),

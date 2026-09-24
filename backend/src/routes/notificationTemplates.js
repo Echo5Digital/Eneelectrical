@@ -4,7 +4,7 @@ const requireAuth = require("../middleware/auth");
 
 const router = express.Router();
 
-const STATUSES = ["approved", "pending", "cancelled"];
+const STATUSES = ["new", "approved", "pending", "cancelled"];
 
 // Admin: list all templates
 router.get("/", requireAuth, async (req, res) => {

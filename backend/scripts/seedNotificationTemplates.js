@@ -4,6 +4,18 @@ const NotificationTemplate = require("../src/models/NotificationTemplate");
 
 const DEFAULT_TEMPLATES = [
   {
+    status: "new",
+    subject: "%service_name% Appointment Received",
+    body: [
+      "Dear %customer_name%,",
+      "",
+      "You have successfully scheduled a %service_name% appointment on %appointment_date% at %appointment_time%.",
+      "",
+      "Thank you for choosing our company,",
+      "%company_name%",
+    ].join("\n"),
+  },
+  {
     status: "approved",
     subject: "%service_name% Appointment Approved",
     body: [

@@ -131,6 +131,7 @@ export default function AdminBookingsPage() {
             className="px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:ring-2 focus:ring-[#F5A623]"
           >
             <option value="">All Statuses</option>
+            <option value="new">New</option>
             <option value="approved">Approved</option>
             <option value="pending">Pending</option>
             <option value="cancelled">Cancelled</option>

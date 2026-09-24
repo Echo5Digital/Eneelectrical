@@ -6,10 +6,13 @@ import { apiFetch, NotificationTemplate, NotificationTemplatesResponse } from ".
 import AdminShell from "../../components/AdminShell";
 
 const STATUS_LABELS: Record<string, string> = {
+  new: "New",
   approved: "Approved",
   pending: "Pending",
   cancelled: "Cancelled",
 };
+
+const STATUS_ORDER = ["new", "approved", "pending", "cancelled"];
 
 const PLACEHOLDERS = [
   { token: "%customer_name%", desc: "Customer's full name" },
@@ -21,7 +24,7 @@ const PLACEHOLDERS = [
 
 export default function AdminNotificationsPage() {
   const [templates, setTemplates] = useState<NotificationTemplate[]>([]);
-  const [selectedStatus, setSelectedStatus] = useState<string>("approved");
+  const [selectedStatus, setSelectedStatus] = useState<string>("new");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [loading, setLoading] = useState(true);
@@ -121,7 +124,7 @@ export default function AdminNotificationsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
           {/* Status list */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 h-fit">
-            {["approved", "pending", "cancelled"].map((status) => {
+            {STATUS_ORDER.map((status) => {
               const template = templates.find((t) => t.status === status);
               const active = selectedStatus === status;
               return (
