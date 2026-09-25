@@ -570,9 +570,9 @@ export default function HoustonClient({ faqData }: Props) {
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/man-electrical-technician-working-switchboard-with-fuses-90kb.jpg"
               alt="ENE Electrical licensed technician working in a Houston area home"
-              className="w-full h-80 lg:h-96 object-cover"
+              className="w-full h-auto"
             />
             {/* Overlay card */}
             <div

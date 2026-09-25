@@ -388,9 +388,9 @@ export default function RichmondClient({ faqData }: Props) {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="/ff1f026f0e82779c77bc04dca93ccb03.jpg"
                 alt="Licensed electrician inspecting a residential electrical panel in a Richmond TX home"
-                className="w-full h-64 object-cover"
+                className="w-full h-auto"
               />
             </div>
           </div>

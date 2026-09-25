@@ -536,7 +536,7 @@ export default function ElectricalPanelUpgradePage() {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
             <img
-              src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/srk.jpeg"
               alt="Modern 200-amp residential electrical panel installed by ENE Electrical"
               className="w-full h-full object-cover"
             />

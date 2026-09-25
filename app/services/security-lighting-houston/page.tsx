@@ -556,7 +556,7 @@ export default function SecurityLightingPage() {
           {/* Smart lighting image card */}
           <div className="sm:col-span-2 lg:col-span-2 rounded-[0.75rem] overflow-hidden shadow-md relative min-h-[220px]">
             <img
-              src="https://images.pexels.com/photos/39057090/pexels-photo-39057090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/slk.jpeg"
               alt="Licensed electrician installing smart-enabled security lighting for a residential home"
               className="w-full h-full object-cover"
             />

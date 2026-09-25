@@ -432,7 +432,7 @@ export default function WestchaseHoustonClient({ faqData }: Props) {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-xl min-h-[380px]">
             <img
-              src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/srk.jpeg"
               alt="ENE Electrical licensed technician performing a panel upgrade in a Westchase Houston home"
               className="w-full h-full object-cover absolute inset-0"
             />

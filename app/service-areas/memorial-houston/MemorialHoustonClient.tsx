@@ -454,7 +454,7 @@ export default function MemorialHoustonClient({ faqData }: Props) {
           <div className="relative rounded-[0.75rem] overflow-hidden shadow-xl aspect-[4/3]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.pexels.com/photos/33751679/pexels-photo-33751679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/xlk.jpeg"
               alt="ENE Electrical technician upgrading an electrical panel in a Memorial Houston home"
               className="w-full h-full object-cover"
             />

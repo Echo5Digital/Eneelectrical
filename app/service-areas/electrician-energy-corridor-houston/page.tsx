@@ -368,11 +368,11 @@ export default function EnergyCorridorHoustonPage() {
               </div>
             </div>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/hlk.jpeg"
               alt="Licensed ENE Electrical technician working on a residential electrical panel in an Energy Corridor Houston home"
-              className="w-full h-full object-cover"
+              className="w-full h-auto"
             />
             <div
               className="absolute bottom-0 left-0 right-0 p-5"

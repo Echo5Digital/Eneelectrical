@@ -711,7 +711,7 @@ export default function NewConstructionClient({ faqData }: Props) {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
             <img
-              src="https://images.pexels.com/photos/33751679/pexels-photo-33751679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/xlk.jpeg"
               alt="Licensed ENE Electrical technician installing an electrical panel in a new construction home"
               className="w-full h-full object-cover"
             />

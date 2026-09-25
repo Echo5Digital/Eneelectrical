@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -9,6 +9,10 @@ import {
   Phone,
   ChevronLeft,
   ChevronRight,
+  Users,
+  Sparkles,
+  CalendarDays,
+  MessageSquareText,
 } from "lucide-react";
 import { apiFetch, getToken, Lead, LeadsResponse } from "../lib/api";
 import AdminShell from "../components/AdminShell";
@@ -20,6 +24,39 @@ const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
   won: { bg: "#DCFCE7", text: "#15803D" },
   lost: { bg: "#FEE2E2", text: "#B91C1C" },
 };
+
+const STATUS_FILTERS = [
+  { value: "", label: "All" },
+  { value: "new", label: "New" },
+  { value: "contacted", label: "Contacted" },
+  { value: "scheduled", label: "Scheduled" },
+  { value: "won", label: "Won" },
+  { value: "lost", label: "Lost" },
+];
+
+const SOURCE_FILTERS = [
+  { value: "", label: "All Sources" },
+  { value: "contact_form", label: "Contact Form" },
+  { value: "appointment_booking", label: "Appointment Booking" },
+];
+
+const AVATAR_PALETTE = [
+  { bg: "#EFF6FF", text: "#2563EB" },
+  { bg: "#F0FDF4", text: "#16A34A" },
+  { bg: "#FFFBEB", text: "#D97706" },
+  { bg: "#FDF2F8", text: "#DB2777" },
+  { bg: "#F5F3FF", text: "#7C3AED" },
+];
+
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
 
 export default function AdminLeadsPage() {
   const router = useRouter();
@@ -69,40 +106,74 @@ export default function AdminLeadsPage() {
 
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
+  const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const summary = useMemo(() => {
+    const newThisWeek = leads.filter((l) => new Date(l.createdAt).getTime() >= sevenDaysAgo).length;
+    const won = leads.filter((l) => l.status === "won").length;
+    const active = leads.filter((l) => l.status === "contacted" || l.status === "scheduled").length;
+    return { newThisWeek, won, active };
+  }, [leads, sevenDaysAgo]);
+
   return (
     <AdminShell>
-      <header className="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100">
-        <div>
-          <h1
-            className="text-xl font-bold"
-            style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
-          >
-            Leads
-          </h1>
-          <p className="text-sm text-gray-500">{total} total submissions</p>
+      <header
+        className="relative overflow-hidden px-8 py-8"
+        style={{ background: "linear-gradient(135deg, #0B1F3A 0%, #14305C 55%, #1B3E75 100%)" }}
+      >
+        <div
+          className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #F5A623 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full opacity-10 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #2E5FE8 0%, transparent 70%)" }}
+        />
+        <div className="relative flex items-center justify-between flex-wrap gap-6">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span
+                className="inline-flex items-center justify-center w-7 h-7 rounded-lg"
+                style={{ backgroundColor: "rgba(245,166,35,0.18)" }}
+              >
+                <Sparkles size={14} style={{ color: "#F5A623" }} />
+              </span>
+              <span
+                className="text-xs font-semibold uppercase tracking-widest"
+                style={{ color: "#F5A623", fontFamily: "Montserrat, sans-serif" }}
+              >
+                Customer Pipeline
+              </span>
+            </div>
+            <h1 className="text-2xl font-bold text-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Leads
+            </h1>
+            <p className="text-sm text-blue-100/80 mt-1">{total} total submissions</p>
+          </div>
+
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm">
+              <CalendarDays size={16} style={{ color: "#F5A623" }} />
+              <div>
+                <p className="text-sm font-bold text-white leading-none">{summary.newThisWeek}</p>
+                <p className="text-[11px] text-blue-100/70 mt-0.5">New this week</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm">
+              <Users size={16} style={{ color: "#F5A623" }} />
+              <div>
+                <p className="text-sm font-bold text-white leading-none">{summary.active}</p>
+                <p className="text-[11px] text-blue-100/70 mt-0.5">Active leads</p>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
-      <main className="flex-1 px-8 py-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-          <div>
-            <h1
-              className="text-2xl font-bold"
-              style={{ color: "#0B1F3A", fontFamily: "Montserrat, sans-serif" }}
-            >
-              Leads
-            </h1>
-            <p className="text-sm text-gray-500">{total} total submissions</p>
-          </div>
-        </div>
-
+      <main className="flex-1 px-8 py-7" style={{ backgroundColor: "#F7F8FA" }}>
         {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-5">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-3 mb-5">
           <div className="relative flex-1">
-            <Search
-              size={16}
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
-            />
+            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               placeholder="Search by name, email, or phone..."
@@ -115,21 +186,6 @@ export default function AdminLeadsPage() {
             />
           </div>
           <select
-            value={statusFilter}
-            onChange={(e) => {
-              setPage(1);
-              setStatusFilter(e.target.value);
-            }}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:ring-2 focus:ring-[#F5A623]"
-          >
-            <option value="">All Statuses</option>
-            <option value="new">New</option>
-            <option value="contacted">Contacted</option>
-            <option value="scheduled">Scheduled</option>
-            <option value="won">Won</option>
-            <option value="lost">Lost</option>
-          </select>
-          <select
             value={sourceFilter}
             onChange={(e) => {
               setPage(1);
@@ -137,10 +193,38 @@ export default function AdminLeadsPage() {
             }}
             className="px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm outline-none focus:ring-2 focus:ring-[#F5A623]"
           >
-            <option value="">All Sources</option>
-            <option value="contact_form">Contact Form</option>
-            <option value="appointment_booking">Appointment Booking</option>
+            {SOURCE_FILTERS.map((f) => (
+              <option key={f.value} value={f.value}>
+                {f.label}
+              </option>
+            ))}
           </select>
+          <div className="flex items-center gap-2 flex-wrap">
+            {STATUS_FILTERS.map((filter) => {
+              const active = statusFilter === filter.value;
+              const color = filter.value ? STATUS_COLORS[filter.value] : null;
+              return (
+                <button
+                  key={filter.value || "all"}
+                  type="button"
+                  onClick={() => {
+                    setPage(1);
+                    setStatusFilter(filter.value);
+                  }}
+                  className="px-3.5 py-2 rounded-full text-xs font-bold transition-all duration-150 border"
+                  style={
+                    active
+                      ? color
+                        ? { backgroundColor: color.bg, color: color.text, borderColor: color.text + "33" }
+                        : { backgroundColor: "#0B1F3A", color: "#ffffff", borderColor: "#0B1F3A" }
+                      : { backgroundColor: "#ffffff", color: "#6B7280", borderColor: "#E5E7EB" }
+                  }
+                >
+                  {filter.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {error && (
@@ -157,27 +241,32 @@ export default function AdminLeadsPage() {
                 <tr className="border-b border-gray-100 text-left" style={{ backgroundColor: "#F7F8FA" }}>
                   <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Name</th>
                   <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Contact</th>
+                  <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Message</th>
                   <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Source</th>
                   <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Status</th>
-                  <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Received</th>
+                  <th className="px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide text-right">Received</th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
                   <tr>
-                    <td colSpan={5} className="px-5 py-10 text-center text-gray-400">
+                    <td colSpan={6} className="px-5 py-14 text-center text-gray-400">
                       Loading...
                     </td>
                   </tr>
                 ) : leads.length === 0 ? (
                   <tr>
-                    <td colSpan={5} className="px-5 py-10 text-center text-gray-400">
-                      No leads found.
+                    <td colSpan={6} className="px-5 py-14 text-center text-gray-400">
+                      <div className="flex flex-col items-center gap-2">
+                        <Users size={28} className="text-gray-300" />
+                        No leads found.
+                      </div>
                     </td>
                   </tr>
                 ) : (
-                  leads.map((lead) => {
+                  leads.map((lead, idx) => {
                     const statusColor = STATUS_COLORS[lead.status] || STATUS_COLORS.new;
+                    const avatar = AVATAR_PALETTE[idx % AVATAR_PALETTE.length];
                     return (
                       <tr
                         key={lead._id}
@@ -185,25 +274,49 @@ export default function AdminLeadsPage() {
                         onClick={() => router.push(`/admin/leads/${lead._id}`)}
                       >
                         <td className="px-5 py-4">
-                          <Link
-                            href={`/admin/leads/${lead._id}`}
-                            className="font-semibold hover:underline"
-                            style={{ color: "#0B1F3A" }}
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            {lead.name}
-                          </Link>
+                          <div className="flex items-center gap-3">
+                            <div
+                              className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                              style={{ backgroundColor: avatar.bg, color: avatar.text }}
+                            >
+                              {initials(lead.name)}
+                            </div>
+                            <Link
+                              href={`/admin/leads/${lead._id}`}
+                              className="font-semibold hover:underline"
+                              style={{ color: "#0B1F3A" }}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {lead.name}
+                            </Link>
+                          </div>
                         </td>
                         <td className="px-5 py-4 text-gray-600">
                           <div className="flex items-center gap-1.5">
-                            <Mail size={13} className="text-gray-400" /> {lead.email}
+                            <Mail size={13} className="text-gray-400 flex-shrink-0" />
+                            <span className="truncate max-w-[160px]">{lead.email}</span>
                           </div>
                           <div className="flex items-center gap-1.5 mt-0.5">
-                            <Phone size={13} className="text-gray-400" /> {lead.phone}
+                            <Phone size={13} className="text-gray-400 flex-shrink-0" /> {lead.phone}
                           </div>
                         </td>
-                        <td className="px-5 py-4 text-gray-600">
-                          {lead.source === "appointment_booking" ? "Appointment" : "Contact Form"}
+                        <td className="px-5 py-4 text-gray-500 max-w-[220px]">
+                          {lead.message ? (
+                            <div className="flex items-start gap-1.5">
+                              <MessageSquareText size={13} className="text-gray-300 mt-0.5 flex-shrink-0" />
+                              <span className="truncate">{lead.message}</span>
+                            </div>
+                          ) : (
+                            <span className="text-gray-300">—</span>
+                          )}
+                        </td>
+                        <td className="px-5 py-4">
+                          <span
+                            className="inline-block px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap"
+                            style={{ backgroundColor: "#F3F4F6", color: "#4B5563" }}
+                          >
+                            {lead.source === "appointment_booking" ? "Appointment" : "Contact Form"}
+                          </span>
                         </td>
                         <td className="px-5 py-4">
                           <span
@@ -213,14 +326,18 @@ export default function AdminLeadsPage() {
                             {lead.status}
                           </span>
                         </td>
-                        <td className="px-5 py-4 text-gray-500 whitespace-nowrap">
+                        <td className="px-5 py-4 text-gray-500 whitespace-nowrap text-right">
                           {new Date(lead.createdAt).toLocaleDateString(undefined, {
                             month: "short",
                             day: "numeric",
                             year: "numeric",
-                            hour: "numeric",
-                            minute: "2-digit",
                           })}
+                          <div className="text-xs text-gray-400">
+                            {new Date(lead.createdAt).toLocaleTimeString(undefined, {
+                              hour: "numeric",
+                              minute: "2-digit",
+                            })}
+                          </div>
                         </td>
                       </tr>
                     );

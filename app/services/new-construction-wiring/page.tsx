@@ -541,9 +541,9 @@ export default function NewConstructionWiringPage() {
           <div className="relative rounded-2xl overflow-hidden shadow-xl h-80 lg:h-full min-h-[400px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.pexels.com/photos/4642438/pexels-photo-4642438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="/electrician-with-tools-working-construction-site-90kb.jpg"
               alt="New home under construction showing electrical rough-in wiring running through wall framing"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-left"
             />
             <div
               className="absolute bottom-0 left-0 right-0 p-5"
